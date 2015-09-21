@@ -1,0 +1,13 @@
+/.idea
+/system/admin_log
+/system/cache
+/system/global
+/system/*.php
+/system/*.html
+/system/*.htm
+/dev/sub/system/admin_log
+/dev/sub/system/cache
+/dev/sub/system/global
+/dev/sub/system/*.php
+/dev/sub/system/*.html
+/dev/sub/system/*.htm

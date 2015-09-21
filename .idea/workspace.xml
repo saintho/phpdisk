@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f801bfc-63ac-40fc-ba5e-5f7c3dbfa569" name="Default" comment="" />
+    <list default="true" id="0f801bfc-63ac-40fc-ba5e-5f7c3dbfa569" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/settings.inc.php" afterPath="$PROJECT_DIR$/system/settings.inc.php" />
+    </list>
     <ignored path="phpdisk.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -38,8 +41,8 @@
       <file leaf-file-name="uc_configs.inc.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plugins/api/uc_configs.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="527">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="459">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -131,20 +134,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.inc.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.inc.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/system/settings.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6981134" vertical-offset="0" max-vertical-offset="1360">
-              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.33224756" vertical-offset="0" max-vertical-offset="1989">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="imgcode.inc.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="imgcode.inc.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/imgcode.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38990825" vertical-offset="0" max-vertical-offset="2125">
+            <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="2125">
               <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
@@ -177,8 +180,8 @@
         <option value="$PROJECT_DIR$/dev/sub/system/configs.inc.php" />
         <option value="$PROJECT_DIR$/includes/function/global.func.php" />
         <option value="$PROJECT_DIR$/templates/default/circle_box_footer.tpl.php" />
-        <option value="$PROJECT_DIR$/system/settings.inc.php" />
         <option value="$PROJECT_DIR$/includes/imgcode.inc.php" />
+        <option value="$PROJECT_DIR$/system/settings.inc.php" />
       </list>
     </option>
   </component>
@@ -439,8 +442,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plugins/api/uc_configs.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="527">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="459">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -543,18 +546,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/settings.inc.php">
+    <entry file="file://$PROJECT_DIR$/includes/imgcode.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6981134" vertical-offset="0" max-vertical-offset="1360">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="2125">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/imgcode.inc.php">
+    <entry file="file://$PROJECT_DIR$/system/settings.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38990825" vertical-offset="0" max-vertical-offset="2125">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33224756" vertical-offset="0" max-vertical-offset="1989">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
