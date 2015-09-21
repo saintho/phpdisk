@@ -2,15 +2,6 @@
 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 // Cache Time: 2015-09-21 18:26:36
-
-
-
-
-
-
-
-
-
 $settings = array(
 	'allow_access' => '1',
 	'allow_register' => '1',
