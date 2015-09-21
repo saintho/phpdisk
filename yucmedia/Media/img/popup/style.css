@@ -1,0 +1,187 @@
+/*
+ * @Document   : popup
+ * @Created on : 2012-8-3, 14:06:32
+ * @Author     : coolfeel
+ * @Description: 弹出式验证码的样式
+ * @version $Id: Item.php 1186 2012-07-25 02:29:24Z zhanghui $
+ * @author Administrator
+ * @author $Author: zhanghui $
+ * $Date: 2012-07-25 10:29:24 +0800 (周三, 2012-07-25) $
+*/
+
+/* 验证主框 */
+.default_popup_main {
+    position: absolute;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 320px;
+    height: 250px;
+    background: url('_DIR_/frame.gif') no-repeat;
+    display: none;
+}
+
+/* 广告位置*/
+.default_popup_main .popup_ad, .default_popup_main .popup_loading_layer, .default_popup_main .popup_tip, .default_popup_main .popup_tools {
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    width: 300px;
+    height: 195px;
+    z-index: 2;
+    /*display: none;*/
+}
+
+.default_popup_main .popup_ad img {
+    width: 300px;
+    height: 195px;
+    display: none;
+    border: 0;
+}
+
+.default_popup_main .popup_loading_layer .popup_loading_inner {
+    margin: 0;
+    padding: 0
+}
+
+.default_popup_main .popup_loading_layer .popup_loading_inner .popup_loading_top {
+    margin: 0;
+    height: 78px;
+    display: block;
+}
+
+/* loading位置*/
+.default_popup_main .popup_loading_layer {
+    z-index: 1;
+    background: #4E4C4C;
+    display: block;
+}
+
+/* loading*/
+.default_popup_main .popup_loading_layer .popup_loading {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background: white url('_DIR_/loading.gif') no-repeat;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 提示信息*/
+.default_popup_main .popup_tip {
+    top: 180px;
+    width: 294px;
+    height: 18px;
+    padding: 2px;
+    border: 1px solid #F9F2A7;
+    background: #FEFFE5;
+    z-index: 999;
+    display: none;
+}
+
+/*警告层*/
+.default_popup_main .popup_tip .popup_warning {
+    margin: 0;
+    padding: 0;
+    height: 18px;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+/*警告标示*/
+.default_popup_main .popup_tip .popup_warning .popup_warning_icon {
+    background: white url('_DIR_/warning.gif');
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin: 0 5px 0 0;
+}
+
+/**/
+.default_popup_main .popup_tip .popup_warning .popup_warning_text {
+    font-family: arial, verdana, serif;
+    font-size: 12px;
+}
+
+/* 关闭按钮*/
+.default_popup_main .popup_tip .popup_warning .popup_close {
+    position: absolute;
+    top: 3px;
+    right: 2px;
+    background: #ffffff url('_DIR_/del.gif');
+    width: 16px;
+    height: 16px;
+    color: #0082CB;
+    cursor: pointer;
+}
+
+/*操作区*/
+.default_popup_main .popup_tools {
+    position: absolute;
+    top: 206px;
+    width: 300px;
+    height: 34px;
+    padding: 0px;
+    margin: 0;
+
+}
+
+/*操作区*/
+.default_popup_main .popup_tools .ctrl {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/*操作区的刷新按钮*/
+.default_popup_main .popup_tools .popup_refresh {
+    position: absolute;
+    left: 17px;
+    top: 9px;
+    width: 27px;
+    height: 27px;
+    background: url('_DIR_/reload1.gif') no-repeat;
+    border: 0;
+    cursor: pointer;
+}
+
+/*刷新按钮效果*/
+.default_popup_main .popup_tools .popup_refresh:hover {
+    background: url('_DIR_/reload2.gif') no-repeat;
+}
+
+/*操作区的帮助按钮*/
+.default_popup_main .popup_tools .popup_help {
+    position: absolute;
+    left: 50px;
+    top: 3px;
+    width: 27px;
+    height: 27px;
+    background: url('_DIR_/help.gif') no-repeat;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    display: none;
+}
+
+/*帮助按钮效果*/
+.default_popup_main .popup_tools .popup_help:hover {
+    background: url('_DIR_/help_hover.gif') no-repeat;
+}
+
+/*  操作区的 logo位置*/
+.default_popup_main .popup_tools .popup_logo {
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    width: 91px;
+    height: 21px;
+    background: url('_DIR_/logo.gif') no-repeat;
+    outline: none;
+    cursor: pointer;
+}
+
+/*logo按钮效果*/
+/*.default_popup_main .popup_tools .popup_logo:hover {*/
+/*background: url('_DIR_/logo2.gif') no-repeat;*/

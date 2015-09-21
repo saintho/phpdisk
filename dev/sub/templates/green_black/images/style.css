@@ -1,0 +1,217 @@
+/**
+##
+#	Project: PHPDISK File Storage Solution
+#	This is NOT a freeware, use is subject to license terms.
+#
+#	Site: http://www.phpdisk.com
+#
+#	$Id: style.css 3 2012-08-06 03:13:28Z along $
+#
+#	Copyright (C) 2008-2013 PHPDisk Team. All Rights Reserved.
+#
+##
+*/
+
+BODY {
+	background:#FFF;font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif
+}
+textarea{font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif}
+form{margin:0; padding:0}
+.btn {
+	background:url("sbtn_bg.gif") repeat-x; border:2px #8EBAEC solid; padding:3px 6px; padding:3px 0 0 0\9;
+}
+
+li{list-style:none}
+A{
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A:hover {
+	 color:#339900; TEXT-DECORATION: underline
+}
+.clear{
+	clear:both
+}
+.bold{font-weight:bold}
+.alt_bg{ background:#ebf4f8}
+.td_line td{border-bottom:1px #cccccc dotted; height:30px}
+/* mydisk */
+.upload_style{ margin-bottom:8px;float:left}
+.upload_btn{ margin-left:10px;float:left}
+#upl_detail{display:none; padding:8px; color:#252525}
+
+.store_nav{padding:10px}
+#up_msg_tips{width:100%; padding:5px; background:#FFFFDD; border:#FFCC00 1px solid; color:#008800}
+
+.l_box ul{list-style:none;padding-bottom:#E2EAEC 2px solid;}
+.l_box ul li{float:left; width:80px; display:block; padding:1px; margin-right:5px; border:#E2EAEC 2px solid; padding:5px; text-align:center; cursor:pointer}
+.l_box_hl{color:#0000FF; background:#efefef; padding:1px; border-bottom:2px #ffffff solid}
+
+.fl_list{ line-height:28px}
+.fl_list .f1{float:left;width:60%; border-bottom:1px #DFDFDF solid;}
+.fl_list .f2{float:right; width:40%; border-bottom:1px #DFDFDF solid; text-align:right}
+.up_tips{margin-top:120px; margin-left:140px; font-size:16px; color:#CCCCCC}
+
+/* guest upload*/
+.gu_box {
+	BACKGROUND-COLOR: #333333; WIDTH: 660px; HEIGHT: 50px;POSITION: relative;
+}
+.gu_box .upload_left {
+	TEXT-ALIGN: left; LINE-HEIGHT: 40px; MARGIN: 5px 0px 5px 5px;_MARGIN: 5px -3px 5px 3px; WIDTH: 650px; BACKGROUND: url(upload_bg.gif) #ffffff no-repeat; FLOAT: left; HEIGHT: 40px
+}
+.gu_box .upload_left .filebase {
+	TEXT-ALIGN: left; LINE-HEIGHT: 40px; WIDTH: 435px; WHITE-SPACE: nowrap; FLOAT: left; HEIGHT: 40px; OVERFLOW: hidden; padding-left:10px; font-size:14px;
+}
+.gu_box .upload_left .selectfile {
+	FLOAT: right; CURSOR: pointer; PADDING-TOP: 3px; padding-right:5px;
+}
+.gu_box .upload_right {
+	MARGIN: 8px 0px; FLOAT: left;
+}
+.gu_box .upload_right INPUT {
+	WIDTH: 95px; background:url(guest_btn.jpg); font-size:16px; font-weight:bold; color:#FFFFFF; border:0; height:30px;
+}
+
+.gu_box .progressWrapper {
+	WIDTH: 662px; OVERFLOW: hidden
+}
+.gu_box .progressContainer {
+	MARGIN: 5px; OVERFLOW: hidden
+}
+.gu_box .message {
+	BORDER-BOTTOM: #ffdd99 1px solid; BORDER-LEFT: #ffdd99 1px solid; PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #ffffcc; MARGIN: 1em 0px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; OVERFLOW: hidden; BORDER-TOP: #ffdd99 1px solid; BORDER-RIGHT: #ffdd99 1px solid; PADDING-TOP: 10px
+}
+.gu_box .red {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: #ffebeb; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+.gu_box .green {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: #fff; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+.gu_box .blue {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: #f0f5ff; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+.gu_box .progressName {
+	TEXT-ALIGN: left; WIDTH: 323px; DISPLAY: none; WHITE-SPACE: nowrap; HEIGHT: 14px; COLOR: #555; FONT-SIZE: 8pt; OVERFLOW: hidden; FONT-WEIGHT: 700
+}
+.gu_box .progressBarInProgress {
+	BACKGROUND-COLOR: rgb(76,148,220); WIDTH: 0%; HEIGHT: 40px; FONT-SIZE: 0px
+}
+.gu_box .progressBarComplete {
+	BACKGROUND-COLOR: rgb(76,148,220); WIDTH: 0%; HEIGHT: 40px; FONT-SIZE: 0px
+}
+.gu_box .progressBarError {
+	BACKGROUND-COLOR: rgb(76,148,220); WIDTH: 0%; HEIGHT: 40px; FONT-SIZE: 0px
+}
+.gu_box .progressBarComplete {
+	BACKGROUND-COLOR: green; WIDTH: 100%; VISIBILITY: hidden
+}
+.gu_box .progressBarError {
+	BACKGROUND-COLOR: red; WIDTH: 100%; VISIBILITY: hidden
+}
+.gu_box .progressBarStatus {
+	Z-INDEX: 102; POSITION: absolute; TEXT-ALIGN: center; WIDTH: 656px; FONT-FAMILY: Arial; WHITE-SPACE: nowrap; HEIGHT: 30px; TOP: 15px
+}
+.gu_box .progressCancel {
+	BACKGROUND-IMAGE: url(images/cancelbutton.gif); WIDTH: 14px; DISPLAY: none; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: -14px 0px; FLOAT: right; HEIGHT: 14px; FONT-SIZE: 0px
+}
+.gu_box A.progressCancel:hover {
+	BACKGROUND-POSITION: 0px 0px
+}
+
+.gu_box .guest_btn{ background:url(images/upload_bg.gif) repeat-x;}
+/* multi upload*/
+#upload_box{width:482px; height:280px; overflow-y:scroll; border:1px #CDCDCD solid}
+#upload_box .progressWrapper {
+	margin-left:10px;
+	width: 445px;
+	overflow: hidden;
+}
+
+#upload_box .progressContainer {
+	margin: 5px;
+	padding: 4px;
+	border: solid 1px #E8E8E8;
+	background-color: #F7F7F7;
+	overflow: hidden;
+}
+#upload_box .message {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;
+}
+#upload_box .up_red {
+	border: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+
+#upload_box .up_green {
+	border: solid 1px #DDF0DD;
+	background-color: #DAE7F0;
+}
+
+#upload_box .up_blue {
+	border: solid 1px #666666;
+	background-color: #337ABB;
+}
+
+#upload_box .progressName {
+	font-size: 12px;
+	color: #555;
+	width: 300px;
+	height: 14px;
+	text-align: left;
+	white-space: nowrap;
+	padding:5px;
+}
+
+#upload_box .progressBarInProgress,
+#upload_box .progressBarComplete,
+#upload_box .progressBarError {
+	font-size: 4px;
+	width: 0%;
+	height: 2px;
+	background-color: #73C8F5;
+	margin-top: 2px;
+	border:1px #fafafa solid
+}
+
+#upload_box .progressBarComplete {
+	width: 100%;
+	background-color: green;
+	visibility: hidden;
+}
+
+#upload_box .progressBarError {
+	width: 100%;
+	background-color: red;
+	visibility: hidden;
+}
+
+#upload_box .progressBarStatus {
+	margin-top: 2px;
+	width: 320px;
+	font-size: 12px;
+	font-family: Arial;
+	text-align: left;
+	white-space: nowrap;
+}
+
+#upload_box a.progressCancel {
+	font-size: 0;
+	display: block;
+	height: 13px;
+	width: 13px;
+	background-image: url(../../../images/upload_cancel.gif);
+	background-repeat: no-repeat;
+	background-position: -13px 0px;
+	float: right;
+}
+
+#upload_box a.progressCancel:hover {
+	background-position: 0px 0px;
+}
+/**/
