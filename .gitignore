@@ -1,5 +1,5 @@
 /.idea/*.*
-/system/*.*
+/system
 !/system/configs.inc.default.php
 !/system/settings.inc.default.php
 !/system/adminset.inc.php
@@ -10,7 +10,7 @@
 !/system/plugins/*.*
 !/system/templates/*.*
 !/system/global/*.*
-/dev/sub/system/*.*
+/dev/sub/system
 !/dev/sub/system/configs.inc.default.php
 !/dev/sub/system/settings.inc.default.php
 !/dev/sub/system/adminset.inc.php
