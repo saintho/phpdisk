@@ -8,9 +8,9 @@ $configs = array(
 
 	'dbname' => 'phpdisk',
 
-	'dbuser' => 'homestead',
+	'dbuser' => 'root',
 
-	'dbpasswd' => 'secret',
+	'dbpasswd' => '',
 
 	'pconnect' => 0,
 
