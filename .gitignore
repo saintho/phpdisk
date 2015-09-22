@@ -1,0 +1,14 @@
+.*
+!.gitignore
+/.idea
+system/cache
+system/admin_log
+plugins/api/uc_configs.inc.php
+system/configs.inc.php
+system/settings.inc.php
+system/db_log.php
+dev/sub/system/cache
+dev/sub/system/admin_log
+dev/sub/system/db_log.php
+dev/sub/system/configs.inc.php
+dev/sub/system/settings.inc.php
