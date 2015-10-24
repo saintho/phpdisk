@@ -76,7 +76,6 @@ if($cate_id){
 	$db->free($q);
 	unset($rs);
 }
-
 require_once template_echo('pd_public',$user_tpl_dir);
 
 include PHPDISK_ROOT."./includes/footer.inc.php";

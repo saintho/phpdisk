@@ -11,11 +11,11 @@
 #
 */
 
-//	Template Name: PHPDisk网盘FMS文件资源类模板
-//	Template URL: http://www.google.com/
-//	Description: PHPDisk网盘FMS文件资源类模板 Copyright 2008-2012 (C)。
-//	Author: PHPDISK TEAM
-//	Author Site: http://www.google.com/ 
+//	Template Name: 默默学课堂模版
+//	Template URL: www.momoxue.com
+//	Description: 默默学课堂模版
+//	Author: saint
+//	Author Site: www.momoxue.com
 //	Version: v1.0
 //	Template Type: user
 //  PHPDISK Core: v3.0

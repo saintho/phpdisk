@@ -1,18 +1,18 @@
 <?php
 
 // This is PHPDISK auto-generated file. Do NOT modify me.
-// Cache Time: 2015-09-23 15:38:22
+// Cache Time: 2015-10-24 15:03:08
 
 $stats = array(
-	'all_files_count' => '0',
-	'stat_time' => '1442993901',
-	'total_storage_count' => '0.00 B',
-	'users_count' => '1',
+	'all_files_count' => '24',
+	'stat_time' => '1444383504',
+	'total_storage_count' => '1.34 M',
+	'users_count' => '3',
 	'users_locked_count' => '0',
-	'users_open_count' => '1',
-	'user_files_count' => '0',
-	'user_folders_count' => '0',
-	'user_storage_count' => '0.00 B',
+	'users_open_count' => '3',
+	'user_files_count' => '24',
+	'user_folders_count' => '2',
+	'user_storage_count' => '1.34 M',
 );
 
 ?>

@@ -25,12 +25,18 @@ if($item=='files' && in_array($action,array('modify_file','post_report','post_co
 if($item=='folders' && in_array($action,array('add_folder','modify_folder','folder_delete'))){
 	$inner_box = true;
 }
+if($item=='course' && in_array($action,array('add_course','modify_course','course_delete','add_chapter_section',
+											 'chapter_section_delete','modify_chapter_section', 'add_file_cs_relation',
+											 'file_cs_relation_delete', 'course_review', 'course_review_cancel'))){
+	$inner_box = true;
+}
 if($item=='profile' && in_array($action,array('conv_income','guest'))){
 	$inner_box = true;
 }
 if($item=='upload'){
 	$inner_box = true;
 }
+
 if($inner_box){
 	if($item){
 		require_once template_echo('my_header',$user_tpl_dir);
@@ -47,7 +53,6 @@ if($inner_box){
 		require_once template_echo("pd_mydisk_locked",$user_tpl_dir);
 	}else{
 		if($item){
-
 			include PHPDISK_ROOT."./includes/header.inc.php";
 			$items = array('files','profile');
 			if(in_array($item,$items)){

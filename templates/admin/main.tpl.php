@@ -26,7 +26,6 @@
 <tr>
 	<td width="15%" align="right"><?=__('users_count')?>: </td>
 	<td>{$stats['users_count']} , <?=__('users_locked_count')?>&nbsp;&nbsp;<a href="{#urr(ADMINCP,"item=users&menu=extend&action=index&gid=0&orderby=is_locked")#}"><span class="txtred bold">{$stats['users_locked_count']}</span></a>  , <?=__('users_open_count')?>&nbsp;&nbsp;<span class="txtblue bold">{$stats['users_open_count']}</span></td>
-	<td rowspan="6" valign="top" width="50%"><div style="font-size:14px; border:1px solid #CCC; padding:8px; height:110px"><b><u>PHPDisk系统授权信息提示：</u></b><br /><br />您的系统是正版授权，已验证激活，您可以 <a href="{#urr(ADMINCP,"job=auth")#}" onclick="return confirm('您需要更新域名授权？');">【修改\更新域名授权&raquo;】</a><br /><br />授权使用到期时间：<span class="txtblue">{#get_auth_time()#}</span></div></td>
 </tr>
 <tr>
 	<td align="right"><?=__('user_files_count')?>: </td>
@@ -50,15 +49,6 @@
 </tr>
 </table>
 <br />
-<table width="100%" cellpadding="4" cellspacing="1" class="tableborder" style="display:{$show_news_frame}">
-<tr>
-	<td class="table_title"><?=__('phpdisk_site_news')?></td>
-</tr>
-<tr>
-	<td><div id="phpdisk_news"></div></td>
-</tr>
-</table>
-<br />
 <table align="center" width="100%" cellpadding="4" cellspacing="1" class="tableborder">
 <tr>
 	<td class="table_title" colspan="2"><?=__('system_env')?></td>
@@ -66,7 +56,6 @@
 <!--#if(!$settings['online_demo']){#-->
 <tr>
 	<td class="tablerow"><?=__('system_host')?>: {$_SERVER['SERVER_NAME']}({$_SERVER['SERVER_ADDR']})</td>
-	<td class="tablerow" valign="top" width="50%" rowspan="6"><div style="margin-bottom:5px;"><?=__('phpdisk_email_subscribe')?></div><script >var nId = "0e1bc68fa78ff8fd7d9841059b4313737169dd94b352cf7e",nWidth="500",sColor="light",sText="<?=__('phpdisk_email_subscribe2')?>" ;</script><script src="http://list.qq.com/zh_CN/htmledition/js/qf/page/qfcode.js" charset="gb18030"></script></td>
 </tr>
 <tr>
 	<td class="tablerow"><?=__('system_server')?>: {$_SERVER['SERVER_SOFTWARE']}</td>
@@ -80,31 +69,10 @@
 <tr>
 	<td class="tablerow"><?=__('iconv_txt')?>: (<?=__('iconv_support')?>: {$iconv_support} <?=__('or')?> <?=__('mbstring_support')?>: {$mbstring_support} ) <span class="txtgray">(<?=__('iconv_tips')?>)</span></td>
 </tr>
-<tr>
-	<td class="tablerow"><?=__('phpdisk_commend')?>: 
-	<a href="http://bbs.google.com/viewthread.php?tid=1506" target="_blank"><?=__('phpdisk_prober')?></a>
-	<a href="http://www.google.com/addvalue.html" target="_blank" class="txtred"><?=__('phpdisk_addvalue')?></a>
-	<a href="http://www.google.com/store.html" target="_blank" class="txtblue">【找模板】</a>
-	</td>
-</tr>
+
 </table>
 <br />
 <table align="center" width="100%" cellpadding="4" cellspacing="1" class="tableborder">
-<tr>
-	<td class="table_title"><?=__('about_system')?></td>
-</tr>
-<tr>
-	<td class="tablerow"><?=__('program_develop')?>: <a href="http://bbs.google.com/space.php?uid=1" target="_blank">along</a></td>
-</tr>
-<tr>
-	<td class="tablerow"><?=__('official_site')?>: <a href="http://www.google.com/" target="_blank">http://www.google.com</a></td>
-</tr>
-<tr>
-	<td class="tablerow"><?=__('phpdisk_bbs')?>: <a href="http://bbs.google.com/" target="_blank">http://bbs.google.com</a></td>
-</tr>
-<tr>
-	<td class="tablerow"><?=__('phpdisk_demo')?>: <a href="http://demo.google.com/" target="_blank">http://demo.google.com</a></td>
-</tr>
 <tr>
 	<td class="tablerow"><?=__('version_info')?>: <b>PHPDisk {PHPDISK_EDITION} {PHPDISK_VERSION} [{$charset_info}]</b> (Build{PHPDISK_RELEASE})</td>
 </tr>

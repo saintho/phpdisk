@@ -14,7 +14,7 @@
 <?php !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied!'); ?>
 <div id="container">
 <!--#include sub/block_adv_middle#-->
-<div class="tit"><img src="images/ico_extract.gif" align="absmiddle" border="0" /><?=__('share_file')?></div>
+
 <!--#if($cate_id){#-->
 <br />
 <div class="layout_box">

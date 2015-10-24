@@ -1,4 +1,4 @@
-<?php die();?>a:2:{s:4:"time";d:1442830769.6913559;s:4:"data";s:2585:"(function () {
+<?php die();?>a:2:{s:4:"time";d:1443862389.3734231;s:4:"data";s:2585:"(function () {
     var isReady = false; //是否已经加载完毕
     var readBound = false; //判断是否已经调用过循环事件
     var readylist = []; //把需要执行的方法先暂存在这个数组里

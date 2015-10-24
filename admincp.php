@@ -68,7 +68,7 @@ require_once template_echo('adm_header',$admin_tpl_dir,'',1);
 if($app && $item =='plugins'){
 	$action_module = PHPDISK_ROOT."plugins/".$app."/admin.inc.php";
 }else{
-	$items = array('templates','database','main','settings','groups','users','files','cache','lang','plugins','email','advertisement','link','announce','navigation','seo','comment','report','verycode','union','sitemap','plans','nodes','domain','public','vip','tag','credit');
+	$items = array('templates','database','main','settings','groups','users','files','course','cache','lang','plugins','email','advertisement','link','announce','navigation','seo','comment','report','verycode','union','sitemap','plans','nodes','domain','public','vip','tag','credit');
 	if(in_array($item,$items)){
 		$action_module = PHPDISK_ROOT.'admin/'.$item.'.inc.php';
 	}else{
@@ -77,6 +77,7 @@ if($app && $item =='plugins'){
 	}
 }
 admin_log();
+
 require_once template_echo('admincp',$admin_tpl_dir,'',1);
 
 $pageinfo = page_end_time();

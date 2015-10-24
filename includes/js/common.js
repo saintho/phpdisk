@@ -301,7 +301,7 @@ function copy_mytxt(txt,msg) {
 }
 function open_box(url,width,height){
 	if(url!=''){
-		window.showModalDialog(url,'','dialogWidth='+width+'px;dialogHeight='+height+'px');
+		window.open(url,'','dialogWidth='+width+'px;dialogHeight='+height+'px');
 	}
 }
 function abox(url,title,width,height){

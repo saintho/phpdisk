@@ -32,7 +32,7 @@ make_dir($dir);
 $upload_max = get_byte_value(ini_get('upload_max_filesize'));
 $post_max = get_byte_value(ini_get('post_max_size'));
 $max_php_file_size = min($upload_max, $post_max);
-
+$up_size = $max_php_file_size;
 if($up_size==$max_php_file_size){
 	$str = '您的网盘支持单个文件上传最大 <u style=\"font-size:14px;\">'.str_replace(' ','',get_size($max_php_file_size,'B',0)).'B</u>';
 }else{

@@ -26,7 +26,8 @@
 <link rel="shortcut icon" href="favicon.ico">
 <meta name="Copyright" content="Powered by PHPDisk Team, {PHPDISK_EDITION} {PHPDISK_VERSION} build{PHPDISK_RELEASE}" />
 <meta name="generator" content="PHPDisk Team" />
-<script type="text/javascript" src="includes/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="includes/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="includes/js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="images/js/jquery.jBox-2.3.min.js"></script>
 <script type="text/javascript" src="images/js/jquery.jBox-zh-CN.js"></script>
 <link type="text/css" rel="stylesheet" href="images/js/skins/blue/jbox.css"/>

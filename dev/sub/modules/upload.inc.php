@@ -286,7 +286,6 @@ switch($action){
 			}
 
 			$uid = $pd_uid ? $pd_uid : $uid;
-
 			require_once template_echo($item,$user_tpl_dir);
 		}
 }

@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2014-04-29 00:38:35
+// Cache Time:2015-10-03 16:45:39
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -33,7 +33,7 @@
 <tr>
 	<td width="40%"><span class="bold"><?=__('open_switch_tpls')?></span>: <br /><span class="txtgray"><?=__('open_switch_tpls_tips')?></span></td>
 	<td><input type="radio" name="setting[open_switch_tpls]" value="1" <?=ifchecked(1,$settings['open_switch_tpls'])?> /> <?=__('yes')?>&nbsp;&nbsp;<input type="radio" name="setting[open_switch_tpls]" value="0" <?=ifchecked(0,$settings['open_switch_tpls'])?>/> <?=__('no')?>
-	<a href="http://www.google.com/store.html" target="_blank" class="txtblue">【找模板】</a></td>
+	</td>
 </tr>
 <tr>
 	<td>&nbsp;</td>

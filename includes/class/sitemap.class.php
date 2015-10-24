@@ -17,7 +17,7 @@ class sitemap {
 	function sitemap() {
 
 	}
-	function build(){
+	static function build(){
 		global $charset,$settings,$db,$tpf,$timestamp;
 		$sitemap_file = PHPDISK_ROOT.'sitemap.xml';
 		if(!file_exists($sitemap_file) || $timestamp-@filemtime($sitemap_file)>86400){

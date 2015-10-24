@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2014-04-29 00:30:05
+// Cache Time:2015-09-26 17:45:20
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -34,7 +34,7 @@
 <link rel="shortcut icon" href="favicon.ico">
 <meta name="Copyright" content="Powered by PHPDisk Team, <?=PHPDISK_EDITION?> <?=PHPDISK_VERSION?> build<?=PHPDISK_RELEASE?>" />
 <meta name="generator" content="PHPDisk Team" />
-<script type="text/javascript" src="includes/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="includes/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="images/js/jquery.jBox-2.3.min.js"></script>
 <script type="text/javascript" src="images/js/jquery.jBox-zh-CN.js"></script>
 <link type="text/css" rel="stylesheet" href="images/js/skins/blue/jbox.css"/>

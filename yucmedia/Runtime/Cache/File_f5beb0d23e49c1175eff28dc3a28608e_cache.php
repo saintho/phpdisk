@@ -1,4 +1,4 @@
-<?php die();?>a:2:{s:4:"time";d:1442830769.6992929;s:4:"data";s:32722:"var yuc_captcha = function (obj) {
+<?php die();?>a:2:{s:4:"time";d:1443862389.385793;s:4:"data";s:32722:"var yuc_captcha = function (obj) {
     var rid = [];
     var pid = {};
     var css = {};

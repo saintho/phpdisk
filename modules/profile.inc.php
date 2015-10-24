@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
 #	Project: PHPDISK File Storage Solution
 #	This is NOT a freeware, use is subject to license terms.
@@ -82,6 +82,38 @@ switch($action){
 			$page_nav = multi($total_num, $perpage, $pg, urr("mydisk","item=$item&action=$action&task=$task&folder_id=$folder_id&word=".rawurlencode($word)));
 		}else{
 			$page_nav = multi($total_num, $perpage, $pg, urr("mydisk","item=$item&action=$action&folder_id=$folder_id"));
+		}
+		require_once template_echo('profile',$user_tpl_dir);
+		break;
+	case 'course_manage':
+		if($task == 'search'){
+
+		}else{
+			$course_array = get_course_list();
+		}
+		$nav_path = '<a href="'.urr("mydisk","item=profile&action=course_manage").'">课程管理</a>&raquo; ';
+		require_once template_echo('profile',$user_tpl_dir);
+		break;
+	case 'chapter_section_manage':
+		$course_id = gpc('course_id','G','');
+		$chapter_section_array = get_chapter_section_list($course_id);
+		$nav_path = '<a href="'.urr("mydisk","item=profile&action=course_manage").'">课程管理</a>&raquo; '.nav_path_course($course_id,$pd_uid,0,1);
+		require_once template_echo('profile',$user_tpl_dir);
+		break;
+	case 'course_review':
+		$perpage = 20;
+		$start_num = ($pg-1) * $perpage;
+		$sql = "SELECT c.*, cg.cate_name FROM {$tpf}course c LEFT JOIN {$tpf}categories cg ON c.cate_id = cg.cate_id WHERE user_id = {$pd_uid} limit $start_num,$perpage";
+		$q = $db->query($sql);
+		$course_array = array();
+		while($rs = $db->fetch_array($q)) {
+			$rs['create_date'] = date('Y-m-d H:i:s',$rs[create_date]);
+			$rs['update_date'] = date('Y-m-d H:i:s',$rs[update_date]);
+			$rs['status'] = $defineCouser[$rs['status']]?$defineCouser[$rs['status']]:'未定义状态';
+			$rs['a_edit'] = urr("mydisk","item=course&action=modify_course&course_id={$rs['courseid']}");
+			$rs['a_del'] = urr("mydisk","item=course&action=course_delete&course_id={$rs['courseid']}");
+			$rs['a_online_review'] = urr("mydisk", "item=profile&action=chapter_section_manage&course_id={$rs['courseid']}");
+			$course_array[] = $rs;
 		}
 		require_once template_echo('profile',$user_tpl_dir);
 		break;
@@ -174,7 +206,7 @@ switch($action){
 		}
 		break;
 	case 'myannounce':
-		if($task=='myannounce'){
+		if($task=='my announce'){
 			auth_task($task);
 		}else{
 			$my_announce = auth_action($action);
@@ -314,6 +346,102 @@ switch($action){
 		$my_downlines = @$db->result_first("select count(*) from {$tpf}buddys where userid='$pd_uid'");
 		require_once template_echo('profile',$user_tpl_dir);
 		break;
+	case 'application_teacher':
+		if($task == 'save_image'){
+			//清除显示
+			ob_end_clean();
+			//增加保存图片的代码
+			require(PHPDISK_ROOT.'includes/class/upload.class.php');
+			$upload=new upload('file',APPLICATION_MATERIALS_DIR);
+			$fileName=$upload->uploadFile();
+			echo json_encode(array('status' => 'ok', 'data'=>array('filename'=>basename($fileName)), 'msg'=>'成功上传文件'));
+			exit;
+		}
+		elseif($task == 'application_add'){
+			//检查是否存在提交的信息
+			$application_one = get_application_teacher_status();
+			if($application_one){
+				$sysmsg = array('不能重复申请,请先取消当前教师申请');
+				redirect('back',$sysmsg);
+				exit;
+			}
+			//申请提交的代码
+			form_auth(gpc('formhash','P',''),formhash());
+			$user_name = gpc('user_name');
+			$sex = gpc('sex');
+			$age = gpc('age');
+			$introduce = gpc('introduce');
+			$education_pic = gpc('education');
+			$job_pic = gpc('job');
+			$teacher_pic = gpc('teacher');
+			$user_id = $myinfo['userid'];
+			$status = 1;
+			$cur_date = time();
+			if(empty($user_name) || empty($sex) || empty($age) || empty($introduce) || empty($education_pic) ||
+				empty($job_pic) || empty($teacher_pic) ){
+				$sysmsg = array('输入信息不完整');
+				redirect('back',$sysmsg);
+				exit;
+			}
+			$sql = "INSERT INTO {$tpf}application_teacher (
+					user_id, status, create_date, last_update, check_num, user_name, sex, age, introduce,
+					education_pic, job_pic, teacher_pic
+					) VALUES (
+					$user_id, $status, '$cur_date', '$cur_date', 1, '$user_name', $sex, $age, '$introduce',
+					'$education_pic', '$job_pic', '$teacher_pic'
+					)";
+			$result_add = $db->query($sql);
+			if($result_add){
+				//添加成功
+				$sysmsg = array('提交申请成功,请静候佳音');
+				redirect('mydisk.php?item=profile&action=application_teacher&task=application_progress',$sysmsg);
+				exit;
+			}else{
+				//添加失败
+				$sysmsg = array('系统出错,添加失败');
+				redirect('back',$sysmsg);
+				exit;
+			}
+		}
+		elseif($task == 'application_cancel'){
+			//申请取消的代码
+			$user_id = $myinfo['userid'];
+			$sql = "DELETE FROM {$tpf}application_teacher WHERE user_id = {$user_id}";
+			$result_del = $db->query($sql);
+			if($result_del){
+				$sysmsg = array('取消申请成功');
+				redirect('back',$sysmsg);
+				exit;
+			}else{
+				$sysmsg = array('系统错误,取消申请失败');
+				redirect('back',$sysmsg);
+				exit;
+			}
+		}
+		elseif($task == 'application_progress'){
+			//查看申请进度的代码
+			//检查是否提交过申请
+			$application_one = get_application_teacher_status();
+			if(!$application_one){
+				$sysmsg = array('申请还没提交,正在进入申请页面');
+				redirect('mydisk.php?item=profile&action=application_teacher',$sysmsg);
+				exit;
+			}else{
+				require_once template_echo('profile',$user_tpl_dir);
+			}
+		}
+		else{
+			//界面的显示代码
+			//检查是否提交过申请
+			$application_one = get_application_teacher_status();
+			if($application_one){
+				$sysmsg = array('申请已提交,正在查看你的审核进度');
+				redirect('mydisk.php?item=profile&action=application_teacher&task=application_progress',$sysmsg);
+				exit;
+			}
+			require_once template_echo('profile',$user_tpl_dir);
+		}
+		break;
 	case 'chg_logo':
 		if($task =='update'){
 			form_auth(gpc('formhash','P',''),formhash());
@@ -417,7 +545,6 @@ switch($action){
 			//$tmp_username = convert_str('utf-8','gbk',$pd_username);
 			$logo = $logo ? $settings['file_path'].'/'.$logo : $user_tpl_dir.'images/logo.png';
 			$logo_url = $logo_url ? $logo_url : urr("space","username=".rawurlencode($pd_username));
-
 			require_once template_echo($item,$user_tpl_dir);
 		}
 		break;

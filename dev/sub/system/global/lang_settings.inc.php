@@ -1,7 +1,7 @@
 <?php
 
 // This is PHPDISK auto-generated file. Do NOT modify me.
-// Cache Time: 2015-09-21 18:25:03
+// Cache Time: 2015-10-08 15:43:24
 
 $lang_settings = array(
 	'zh_cn'=>array(

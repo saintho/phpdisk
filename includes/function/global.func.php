@@ -955,6 +955,22 @@ function nav_path($folder_id,$uid,$only_txt=0){
 	unset($rs);
 	return $str;
 }
+function nav_path_course($course_id,$uid,$only_txt=0){
+    global $db,$tpf;
+    $username = $db->result_first("select username from {$tpf}users where userid='$uid' limit 1");
+    $rs = $db->fetch_one_array("select * from {$tpf}course where courseid='$course_id' ");
+    $str = '';
+    if($rs['parent_id']!=0){
+        $str .= nav_path_course($rs['parent_id'],$uid,$only_txt);
+    }
+    if($only_txt){
+        $str .= $rs['course_name'] ? $rs['course_name'].'>' : '';
+    }else{
+        $str .= $rs['course_name'] ? '<a href="'.urr("space","username={$username}&cs_id={$rs['courseid']}").'">'.$rs['course_name'].'</a>&raquo; ' : '';
+    }
+    unset($rs);
+    return $str;
+}
 
 function read_file($f) {
 	if (file_exists($f)) {
@@ -1049,6 +1065,31 @@ function ip_encode($ip){
 function clear_html($str,$len=50){
 	return str_replace("\r\n",' ',cutstr(preg_replace("/<.+?>/i","",$str),$len));
 }
+function get_chapter_section_option($courseId,$pid=0,$selID=0,$lv=0){
+	global $db,$tpf;
+	$q = $db->query("select * from {$tpf}course_chapter_section where course_id = {$courseId}");
+	while ($rs = $db->fetch_array($q)) {
+		$data[] = $rs;
+	}
+	$db->free($q);
+	unset($rs);
+	if(count($data)){
+		$html = '';
+		foreach($data as $v){
+			if($v['parent_id'] == $pid){
+				$html .= '<option value="'.$v[csid].'"';
+				$html .= $selID ? ifselected($selID,$v[csid]) : '';
+				$html .= '>'.str_repeat('&nbsp;',$lv*2).$v[cs_name].'</option>'.LF;
+				$lv++;
+				$html .= get_chapter_section_option($courseId, $v['csid'],$selID,$lv);
+				$lv--;
+			}
+		}
+		return $html;
+	}else{
+		return '';
+	}
+}
 function get_cate_option($pid=0,$selID=0,$lv=0){
 	global $db,$tpf;
 	$q = $db->query("select * from {$tpf}categories order by show_order asc");
@@ -1114,6 +1155,11 @@ function get_cate_list($pid=0){
 	unset($rs);
 	return $cate_list;
 }
+//获取该分类下全部子分类
+function get_allsubcate_form_cateid($cate_id){
+
+}
+
 function get_cate_path($cate_id){
 	global $db,$tpf;
 	$rs = $db->fetch_one_array("select pid,cate_id,cate_name from {$tpf}categories where cate_id='$cate_id'");
@@ -1536,5 +1582,96 @@ function create_down_url($file){
 	$p_filename = filter_name($file['file_name'].$tmp_ext);
 	$expire_time = $settings[dl_expire_time] ? ($settings[dl_expire_time]+$timestamp) : 0;
 	return urr("dl",pd_encode("file_name=$p_filename&file_id={$file['file_id']}&fs=$fs&pp=$pp&hash=$hash&expire_time=$expire_time"));
+}
+
+//获取用户提交过教师申请的状态
+function get_application_teacher_status(){
+	global $db,$tpf,$pd_uid;
+	$user_id = $pd_uid;
+	$sql = "SELECT status FROM {$tpf}application_teacher WHERE user_id = {$user_id}";
+	$application_one = $db->fetch_one_array($sql);
+	return $application_one;
+}
+
+//获取视频列表数据
+function get_course_list($condition = null){
+	global $db,$tpf,$pd_uid,$pg,$defineCouser;
+	$perpage = 20;
+	$start_num = ($pg-1) * $perpage;
+    $sql = "SELECT distinct c.*, cg.cate_name,u.username, count(*) as file_num
+            FROM {$tpf}file_cs_relation fcr
+            LEFT JOIN {$tpf}course c ON c.courseid = fcr.course_id
+            LEFT JOIN {$tpf}categories cg ON c.cate_id = cg.cate_id
+            LEFT JOIN {$tpf}users u ON u.userid = c.user_id
+            WHERE user_id = {$pd_uid} {$condition} limit {$start_num},{$perpage}";
+	$q = $db->query($sql);
+	$course_array = array();
+	while($rs = $db->fetch_array($q)) {
+        if(!empty($rs['courseid'])){
+            $rs['create_date'] = date('Y-m-d H:i:s',$rs[create_date]);
+            $rs['update_date'] = date('Y-m-d H:i:s',$rs[update_date]);
+            $rs['status_num'] = $rs['status'];
+            $rs['status'] = $defineCouser[$rs['status']]?$defineCouser[$rs['status']]:'未定义状态';
+            $rs['a_course_view'] = urr("mydisk","item=profile&action=chapter_section_manage&course_id={$rs['courseid']}");
+            $rs['a_course_view_admin'] = urr("admincp","item=course&menu=file&action=course_view&course_id={$rs['courseid']}");
+            $rs['a_edit'] = urr("mydisk","item=course&action=modify_course&course_id={$rs['courseid']}");
+            $rs['a_del'] = urr("mydisk","item=course&action=course_delete&course_id={$rs['courseid']}");
+            $rs['a_course_review'] = urr("mydisk", "item=course&action=course_review&course_id={$rs['courseid']}");
+            $rs['a_course_review_cancel'] = urr("mydisk", "item=course&action=course_review_cancel&course_id={$rs['courseid']}");
+            $course_array[] = $rs;
+        }
+	}
+	$db->free($q);
+	unset($rs);
+	return $course_array;
+}
+
+//获取课程的章节列表
+function get_chapter_section_list($course_id){
+	global $tpf, $db, $defineChaptersSections, $defineFileChaptersSections;
+	//获取章节
+	require(PHPDISK_ROOT.'includes/class/phptree.class.php');
+	$sql = "SELECT * FROM {$tpf}course_chapter_section WHERE course_id = {$course_id}";
+	$q = $db->query($sql);
+	$chapter_section_array = array();
+	while($rs = $db->fetch_array($q)) {
+		$rs['ff_id'] = $rs['csid'];
+		$rs['create_date'] = date('Y-m-d H:i:s',$rs[create_date]);
+		$rs['update_date'] = date('Y-m-d H:i:s',$rs[update_date]);
+		$rs['status'] = $defineChaptersSections[$rs['status']]?$defineChaptersSections[$rs['status']]:'未定义状态';
+		$rs['a_edit'] = urr("mydisk","item=course&action=modify_chapter_section&cs_id={$rs['csid']}&course_id={$course_id}");
+		$rs['a_del'] = urr("mydisk","item=course&action=chapter_section_delete&cs_id={$rs['csid']}&course_id={$course_id}");
+		$rs['a_add_file'] = urr("mydisk","item=course&action=add_file_cs_relation&cs_id={$rs['csid']}&course_id={$course_id}");
+		$rs['is_cs'] = 1;
+		$chapter_section_array[] = $rs;
+	}
+	unset($rs);
+	//获取章节下的文件
+	$sql = "SELECT * FROM {$tpf}file_cs_relation fcr LEFT JOIN {$tpf}files f ON fcr.file_id = f.file_id WHERE course_id = {$course_id} AND is_del =0";
+	$q = $db->query($sql);
+	$file_array = array();
+	$ff_id = 10000000;
+	while($rs = $db->fetch_array($q)) {
+		$rs['ff_id'] = $ff_id;
+		$ff_id ++;
+		$rs['parent_id'] = $rs['cs_id'];
+		$rs['file_time'] = date('Y-m-d H:i:s',$rs[file_time]);
+		$rs['status'] = $defineFileChaptersSections[$rs['status']]?$defineFileChaptersSections[$rs['status']]:'未定义状态';
+		$rs['a_del'] = urr("mydisk","item=course&action=file_cs_relation_delete&cs_id={$rs['cs_id']}&file_id={$rs['file_id']}&course_id={$rs['course_id']}");
+		$rs['is_file'] = 1;
+		$file_array[] = $rs;
+	}
+	unset($rs);
+	//合并数组
+	$cs_file = array_merge($chapter_section_array,$file_array);
+	PHPTree::$config['primary_key'] = 'ff_id';
+	PHPTree::$config['parent_key'] = 'parent_id';
+	$chapter_section_array = PHPTree::makeTreeForHtml($cs_file);
+	return $chapter_section_array;
+}
+
+//获取分类下的课程
+function get_course_from_cate($cate=0){
+
 }
 ?>

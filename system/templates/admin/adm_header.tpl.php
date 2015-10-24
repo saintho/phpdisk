@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2014-04-29 00:36:22
+// Cache Time:2015-10-03 21:42:48
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -25,7 +25,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?=$charset?>" />
 <title>PHPDISK Administrator's Control Panel - google.com</title>
-<script type="text/javascript" src="includes/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="includes/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="includes/js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="images/js/jquery.jBox-2.3.min.js"></script>
 <script type="text/javascript" src="images/js/jquery.jBox-zh-CN.js"></script>
 <link type="text/css" rel="stylesheet" href="images/js/skins/blue/jbox.css"/>

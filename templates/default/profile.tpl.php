@@ -71,7 +71,7 @@ if(count($folders_array)){
 	<a href="javascript:;" onclick="abox('{$v[a_del]}','<?=__('del_folder')?>',400,200)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
 	</td>
 </tr>
-<!--#		
+<!--#
 	}
 }
 
@@ -97,13 +97,13 @@ if(count($files_array)){
 	<td align="right">
 	<a href="javascript:;" onclick="abox('{$v['a_modify']}','<?=__('modify_file')?>',600,400)" title="<?=__('modify')?>"><img src="images/edit_icon.gif" align="absmiddle" border="0" /></a>
 	<input type="text" name="show_order[]" style="text-align:center;width:24px" value="{$v[show_order]}" maxlength="2" />
-	<input type="hidden" name="file_ids2[]" value="{$v['file_id']}" />	
+	<input type="hidden" name="file_ids2[]" value="{$v['file_id']}" />
 	</td>
 </tr>
-<!--#		
+<!--#
 	}
 }
-if(count($files_array)){	
+if(count($files_array)){
 #-->
 <tr>
 	<td><a href="javascript:void(0);" onclick="reverse_ids(document.file_form.file_ids);"><?=__('select_all')?></a>&nbsp;<a href="javascript:void(0);" onclick="cancel_ids(document.file_form.file_ids);"><?=__('select_cancel')?></a></td>
@@ -124,13 +124,13 @@ if(count($files_array)){
 <!--#
 }
 #-->
-<!--#	
-if(!count($files_array) && !count($folder_array)){	
+<!--#
+if(!count($files_array) && !count($folder_array)){
 #-->
 <tr>
 	<td colspan="6" align="center">此目录暂无文件(夹)记录</td>
 </tr>
-<!--#	
+<!--#
 }
 #-->
 </table>
@@ -151,8 +151,253 @@ function dosubmit(o){
 			return false;
 		}
 	}
-}	
+}
 </script>
+<!--#}elseif($action=='course_manage'){#-->
+<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
+	<tr>
+		<td colspan="9" class="nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />课程管理&nbsp;&nbsp;
+			<a href="javascript:;" onclick="abox('{#urr("mydisk","item=course&action=add_course")#}','创建新课程',350,250);"><img src="images/ico_write.png" align="absmiddle" border="0" />创建课程</a>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4">当前路径：{$nav_path}</td>
+		<td colspan="4" align="right">
+			<form method="get" action="{#urr("mydisk","item=profile")#}" onsubmit="return dosearch(this);">
+                <input type="hidden" name="item" value="profile" />
+				<input type="hidden" name="action" value="course_manage" />
+				<input type="hidden" name="task" value="search" />
+				搜索课程:<input type="text" name="word" value="{$word}"/>
+				<input type="submit" class="btn" value="<?=__('search')?>" />
+			</form>
+			<script type="text/javascript">
+				function dosearch(o){
+					if(o.word.value.strtrim()==''){
+						o.word.focus();
+						return false;
+					}
+				}
+			</script>
+		</td>
+	</tr>
+	<form action="{#urr("mydisk","item=files")#}" name="file_form" method="post" onsubmit="return dosubmit(this);">
+	<input type="hidden" name="action" value="op_file" />
+	<input type="hidden" name="formhash" value="{$formhash}" />
+	<!--#if(count($course_array)){#-->
+	<tr>
+		<td width="12%" class="bold">课程名称</td>
+		<td width="10%" align="center" class="bold">分类</td>
+		<td width="8%" align="center" class="bold">视频数</td>
+		<td width="8%" align="center" class="bold"><?=__('file_downs')?></td>
+		<td width="8%" align="center" class="bold">浏览数</td>
+		<td width="12%" align="center" class="bold">状态</td>
+		<td width="17%" align="center" width="150" class="bold">更新时间</td>
+		<td width="13%" align="center" class="bold">
+			<?=__('operation')?>
+		</td>
+	</tr>
+	<!--#
+    }
+    if(count($course_array)){
+        foreach($course_array as $k => $v){
+            $color = ($k%2 ==0) ? 'color1' :'color4';
+    #-->
+	<tr class="{$color}">
+		<td>
+			<img src="images/folder.gif" align="absmiddle" border="0" />
+			<a href="{$v['a_course_view']}">{$v['course_name']}</a>
+		</td>
+		<td align="center" class="txtgray">{$v['cate_name']}</td>
+		<td align="center" class="txtgray">{$v['file_num']}</td>
+		<td align="center" class="txtgray">{$v['download_num']}</td>
+		<td align="center" class="txtgray">{$v['view_num']}</td>
+		<td align="center" class="txtgray">{$v['status']}</td>
+		<td align="center" class="txtgray">{$v['update_date']}</td>
+		<td align="center">
+            <!--#if($v['status_num'] == 1){#-->
+            <a href="javascript:;" onclick="abox('{$v[a_course_review]}','提交上线审核',400,250)"><img src="images/upload_file_icon.gif" align="absmiddle" border="0" /></a>
+            <!--#}#-->
+            <!--#if($v['status_num'] == 2){#-->
+            <a href="javascript:;" onclick="abox('{$v[a_course_review_cancel]}','取消上线审核',400,250)"><img src="images/down_file_icon.gif" align="absmiddle" border="0" /></a>
+            <!--#}#-->
+			<a href="javascript:;" onclick="abox('{$v[a_edit]}','修改课程',350,250);"><img src="images/ico_write.png" align="absbottom" border="0" /></a>
+			<a href="javascript:;" onclick="abox('{$v[a_del]}','删除课程',400,250)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
+		</td>
+	</tr>
+	<!--#
+        }
+    }
+    #-->
+	<!--#
+    if(!count($course_array) ){
+    #-->
+	<tr>
+		<td colspan="6" align="center">内容为空，还没添加课程</td>
+	</tr>
+	<!--#
+    }
+    #-->
+</table>
+
+<!--#}elseif($action=='chapter_section_manage'){#-->
+<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
+	<tr>
+		<td colspan="9" class="nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />章节管理&nbsp;&nbsp;
+			<a href="javascript:;" onclick="abox('{#urr("mydisk","item=course&action=add_chapter_section&course_id=$course_id")#}','创建新章节',350,250);"><img src="images/ico_write.png" align="absmiddle" border="0" />创建新章节</a>
+		</td>
+	</tr>
+	<tr>
+		<td>当前路径：{$nav_path}</td>
+		<td colspan="8" align="right"></td>
+	</tr>
+	<form action="{#urr("mydisk","item=files")#}" name="file_form" method="post" onsubmit="return dosubmit(this);">
+	<input type="hidden" name="action" value="op_file" />
+	<input type="hidden" name="formhash" value="{$formhash}" />
+	<!--#if(count($chapter_section_array)){#-->
+	<tr>
+		<td width="22%" class="bold">章节／课程名称</td>
+		<td width="8%" align="center" class="bold">视频数</td>
+		<td width="8%" align="center" class="bold"><?=__('file_downs')?></td>
+		<td width="8%" align="center" class="bold">浏览数</td>
+		<td width="12%" align="center" class="bold">状态</td>
+		<td width="17%" align="center" width="150" class="bold">更新时间</td>
+		<td width="13%" align="center" class="bold">
+			<?=__('operation')?>
+		</td>
+	</tr>
+	<!--#
+    }
+    if(count($chapter_section_array)){
+        foreach($chapter_section_array as $k => $v){
+            $color = ($k%2 ==0) ? 'color1' :'color4';
+    #-->
+        <!--#if($v['is_cs']){ #-->
+        <tr class="{$color}">
+            <td>
+                <!--# echo str_repeat('&nbsp;',$v['level']*2)#-->
+                <img src="images/disk.gif" align="absmiddle" border="0" />
+                {$v['cs_name']}
+                <a href="javascript:;" onclick="abox('{$v[a_add_file]}','添加视频',650,550);"><img src="images/tree/nolines_plus.gif" align="absbottom" border="0" /></a>
+            </td>
+            <td align="center" class="txtgray">-</td>
+            <td align="center" class="txtgray">{$v['download_num']}</td>
+            <td align="center" class="txtgray">{$v['view_num']}</td>
+            <td align="center" class="txtgray">-</td>
+            <td align="center" class="txtgray">{$v['update_date']}</td>
+            <td align="center">
+                <a href="javascript:;" onclick="abox('{$v[a_edit]}','修改章节',350,250);"><img src="images/ico_write.png" align="absbottom" border="0" /></a>
+                <a href="javascript:;" onclick="abox('{$v[a_del]}','删除章节',400,250)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
+            </td>
+        </tr>
+        <!--#} #-->
+        <!--#if($v['is_file']){ #-->
+        <tr class="{$color}">
+            <td>
+                <!--# echo str_repeat('&nbsp;',$v['level']*2)#-->
+                <img src="images/tree/cd.gif" align="absmiddle" border="0" />
+                {$v['file_name']}
+            </td>
+            <td align="center" class="txtgray">-</td>
+            <td align="center" class="txtgray">{$v['file_downs']}</td>
+            <td align="center" class="txtgray">{$v['file_views']}</td>
+            <td align="center" class="txtgray">{$v['status']}</td>
+            <td align="center" class="txtgray">{$v['file_time']}</td>
+            <td align="center">
+                <a href="javascript:;" onclick="abox('{$v[a_del]}','删除文件',400,250)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
+            </td>
+        </tr>
+        <!--#} #-->
+	<!--#
+        }
+    }
+    #-->
+	<!--#
+    if(!count($chapter_section_array) ){
+    #-->
+	<tr>
+		<td colspan="6" align="center">内容为空，还没添加章节</td>
+	</tr>
+	<!--#
+    }
+    #-->
+</table>
+<!--#}elseif($action=='course_review'){#-->
+<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
+    <tr>
+        <td colspan="9" class="nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />课程审核&nbsp;&nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td>当前路径：{$nav_path}</td>
+        <td colspan="8" align="right">
+            <form method="get" action="{#urr("mydisk","")#}" onsubmit="return dosearch(this);">
+            <input type="hidden" name="action" value="files" />
+            <input type="hidden" name="task" value="search" />
+            搜索课程:<input type="text" name="word" value="{$word}"/>
+            <input type="submit" class="btn" value="<?=__('search')?>" />
+            </form>
+            <script type="text/javascript">
+                function dosearch(o){
+                    if(o.word.value.strtrim()==''){
+                        o.word.focus();
+                        return false;
+                    }
+                }
+            </script>
+        </td>
+    </tr>
+    <form action="{#urr("mydisk","item=files")#}" name="file_form" method="post" onsubmit="return dosubmit(this);">
+    <input type="hidden" name="action" value="op_file" />
+    <input type="hidden" name="formhash" value="{$formhash}" />
+    <!--#if(count($course_array)){#-->
+    <tr>
+        <td width="29%" class="bold">课程名称</td>
+        <td width="10%" align="center" class="bold">分类</td>
+        <td width="8%" align="center" class="bold">视频数</td>
+        <td width="8%" align="center" class="bold"><?=__('file_downs')?></td>
+        <td width="8%" align="center" class="bold">浏览数</td>
+        <td width="17%" align="center" width="150" class="bold">更新时间</td>
+        <td width="12%" align="center" class="bold">状态／审核进度</td>
+        <td width="13%" align="center" class="bold">
+            <?=__('operation')?>
+        </td>
+    </tr>
+    <!--#
+    }
+    if(count($course_array)){
+        foreach($course_array as $k => $v){
+            $color = ($k%2 ==0) ? 'color1' :'color4';
+    #-->
+    <tr class="{$color}">
+        <td>
+            <img src="images/folder.gif" align="absmiddle" border="0" />
+            <a href="{$v['a_course_view']}">{$v['course_name']}</a>
+        </td>
+        <td align="center" class="txtgray">{$v['cate_name']}</td>
+        <td align="center" class="txtgray">{$v['folder_size']}</td>
+        <td align="center" class="txtgray">{$v['download_num']}</td>
+        <td align="center" class="txtgray">{$v['view_num']}</td>
+        <td align="center" class="txtgray">{$v['update_date']}</td>
+        <td align="center" class="txtgray">{$v['status']}</td>
+        <td align="center">
+            <a href="javascript:;" onclick="abox('{$v[a_edit]}','修改课程',350,250);">提交审核</a>
+            <a href="javascript:;" onclick="abox('{$v[a_del]}','删除课程',400,250)">取消审核x</a>
+        </td>
+    </tr>
+    <!--#
+        }
+    }
+    #-->
+    <!--#
+    if(!count($course_array) ){
+    #-->
+    <tr>
+        <td colspan="6" align="center">内容为空，还没添加课程</td>
+    </tr>
+    <!--#
+    }
+    #-->
+</table>
 
 <!--#}elseif($action=='mod_stat'){#-->
 <form action="{#urr("mydisk","item=profile")#}" method="post">
@@ -340,6 +585,242 @@ function dosubmit2(o){
 </table>
 </form>
 <!--#}#-->
+
+<!--#}elseif($action=='application_teacher'){#-->
+<!--#if($task=='application_progress'){#-->
+<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
+	<tbody>
+	<tr>
+		<td colspan="2" class="f14 nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />审批进度</td>
+	</tr>
+	<tr>
+		<td>进度div</td>
+	</tr>
+	<tr>
+		<td><a href="mydisk.php?item=profile&action=application_teacher&task=application_cancel" class="btn"
+			   onclick="return confirm('确定要取消你的教师申请吗？取消后无法恢复')">取消申请</a></td>
+	</tr>
+	</tbody>
+</table>
+<script type="text/javascript">
+
+</script>
+<!--#}else{#-->
+<script type="text/javascript" src="includes/js/dmuploader.min.js"></script>
+<form action="{#urr("mydisk","item=profile")#}" method="post">
+<input type="hidden" name="action" value="{$action}"/>
+<input type="hidden" name="task" value="application_add"/>
+<input type="hidden" name="formhash" value="{$formhash}" />
+<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
+	<tbody>
+		<tr>
+			<td colspan="2" class="f14 nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />申请教师</td>
+		</tr>
+		<tr>
+			<td width="30%">姓名</td>
+			<td>
+				<div class=""><input type="text" name="user_name"/></div>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%">性别</td>
+			<td>
+				<div class="">
+					<label><input type="radio" name="sex" value="1"/>男</label>
+					<label><input type="radio" name="sex" value="2"/>女</label>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%">年龄</td>
+			<td>
+				<div class=""><input type="text" name="age"/></div>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%">个人介绍</td>
+			<td>
+				<div class=""><textarea type="text" name="introduce"></textarea></div>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%">学历证明：</td>
+			<td>
+				<div id="education_prove" class="uploader">
+					<div class="browser">
+						<label>
+							<input type="file" name="" title='请选择证明的材料上传'>
+							<input type="hidden" name="education" value="">
+						</label>
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr id="education_file_info" style="display: none">
+			<td width="30%"></td>
+			<td>
+				<div class="info"></div>
+				<div class="progress"><div></div></div>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%">工作证明：</td>
+			<td>
+				<div id="job_prove" class="uploader">
+					<div class="browser">
+						<label>
+							<input type="file" name="" title='请选择证明的材料上传'>
+							<input type="hidden" name="job" value="">
+						</label>
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr id="job_file_info" style="display: none">
+			<td width="30%"></td>
+			<td>
+				<div class="info"></div>
+				<div class="progress"><div></div></div>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%">教师资格证明：</td>
+			<td>
+				<div id="teacher_prove" class="uploader">
+					<div class="browser">
+						<label>
+							<input type="file" name="" title='请选择证明的材料上传'>
+							<input type="hidden" name="teacher" value="">
+						</label>
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr id="teacher_file_info" style="display: none">
+			<td width="30%"></td>
+			<td>
+				<div class="info"></div>
+				<div class="progress"><div></div></div>
+			</td>
+		</tr>
+		<tr>
+			<td width="30%"></td>
+			<td><input type="submit" value="提交申请" class="btn"/></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+<style>
+	.progress{
+		border:solid 1px #C0C0C0;
+		height:12px;
+		margin-top:5px;
+		padding:1px;
+		width:290px;
+	}
+	.progress div{
+		width:0%;
+		height:12px;
+		background-color: #00CCFF;
+	}
+</style>
+<script type="text/javascript">
+	url_upload = 'mydisk.php?item=profile&action=application_teacher&task=save_image';
+	function update_file_progress(classdiv, percent)
+	{
+		$('#' + classdiv).find('div.progress div').width(percent);
+	}
+	function update_file_status(classdiv, message)
+	{
+		$('#' + classdiv).find('div.info').html(message);
+	}
+	// 学历证明上传js
+	$('#education_prove').dmUploader({
+		url: url_upload,
+		dataType: 'json',
+		allowedTypes: 'image/*',
+		/*extFilter: 'jpg;png;gif',*/
+		onBeforeUpload: function(id){
+			$('#education_file_info').css('display','');
+		},
+		onUploadProgress: function(id, percent){
+			var percentStr = percent + '%';
+			update_file_progress("education_file_info", percentStr);
+		},
+		onUploadSuccess: function(id, data){
+			update_file_progress("education_file_info", '100%');
+			update_file_status("education_file_info", "上传完成");
+			$('input[name="education"]').val(data.data.filename);
+		},
+		onUploadError: function(id, message){
+			update_file_status("education_file_info", "上传错误");
+		},
+		onFileTypeError: function(file){
+			update_file_status("education_file_info", "文件类型错误");
+		},
+		onFileSizeError: function(file){
+			update_file_status("education_file_info", "文件大小错误");
+		}
+	});
+	// 工作证明上传js
+	$('#job_prove').dmUploader({
+		url: url_upload,
+		dataType: 'json',
+		allowedTypes: 'image/*',
+		/*extFilter: 'jpg;png;gif',*/
+		onBeforeUpload: function(id){
+			$('#job_file_info').css('display','');
+		},
+		onUploadProgress: function(id, percent){
+			var percentStr = percent + '%';
+			update_file_progress("job_file_info", percentStr);
+		},
+		onUploadSuccess: function(id, data){
+			update_file_progress("job_file_info", '100%');
+			update_file_status("job_file_info", "上传完成");
+			$('input[name="job"]').val(data.data.filename);
+		},
+		onUploadError: function(id, message){
+			update_file_status("job_file_info", "上传错误");
+		},
+		onFileTypeError: function(file){
+			update_file_status("job_file_info", "文件类型错误");
+		},
+		onFileSizeError: function(file){
+			update_file_status("job_file_info", "文件大小错误");
+		}
+	});
+	// 学历证明上传js
+	$('#teacher_prove').dmUploader({
+		url: url_upload,
+		dataType: 'json',
+		allowedTypes: 'image/*',
+		/*extFilter: 'jpg;png;gif',*/
+		onBeforeUpload: function(id){
+			$('#teacher_file_info').css('display','');
+		},
+		onUploadProgress: function(id, percent){
+			var percentStr = percent + '%';
+			update_file_progress("teacher_file_info", percentStr);
+		},
+		onUploadSuccess: function(id, data){
+			update_file_progress("teacher_file_info", '100%');
+			update_file_status("teacher_file_info", "上传完成");
+			$('input[name="teacher"]').val(data.data.filename);
+		},
+		onUploadError: function(id, message){
+			update_file_status("teacher_file_info", "上传错误");
+		},
+		onFileTypeError: function(file){
+			update_file_status("teacher_file_info", "文件类型错误");
+		},
+		onFileSizeError: function(file){
+			update_file_status("teacher_file_info", "文件大小错误");
+		}
+	});
+</script>
+<!--#}#-->
+
 <!--#}elseif($action=='invite'){#-->
 <table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
 <tr>
@@ -347,10 +828,10 @@ function dosubmit2(o){
 </tr>
 <tr>
 	<td colspan="2"><?=__('invite_link')?>：<input type="text" size="70" id="invite_url" value="{$invite_url}" readonly onclick="getId('invite_url').select();copy_text('invite_url');"/><input type="button" value="<?=__('copy_link')?>" onclick="getId('invite_url').select();copy_text('invite_url');" class="btn"/></td>
-</tr>	
+</tr>
 <tr>
 	<td colspan="2"><?=__('downline_income')?>：<b>{$curr_downline_rate}</b> &nbsp;&nbsp;<?=__('my_invite_user')?>：<b>{$my_downlines}</b></td>
-</tr>	
+</tr>
 <tr>
 	<td width="15%"><?=__('my_income')?>： </td>
 	<td><?=__('my_credit')?>：<b class="f14">{#get_discount($pd_uid,get_profile($pd_uid,'credit'))#}</b> , <?=__('downline_credit')?>：<b class="f14">{$myinfo['dl_credit']}</b>&nbsp;&nbsp;</td>
@@ -386,7 +867,7 @@ function dosubmit2(o){
 </tr>
 <tr>
 	<td>&nbsp;</td>
-	<td><?=__('my_credit')?>：<b class="f14">{#get_discount($pd_uid,$myinfo['credit'])#}</b> , <?=__('downline_credit')?>：<b class="f14">{$myinfo['dl_credit']}</b> 
+	<td><?=__('my_credit')?>：<b class="f14">{#get_discount($pd_uid,$myinfo['credit'])#}</b> , <?=__('downline_credit')?>：<b class="f14">{$myinfo['dl_credit']}</b>
 	<!--#if($curr_credit_rate){#-->
 	 , <?=__('exchange_rate')?>：<b class="f14 txtblue">{$curr_credit_rate}</b>
 	<input type="button" class="btn" id="chg_btn" value="<?=__('exchange_credit')?>" onclick="conv_credit('credit');" />
@@ -440,12 +921,12 @@ function dosubmit2(o){
 </form>
 <script type="text/javascript">
 function doincome(o){
-	if(o.money.value ==''){		
+	if(o.money.value ==''){
 		alert('<?=__('pls_input_income_money')?>');
 		o.money.focus();
 		return false;
 	}
-	if(o.income_pwd.value ==''){		
+	if(o.income_pwd.value ==''){
 		alert('提现密码不能为空');
 		o.income_pwd.focus();
 		return false;
@@ -507,15 +988,15 @@ if(count($orders)){
 	<td class="txtgray">{$v['in_time']}</td>
 	<td align="right">{$v['o_status']}</td>
 </tr>
-<!--#		
+<!--#
 	}
 	unset($orders);
 #-->
 <tr>
 	<td style="border-bottom:none;" colspan="6">{$page_nav}</td>
 </tr>
-<!--#	
-}else{	
+<!--#
+}else{
 #-->
 <tr>
 	<td colspan="6" align="center"><?=__('income_log_not_found')?></td>
@@ -550,15 +1031,15 @@ if(count($orders)){
 	<td class="txtgreen" align="center">{$v['credit']}</td>
 	<td class="txtgray" align="right">{$v['in_time']}</td>
 </tr>
-<!--#		
+<!--#
 	}
 	unset($orders);
 #-->
 <tr>
 	<td style="border-bottom:none;" colspan="6">{$page_nav}</td>
 </tr>
-<!--#	
-}else{	
+<!--#
+}else{
 #-->
 <tr>
 	<td colspan="6" align="center"><?=__('credit_log_not_found')?></td>
@@ -592,7 +1073,7 @@ if(count($plans)){
 <!--#
 	foreach($plans as $k => $v){
 #-->
-<tr 
+<tr
 <!--#if(!($auth[open_plan_active] && $settings[open_plan_active])){#-->onclick="hl_plan({$k},{#count($plans)#});"<!--#}#--> style="cursor:pointer" id="tr_{$k}"
 <!--#if($v[plan_id]==get_profile($pd_uid,'plan_id')){#-->class="color4 txtblue"<!--#}#-->>
 	<td>
@@ -608,10 +1089,10 @@ if(count($plans)){
 	<td>{$v['memo']}&nbsp;</td>
 	<!--#}#-->
 </tr>
-<!--#		
+<!--#
 	}
 	unset($plans);
-}else{	
+}else{
 #-->
 <tr>
 	<td colspan="7" align="center"><?=__('plans_not_found')?></td>
@@ -709,7 +1190,7 @@ function chkform(o){
 		alert("当前登录密码不正确");
 		o.old_pwd.focus();
 		return false;
-	}	
+	}
 	if(o.new_pwd.value.strtrim().length <6){
 		alert("<?=__('password_too_short')?>");
 		o.new_pwd.focus();
@@ -726,7 +1207,7 @@ function chkform2(o){
 		alert("当前提现密码不正确");
 		o.old_pwd.focus();
 		return false;
-	}	
+	}
 	if(o.new_pwd.value.strtrim().length <6){
 		alert("提现密码过短");
 		o.new_pwd.focus();
@@ -750,7 +1231,7 @@ function chkform2(o){
 </tr>
 <tr>
 	<td align="right" width="20%"><?=__('account_type')?>：</td>
-	<td width="100%"><input type="radio" name="income_type" value="alipay" id="a1" {#ifchecked('alipay',$income_type,'str')#} /><label for="a1"><?=__('alipay')?></label> 
+	<td width="100%"><input type="radio" name="income_type" value="alipay" id="a1" {#ifchecked('alipay',$income_type,'str')#} /><label for="a1"><?=__('alipay')?></label>
 	<input type="radio" name="income_type" value="tenpay" id="a2" {#ifchecked('tenpay',$income_type,'str')#} /><label for="a2"><?=__('tenpay')?></label> </td>
 </tr>
 <tr>
@@ -953,15 +1434,15 @@ if(count($buddys)){
 	<td align="center">{$v[is_system]}</td>
 	<td align="center">{$v[credit]}</td>
 </tr>
-<!--#		
+<!--#
 	}
 	unset($buddys);
 #-->
 <tr>
 	<td colspan="7">{$page_nav}</td>
 </tr>
-<!--#	
-}else{	
+<!--#
+}else{
 #-->
 <tr>
 	<td colspan="7" align="center"><?=__('downline_users_not_found')?></td>
@@ -1051,9 +1532,9 @@ if(count($buddys)){
 	<td valign="top" style="border-left:1px #CCCCCC solid;">
 	<table width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
 	<tr>
-		<td colspan="2" class="f14"><img src="images/ann_icon.gif" align="absmiddle" border="0" /><?=__('announce')?></td>
+		<td colspan="2" class="f14"><img src="images/ann_icon.gif" align="absmiddle" border="0" />网站公告</td>
 	</tr>
-	<!--#show_announces()#-->
+	<!--<!--#show_announces()#-->-->
 	</table>
 </td>
 </tr>

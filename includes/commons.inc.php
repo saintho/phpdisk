@@ -32,6 +32,7 @@ if(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
 }
 define('NOW_YEAR','2014');
 define('PHPDISK_ROOT', substr(dirname(__FILE__), 0, -8));
+define('APPLICATION_MATERIALS_DIR',PHPDISK_ROOT.'application_materials/');
 define('PD_PLUGINS_DIR',PHPDISK_ROOT.'plugins/');
 define('IN_PHPDISK',TRUE);
 define('SERVER_NAME',$_SERVER['SERVER_NAME']);
@@ -198,4 +199,12 @@ $payment_arr = array('mywealth'=>__('mywealth'),'alipay'=>__('alipay'),'tenpay'=
 $ca_arr = array('download'=>__('ca_download'),'ref'=>__('ca_ref'),'view'=>'点击');
 $my_sid = session_id();
 
+//男女的数组
+$defineSex = array(1=>'男', 2=>'女');
+//申请教师的状态数组
+$defineApplicationTeacher = array(1=>'等待审核', 2=>'正在审核', 3=>'审核通过', 4=>'资料不完整', 5=>'资料填写错误', 6=>'资料非法', 7=>'其他');
+//课程的状态数组
+$defineFileChaptersSections = array(1=>'线下／未审核', 2=>'线上／审核中', 3=>'线上／审核通过', 4=>'线下／审核不通过－淫秽色情，宗教纷争', 5=>'线下／审核不通过－视频与课程介绍不符合', 6=>'线下／审核不通过－视频质量有问题', 7=>'线下／审核不通过－其他');
+$defineChaptersSections = array(1=>'线下／未审核', 2=>'线上／提交审核');
+$defineCouser = array(1=>'线下／未审核', 2=>'线上／提交审核');
 ?>

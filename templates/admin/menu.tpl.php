@@ -62,6 +62,7 @@ $(document).ready(function(){
 	<li id="am_4"><a href="{#urr(ADMINCP,"item=groups&menu=$menu&action=index")#}"><?=__('menu_user_group')?></a></li>
 	<li id="am_5"><a href="{#urr(ADMINCP,"item=users&menu=$menu&action=fastlogin")#}"><?=__('menu_user_fastlogin')?></a></li>
 	<li id="am_6"><a href="{#urr(ADMINCP,"item=users&menu=$menu&action=index")#}"><?=__('menu_user_manage')?></a></li>
+		<li id="am_6"><a href="{#urr(ADMINCP,"item=users&menu=$menu&action=review_application_teacher")#}">教师审核</a></li>
 	<li id="am_7"><a href="{#urr(ADMINCP,"item=users&menu=$menu&action=orders")#}"><?=__('menu_order_process')?></a></li>
 	<li id="am_8"><a href="{#urr(ADMINCP,"item=plans&menu=$menu&action=list")#}"><?=__('menu_earn_plans')?></a></li>
 	<!--#if($auth[pd_p] || $auth[pd_a]){#-->
@@ -96,16 +97,24 @@ $(document).ready(function(){
 	<!--#if(!super_admin()){#-->
 	<script>$('#am_9').hide();$('#am_10').hide();</script>
 	<!--#}#-->
-<!--#}elseif($menu =='file'){#-->	
+	<!--#}elseif($menu =='file'){#-->
 	<div class="menu_box">
-	<div class="title" onClick="expand(1);"><img id="img_1" align="absmiddle" src="{$admin_tpl_dir}images/menu_open.gif" border=0><?=__('menu_files')?></div>
-	<div id="box_1">
-	<li id="am_14"><a href="{#urr(ADMINCP,"item=files&menu=$menu&action=index")#}"><?=__('menu_files_list')?></a></li>
-	<li id="am_41"><a href="{#urr(ADMINCP,"item=tag&menu=$menu")#}"><?=__('menu_tag')?></a></li>
-	<li id="am_15"><a href="{#urr(ADMINCP,"item=nodes&menu=$menu&action=list")#}"><?=__('menu_files_node')?></a></li>
-	<li><a href="{#urr(ADMINCP,"item=files&menu=$menu&action=index&view=user_del")#}"><?=__('file_recycle')?></a></li>
-	<li><a href="{#urr(ADMINCP,"item=files&menu=$menu&action=filterword")#}"><?=__('file_filter_word')?></a></li>
+		<div class="title" onClick="expand(1);"><img id="img_1" align="absmiddle" src="{$admin_tpl_dir}images/menu_open.gif" border=0><?=__('menu_files')?></div>
+		<div id="box_1">
+			<!--<li id="am_14"><a href="{#urr(ADMINCP,"item=files&menu=$menu&action=index")#}"><?=__('menu_files_list')?></a></li>-->
+			<li id="am_41"><a href="{#urr(ADMINCP,"item=tag&menu=$menu")#}"><?=__('menu_tag')?></a></li>
+			<li id="am_15"><a href="{#urr(ADMINCP,"item=nodes&menu=$menu&action=list")#}"><?=__('menu_files_node')?></a></li>
+			<!--<li><a href="{#urr(ADMINCP,"item=files&menu=$menu&action=index&view=user_del")#}"><?=__('file_recycle')?></a></li>-->
+			<li><a href="{#urr(ADMINCP,"item=files&menu=$menu&action=filterword")#}"><?=__('file_filter_word')?></a></li>
+		</div>
 	</div>
+	<br/>
+
+	<div class="menu_box">
+		<div class="title" onClick="expand(1);"><img id="img_1" align="absmiddle" src="{$admin_tpl_dir}images/menu_open.gif" border=0>课程管理</div>
+		<div id="box_1">
+			<li id="am_14"><a href="{#urr(ADMINCP,"item=course&menu=$menu&action=index")#}">课程审核</a></li>
+		</div>
 	</div>
 	<br/>
 	<!--#if($auth[pd_a]){#-->
@@ -253,7 +262,7 @@ $(document).ready(function(){
 	</div>
 	<br/>
 </div>
-<?
+<?php
 if(!super_admin()){
 	$menu_ids = array(
 	'base'=>array(1,2,40),

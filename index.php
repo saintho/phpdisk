@@ -1,8 +1,4 @@
 <?php
-
-
-
-
 /**
 #	Project: PHPDISK File Storage Solution
 #	This is NOT a freeware, use is subject to license terms.
@@ -29,11 +25,15 @@ if($action=='set_default_tpl'){
 }
 $title = $settings[site_title];
 $seo = get_seo('index',0);
-if($seo[title]){
+if(isset($seo[title])){
 	eval("\$title = \"$seo[title]\";");
 }
-eval("\$keywords = \"$seo[keywords]\";");
-eval("\$description = \"$seo[description]\";");
+if(isset($seo[keywords])) {
+	eval("\$keywords = \"$seo[keywords]\";");
+}
+if(isset($seo[description])) {
+	eval("\$description = \"$seo[description]\";");
+}
 
 include PHPDISK_ROOT."./includes/header.inc.php";
 

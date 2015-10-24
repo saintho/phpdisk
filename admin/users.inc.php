@@ -246,7 +246,90 @@ switch($action){
 			require_once template_echo($item,$admin_tpl_dir,'',1);
 		}
 		break;
-
+	case 'review_application_teacher':
+		admin_no_power($task,6,$pd_uid);
+        if($task =='application_delete'){
+            //申请删除的代码
+            $user_id = gpc('uid');
+            if($user_id>0){
+                $sql = "DELETE FROM {$tpf}application_teacher WHERE user_id = {$user_id}";
+                $result_del = $db->query($sql);
+                if($result_del){
+                    $sysmsg = array('删除申请成功');
+                    redirect('back',$sysmsg);
+                    exit;
+                }else{
+                    $sysmsg = array('系统错误,删除申请失败');
+                    redirect('back',$sysmsg);
+                    exit;
+                }
+            }else{
+                $sysmsg = array('非法操作，用户id丢失');
+                redirect('back',$sysmsg);
+            }
+        }elseif($task == 'application_detail'){
+            $user = array();
+			$log_one = array();
+            $application_materials_dir = "application_materials/";
+            $user_id = gpc('uid','G','');
+            //获取申请的情况
+			$sql = "SELECT * FROM {$tpf}application_teacher t LEFT JOIN {$tpf}users u ON t.user_id = u.userid WHERE user_id = {$user_id}";
+            $rs = $db->fetch_one_array($sql);
+            $rs['create_date'] = date("Y-m-d H:i:s",$rs['create_date']);
+			$rs['sex'] = $defineSex[$rs['sex']]?$defineSex[$rs['sex']]:'性别错误';
+			$rs['status'] = $defineApplicationTeacher[$rs['status']]?$defineApplicationTeacher[$rs['status']]:'状态错误';
+            $user = $rs;
+			//获取申请的最后的一条操作记录
+			$sql = "SELECT * FROM {$tpf}application_teacher_handle_log thl WHERE applicationid = {$user['applicationid']}";
+			$rs = $db->fetch_one_array($sql);
+			$log_one = $rs;
+            require_once template_echo($item,$admin_tpl_dir,'',1);
+        }elseif($task == 'application_review'){
+			$applicationId = gpc('application_id','G','');
+            $content = gpc('content','P','');
+            $user_id = gpc('uid','G','');
+            $status = gpc('status','G','');
+			$adminId = $myinfo['userid'];
+			if(!empty($content) && !empty($user_id) && !empty($status) && !empty($applicationId) && !empty($adminId)){
+				$sql = "UPDATE {$tpf}application_teacher SET status = {$status} WHERE user_id = {$user_id}";
+				$rs = @$db->query($sql);
+				if($rs){
+					$sql = "INSERT INTO {$tpf}application_teacher_handle_log (applicationid, handler, content)
+ 							VALUE ({$applicationId}, {$adminId}, '{$content}')";
+					$rs = @$db->query($sql);
+					if($rs){
+						$sysmsg = array('操作成功，正在跳转页面');
+						redirect('back',$sysmsg);
+					}else{
+						$sysmsg = array('系统错误，操作记录无法保存');
+						redirect('back',$sysmsg);
+					}
+				}else{
+					$sysmsg = array('系统错误，操作失败');
+					redirect('admincp.php?item=users&menu=user&action=review_application_teacher',$sysmsg);
+				}
+			}else{
+				$sysmsg = array('系统错误，审核教师参数丢失');
+				redirect('back',$sysmsg);
+			}
+        }
+        else{
+            $applicant = array();
+			$gStatus = gpc('status','G','');
+			$condition = !empty($gStatus) ?"WHERE status = {$gStatus}" : '';
+            $sql = "SELECT * FROM {$tpf}application_teacher t LEFT JOIN {$tpf}users u ON t.user_id = u.userid {$condition} ORDER BY create_date DESC";
+            $q = $db->query($sql);
+            while($rs = $db->fetch_array($q)){
+                $rs['create_date'] = date("Y-m-d H:i:s",$rs['create_date']);
+                $rs['a_application_delete'] = urr(ADMINCP,"item=users&menu=user&action=review_application_teacher&task=application_delete&uid={$rs['userid']}");
+                $rs['a_application_detail'] = urr(ADMINCP,"item=users&menu=user&action=review_application_teacher&task=application_detail&uid={$rs['userid']}");
+                $rs['sex'] = $defineSex[$rs['sex']]?$defineSex[$rs['sex']]:'性别错误';
+				$rs['status'] = $defineApplicationTeacher[$rs['status']]?$defineApplicationTeacher[$rs['status']]:'状态错误';
+				$applicant[] = $rs;
+            }
+            require_once template_echo($item,$admin_tpl_dir,'',1);
+        }
+        break;
 	case 'search':
 		admin_no_power($task,6,$pd_uid);
 		$perpage = 50;

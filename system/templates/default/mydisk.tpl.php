@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-09-21 18:25:10
+// Cache Time:2015-09-23 23:49:41
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -35,7 +35,7 @@ function expand_menu(id){
 <div id="md_box">
 <div id="md_main">
 	<div class="md_l">
-	
+
 <div class="user_menu">
 <div class="tit" style="cursor:pointer" onclick="expand_menu(1);"><img id="img_1" src="images/ico_desc.gif" align="absmiddle" border="0" /> <?=__('file_menu')?></div>
 <ul id="nav_1">
@@ -46,7 +46,7 @@ function expand_menu(id){
 		<?php } ?>
 		<li><a href="<?=urr("mydisk","item=profile&action=files")?>" id="n_files"><img src="images/ico_home.gif" align="absmiddle" border="0" /><?=__('manage_file')?></a></li>
 </ul>
-</div>	
+</div>
 
 <div class="user_menu">
 <div class="tit" style="cursor:pointer" onclick="expand_menu(2);"><img id="img_2" src="images/ico_desc.gif" align="absmiddle" border="0" /> <?=__('income_menu')?></div>
@@ -59,19 +59,20 @@ function expand_menu(id){
 		<li><a href="<?=urr("mydisk","item=profile&action=credit_log")?>" id="n_credit_log"><img src="images/user/ico_history.gif" align="absmiddle" border="0" /><?=__('credit_log')?></a></li>
 		<?php } ?>
 </ul>
-</div>	
+</div>
 <div class="user_menu">
 <div class="tit" style="cursor:pointer" onclick="expand_menu(3);"><img id="img_3" src="images/ico_desc.gif" align="absmiddle" border="0" /> <?=__('profile_menu')?></div>
 <ul id="nav_3">
 		<li><a href="<?=urr("mydisk","item=profile")?>" id="n_default"><img src="images/user/ico_profile.gif" align="absmiddle" border="0" /><?=__('myinfo')?></a></li>
 		<?php show_ext_menu('myannounce') ?>
 		<li><a href="<?=urr("mydisk","item=profile&action=chg_logo")?>" id="n_chg_logo"><img src="images/user/ico_app.gif" align="absmiddle" border="0" /><?=__('space_setting')?></a></li>
-		<li><a href="<?=urr("mydisk","item=profile&action=invite")?>" id="n_invite"><img src="images/link_icon.gif" align="absmiddle" border="0" /><?=__('invite_user')?></a></li>
+		<!--<li><a href="<?=urr("mydisk","item=profile&action=invite")?>" id="n_invite"><img src="images/link_icon.gif" align="absmiddle" border="0" /><?=__('invite_user')?></a></li>-->
+		<li><a href="<?=urr("mydisk","item=profile&action=application_teacher")?>" id="n_application_teacher"><img src="images/link_icon.gif" align="absmiddle" border="0" />申请教师</a></li>
 		<li><a href="<?=urr("mydisk","item=profile&action=dl_users")?>" id="n_dl_users"><img src="images/user/ico_buddy.gif" align="absmiddle" border="0" /><?=__('downline_user')?></a></li>
 		<li><a href="<?=urr("mydisk","item=profile&action=mod_pwd")?>" id="n_mod_pwd"><img src="images/user/ico_profile.gif" align="absmiddle" border="0" /><?=__('mod_pwd')?></a></li>
 		<li><a href="<?=urr("account","action=logout")?>" onclick="return confirm('<?=__('confirm_logout')?>');"><img src="images/admin_icon.gif" align="absmiddle" border="0" /><?=__('exit')?></a></li>
 </ul>
-</div>	
+</div>
 	</div>
 	<div class="md_r"><?php require_once $action_module; ?></div>
 </div>

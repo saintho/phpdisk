@@ -26,17 +26,21 @@
 <link rel="shortcut icon" href="favicon.ico">
 <meta name="Copyright" content="Powered by PHPDisk Team, {PHPDISK_EDITION} {PHPDISK_VERSION} build{PHPDISK_RELEASE}" />
 <meta name="generator" content="PHPDisk Team" />
-<script type="text/javascript" src="includes/js/jquery-1.8.3.min.js"></script>
+
+<script type="text/javascript" src="includes/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="includes/js/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="images/js/jquery.jBox-2.3.min.js"></script>
 <script type="text/javascript" src="images/js/jquery.jBox-zh-CN.js"></script>
 <link type="text/css" rel="stylesheet" href="images/js/skins/blue/jbox.css"/>
 <script type="text/javascript" src="includes/js/common.js"></script>
 <script type="text/javascript" src="includes/js/tree.js"></script>
+<script type="text/javascript" src="includes/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 <!--#if($settings['cookie_domain']){#-->
 document.domain = "{$settings['cookie_domain']}";
 <!--#}#-->
 </script>
+<link rel="stylesheet" href="images/bootstrap.min.css" type="text/css">
 <link href="images/common.css" rel="stylesheet" type="text/css">
 <link href="{$user_tpl_dir}images/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -89,6 +93,7 @@ document.domain = "{$settings['cookie_domain']}";
 <div class="menu">
 <div class="nav">
 <ul>
+  <!--
   <li><a href="./" id="nv_index"><span><?=__('site_index')?></span></a></li>
   <!--#if($settings['open_vip']){#-->
   {#menu_buy_vip()#}
@@ -98,6 +103,15 @@ document.domain = "{$settings['cookie_domain']}";
   <li><a href="{#urr("tag","")#}" id="nv_tag"><span><?=__('tag')?></span></a></li>
   <li><a href="{#urr("hotfile","")#}" id="nv_hotfile"><span><?=__('hotfile')?></span></a></li>
   <li><a href="{#urr("search","")#}" id="nv_search"><span><?=__('search_file')?></span></a></li>
+  -->
+  <li><a href="/index.php" id="nv_public"><span>首页</span></a></li>
+  <!--#
+	foreach($C['sub_nav'] as $v){
+  #-->
+  <li><a href="{#urr("public","cate_id=$v[cate_id]")#}"><span>{$v[cate_name]}</span></a></li>
+  <!--#
+      }
+  #-->
   </ul>
   </div>
 </div>
@@ -106,7 +120,7 @@ document.domain = "{$settings['cookie_domain']}";
 <script type="text/javascript">getId('nv_{$curr_script}').className='nav_sel';</script>
 <!--#}#-->
 <!--#
-if(count($C['sub_nav'])){
+if(!count($C['sub_nav'])){
 #-->
 <div class="sub_nav">
 <ul>
@@ -117,9 +131,9 @@ if(count($C['sub_nav'])){
 	<li><a href="{#urr("public","cate_id=$v[cate_id]")#}">{$v[cate_name]}</a></li>
 <!--#
 	}
-#-->	
+#-->
 </ul>
-</div>  
+</div>
 <div class="clear"></div>
 <!--#}#-->
 <br />

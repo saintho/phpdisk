@@ -56,7 +56,6 @@ switch ($action){
 				tb_redirect('back',$sysmsg);
 			}
 		}else{
-
 			$ref = $_SERVER['HTTP_REFERER'];
 			require_once template_echo($item,$user_tpl_dir);
 		}
