@@ -1,7 +1,7 @@
 <?php
 
 // This is PHPDISK auto-generated file. Do NOT modify me.
-// Cache Time: 2015-10-14 10:04:55
+// Cache Time: 2015-10-27 17:28:18
 
 $plugin_settings = array(
 	'api'=>array(

@@ -33,6 +33,7 @@ switch($action){
 
 		}else{
 			$course_array = get_course_list();
+			$course_array = $course_array['data'];
 			$page_nav = multi($total_num, $perpage, $pg, urr(ADMINCP,"item=$item&menu=file&action=$action&view=$view&uid=$uid"));
 			$dd = date('Y-m-d');
 			require_once template_echo($item,$admin_tpl_dir,'',1);
@@ -78,6 +79,7 @@ switch($action){
 
 		$current_status = $status;
 		$course_array = get_course_list($condition);
+		$course_array = $course_array['data'];
 		$page_nav = multi($total_num, $perpage, $pg, urr(ADMINCP,"item=$item&menu=file&action=$action&view=$view&uid=$uid"));
 		$dd = date('Y-m-d');
 		require_once template_echo($item,$admin_tpl_dir,'',1);

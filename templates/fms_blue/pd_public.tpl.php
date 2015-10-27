@@ -15,63 +15,63 @@
 <div id="container">
 <!--#include sub/block_adv_middle#-->
 
+<div>
+<ol class="breadcrumb">
+	<li><a href="#">Home</a></li>
+	<li><a href="#">Library</a></li>
+	<li class="active">Data</li>
+</ol>
+</div>
+
 <!--#if($cate_id){#-->
-<br />
 <div class="layout_box">
-<div class="l">
+<div class="l col-md-3">
 <!--#include sub/block_public_cate_list#-->
-<br />
+
 <!--#show_adv_data('adv_right');#-->
+
 <!--#include sub/block_cate_hot_file#-->
-<br />
+
 <!--#include sub/block_now_week_down_file#-->
 </div>
-<div class="r">
-<div class="file_box">
-	<h2 class="file_tit">{$nav_title}</h2>
-<table align="center" width="98%" cellpadding="0" cellspacing="0" border="0" id="f_tab" class="td_line">
-<tr class="head_bar">
-	<td width="60%" class="bold"><?=__('file_name')?></td>
-	<td align="center" class="bold"><?=__('username')?></td>
-	<td align="center" class="bold"><?=__('file_size')?></td>
-	<td align="right" width="100" class="bold"><?=__('file_upload_time')?></td>
-</tr>
-<!--#
-if(count($files_array)){
-	foreach($files_array as $k => $v){
-		$color = ($k%2 ==0) ? 'color1' :'color4';
-#-->
-<tr class="{$color}">
-	<td class="f14">&nbsp;{#file_icon($v['file_extension'])#}
-	<!--#if($v['is_image']){#-->
-	<a href="{$v['a_viewfile']}" id="p_{$k}" target="_blank" >{$v['file_name_all']}</a><br /><span class="txtgray">{$v['file_description']}</span>
-<div id="c_{$k}" class="menu_thumb"><img src="{$v['file_thumb']}" /></div>
-<script type="text/javascript">on_menu('p_{$k}','c_{$k}','x','');</script>
-	<!--#}else{#-->
-	<a href="{$v['a_viewfile']}" target="_blank" >{$v['file_name_all']}</a><br /><span class="txtgray">{$v['file_description']}</span>
-	<!--#}#-->
-	</td>
-	<td align="center"><a href="{$v['a_space']}" target="_blank">{$v['username']}</a></td>
-	<td align="center">{$v['file_size']}</td>
-	<td align="right" class="td_line txtgray">{$v['file_time']}</td>
-</tr>
-<!--#		
+<div class="r col-md-9">
+<div >
+	<table align="center" width="98%" cellpadding="0" cellspacing="0" border="0" id="f_tab" class="td_line">
+	<!--#
+	if(count($course_data)){
+		foreach($course_data as $k => $v){
+			$color = ($k%2 ==0) ? 'color1' :'color4';
+			$rowH = ($k%3 ==0) ? '<div class="row">' :'';
+			$rowF = ($k%3 ==2) ? '</div>' :'';
+	#-->
+		{$rowH}
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUwOWY2ZjUwYzcgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTA5ZjZmNTBjNyI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS40Ij4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+" alt="">
+					<div class="caption">
+						<h3><a href="{$v['a_viewcourse']}" >{$v['course_name']}</a></h3>
+						<p>{$v['description']}</p>
+					</div>
+				</div>
+			</div>
+		{$rowF}
+	<!--#
+		}
+		unset($files_array);
+	}else{
+	#-->
+	<tr>
+		<td colspan="6"><?=__('file_not_found')?></td>
+	</tr>
+	<!--#
 	}
-	unset($files_array);
-}else{	
-#-->
-<tr>
-	<td colspan="6"><?=__('file_not_found')?></td>
-</tr>
-<!--#
-}
-#-->
-<!--#if($page_nav){#-->
-<tr>
-	<td colspan="6" class="head_bar">{$page_nav}</td>
-</tr>
-<!--#}#-->
-</table>
+	#-->
+	<!--#if($page_nav){#-->
+	<tr>
+		<td colspan="6" class="head_bar">{$page_nav}</td>
+	</tr>
+	<!--#}#-->
+	</table>
 </div>
 
 </div>
@@ -114,9 +114,9 @@ if(count($cate_list)){
 #-->
 
 <div class="layout_box2">
-<div class="m">
-<div align="center"><?=__('file_not_found')?></div>
-</div>
+	<div class="m">
+		<div align="center"><?=__('file_not_found')?></div>
+	</div>
 </div>
 <!--#}#-->
 <div class="clear"></div>

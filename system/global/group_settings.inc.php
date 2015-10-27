@@ -1,7 +1,7 @@
 <?php
 
 // This is PHPDISK auto-generated file. Do NOT modify me.
-// Cache Time: 2015-09-23 17:32:58
+// Cache Time: 2015-10-27 17:28:18
 
 $group_settings = array(
 	'1' => array(
@@ -58,6 +58,20 @@ $group_settings = array(
 		'can_share' => '1',
 		'secs_loading' => '0',
 		'server_ids' => '1',
+	),
+
+	'5' => array(
+		'max_messages' => '0',
+		'max_flow_down' => '0',
+		'max_flow_view' => '0',
+		'max_storage' => '0',
+		'max_filesize' => '0',
+		'group_file_types' => '',
+		'max_folders' => '0',
+		'max_files' => '0',
+		'can_share' => '0',
+		'secs_loading' => '0',
+		'server_ids' => '',
 	),
 
 );

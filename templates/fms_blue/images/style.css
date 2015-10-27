@@ -18,9 +18,8 @@ BODY {
 textarea{font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif}
 form{margin:0; padding:0}
 .btn {
-	color:#252525; background:url("body_top.gif") repeat-x center; border:1px #B0B0B0 solid; height:25px; padding-top:0; padding-top:3px\9; cursor:pointer;
+
 }
-.btn:hover{font-weight:800}
 
 li{list-style:none; margin:0px; padding:0px;}
 A {
@@ -72,28 +71,12 @@ A:hover {
 
 /* nav menu*/
 .menu {
-	margin: 0px auto; width: 995px; background: url("bg_nav.gif") no-repeat right -64px; height: 32px; overflow: hidden;
+	margin: 0px auto; width: 995px;
 }
-.menu .nav {
-	width: 992px; background: url("bg_nav.gif") repeat-x 0px -32px; height: 32px;
-}
-.menu .nav ul {
-   width: auto; background: url("bg_nav.gif") no-repeat 0px 0px; float: left; height: 32px; margin:0px; padding:0; padding-left:3px;
-}
-.menu .nav li {
-	text-align: center; list-style-type: none; padding-left: 2px; padding-right: 7px; background: url("bg_nav.gif") no-repeat right -96px; float: left; font-size: 14px; color: #f1faff;
-}
-.menu .nav li a {
-	line-height: 29px; margin-top: 3px; width: 86px; float: left; height: 29px;color: #f1faff; font-weight: bold; text-decoration: none
-}
-.menu .nav li a:hover {
-	background: url("active_bg.gif") no-repeat 50% bottom; color: #333333; text-decoration: none
-}
-.menu .nav .nav_sel{
-background: url("active_bg.gif") no-repeat 50% bottom;  text-decoration: none
-}
-.menu .nav .nav_sel span{color: #333333;}
 
+.menu *{
+
+}
 
 .sub_nav {border:1px #7BAADE solid; border-top:0; width:auto; background:url("win_bg.jpg") repeat-x; height:30px}
 .sub_nav ul{ margin:0; padding:0; margin-left:15px;}
@@ -109,8 +92,8 @@ background: url("active_bg.gif") no-repeat 50% bottom;  text-decoration: none
 #md_box {width: 100%; height:auto;margin:0px auto;}
 #md_top{ width:100%; height:60px; border-bottom:4px #003366 solid}
 #md_main{width:100%; height:auto;}
-#md_main .md_l{width:120px; float:left; margin-right:5px;}
-#md_main .md_r{width:86%; float:left; border:1px #CCCCCC solid; margin-left:3px;}
+#md_main .md_l{padding-left:0px;}
+#md_main .md_r{padding-right:0px;}
 #md_main .md_r .nav_tit{background:url("title_bg.jpg") repeat-x;}
 .menu_sel{background:#E3EFFB; color:#FFFFFF; padding:0 4px;}
 
@@ -271,7 +254,7 @@ background: url("active_bg.gif") no-repeat 50% bottom;  text-decoration: none
 #report_box li{margin-left:15px !important;margin-left:0px}
 #report_box .warning{ color:#666; padding:30px}
 
-.layout_box .l{	float:left; width:255px;}
+.layout_box .l{	float:left; width:255px;padding-left: 0px;}
 .layout_box .fl_box{width:100%; border:1px solid #7BAADE;}
 .layout_box .fl_box ul{padding:5px; margin:0;}
 .layout_box .fl_box li{line-height:25px; height:25px; width:auto; overflow:hidden; border-bottom:1px #CEDAE5 dotted;word-wrap:word-break;word-break:break-all;}
@@ -302,7 +285,7 @@ background: url("active_bg.gif") no-repeat 50% bottom;  text-decoration: none
 .layout_box .fl_box2 li a{display:block; overflow:hidden;_margin-top:4px;}
 .layout_box .fl_box2 .tit2{ background:#EAF3FF; font-size:14px;  padding:6px; }
 
-.layout_box .r{	float:right; width:735px;}
+.layout_box .r{	float:right; width:735px;padding-right: 0px}
 
 .layout_box .fl_box ul{padding:5px; margin:0;}
 .layout_box .fl_box li{line-height:25px; height:25px; width:auto; overflow:hidden; border-bottom:1px #CEDAE5 dotted;word-wrap:word-break;word-break:break-all;}
@@ -437,3 +420,5 @@ download button
 .cp_wrap .r{width:40%; float:right;}
 /* adv*/
 .adv_box{ border:1px #7BAADE solid; padding:1px;}
+.breadcrumb-search-div{padding-top: 8px; padding-bottom: 8px; height: 50px;}
+.breadcrumb-search-div .nav-path{line-height: 35px}

@@ -77,7 +77,6 @@ switch($action){
 		$db->free($q);
 		unset($rs);
 
-		$page_nav = multi($total_num, $perpage, $pg, urr("mydisk","item=$item&action=$action&folder_id=$folder_id"));
 		if($task=='search'){
 			$page_nav = multi($total_num, $perpage, $pg, urr("mydisk","item=$item&action=$action&task=$task&folder_id=$folder_id&word=".rawurlencode($word)));
 		}else{
@@ -86,17 +85,31 @@ switch($action){
 		require_once template_echo('profile',$user_tpl_dir);
 		break;
 	case 'course_manage':
+		$perpage = 3;
 		if($task == 'search'){
-
+			$word = gpc('word','GP','');
+			$course_array = get_course_list($word,$perpage);
+			$total_num = $course_array['total_num'];
+			$course_array = $course_array['data'];
 		}else{
-			$course_array = get_course_list();
+			$course_array = get_course_list('',$perpage);
+			$total_num = $course_array['total_num'];
+			$course_array = $course_array['data'];
 		}
+
 		$nav_path = '<a href="'.urr("mydisk","item=profile&action=course_manage").'">课程管理</a>&raquo; ';
+		if($task=='search'){
+			$page_nav = multi($total_num, $perpage, $pg, urr("mydisk","item=$item&action=$action&task=$task&word=".rawurlencode($word)));
+		}else{
+			$page_nav = multi($total_num, $perpage, $pg, urr("mydisk","item=$item&action=$action"));
+		}
 		require_once template_echo('profile',$user_tpl_dir);
 		break;
 	case 'chapter_section_manage':
 		$course_id = gpc('course_id','G','');
-		$chapter_section_array = get_chapter_section_list($course_id);
+		//该课程数据
+		$chapter_section_array = !empty($course_id)? get_chapter_section_list($course_id):array();
+		//路径条
 		$nav_path = '<a href="'.urr("mydisk","item=profile&action=course_manage").'">课程管理</a>&raquo; '.nav_path_course($course_id,$pd_uid,0,1);
 		require_once template_echo('profile',$user_tpl_dir);
 		break;
@@ -422,6 +435,8 @@ switch($action){
 			//查看申请进度的代码
 			//检查是否提交过申请
 			$application_one = get_application_teacher_status();
+			$application_num = $application_one['status'];
+			$application_log = $defineApplicationTeacher[$application_num];
 			if(!$application_one){
 				$sysmsg = array('申请还没提交,正在进入申请页面');
 				redirect('mydisk.php?item=profile&action=application_teacher',$sysmsg);
@@ -431,15 +446,22 @@ switch($action){
 			}
 		}
 		else{
-			//界面的显示代码
 			//检查是否提交过申请
 			$application_one = get_application_teacher_status();
-			if($application_one){
+			$application_num = $application_one['status'];
+			if($application_num == 1 || $application_num == 2){
 				$sysmsg = array('申请已提交,正在查看你的审核进度');
 				redirect('mydisk.php?item=profile&action=application_teacher&task=application_progress',$sysmsg);
-				exit;
+			}elseif($application_num == 3){
+				$sysmsg = array('你的申请已经通过，正在进入审核结果页面');
+				redirect('mydisk.php?item=profile&action=application_teacher&task=application_progress',$sysmsg);
+			}elseif($application_num == 4 || $application_num == 5 || $application_num == 6 || $application_num == 7){
+				$sysmsg = array('你的申请没有通过，正在进入审核结果页面');
+				redirect('mydisk.php?item=profile&action=application_teacher&task=application_progress',$sysmsg);
+			}else{
+				//界面的显示代码
+				require_once template_echo('profile',$user_tpl_dir);
 			}
-			require_once template_echo('profile',$user_tpl_dir);
 		}
 		break;
 	case 'chg_logo':
@@ -704,7 +726,6 @@ switch($action){
 			unset($rs);
 			$page_nav = multi($total_num, $perpage, $pg, "mydisk.php?item=profile&action=$action");
 		}
-
 		require_once template_echo('profile',$user_tpl_dir);
 		break;
 	case 'guest':

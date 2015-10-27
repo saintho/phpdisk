@@ -136,6 +136,10 @@ if(!@get_magic_quotes_gpc()){
 
 $str = strrchr($_SERVER['SCRIPT_NAME'],'/');
 $curr_script = substr($str,1,strlen($str)-5);
+
+$curr_nav = gpc('cate_id','GP');
+$curr_nav = !empty($curr_nav)?get_cate_ancestor($curr_nav):0;
+
 if(in_array($curr_script,array('account','search','hotfile','public'))){
 	include_once(PHPDISK_ROOT.'includes/dosafe.php');
 }

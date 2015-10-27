@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-10-14 11:09:16
+// Cache Time:2015-10-27 22:22:52
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -21,19 +21,22 @@
  ?>
 <?php !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied!'); ?>
 <div class="panel panel-default">
-	<div class="panel-heading">分页列表</div>
+	<div class="panel-heading">分类列表</div>
 	<ul class="list-group">
 		<?php 
 		if(count($C[cate_list])){
 			foreach($C[cate_list] as $k => $v){
 		 ?>
-			<li class="list-group-item"><a href="<?=$v[a_public]?>" id="a_cate_<?=$v[cate_id]?>"><span><?=$v['cate_name']?></span></a></li>
+			<a class="list-group-item" href="<?=$v[a_public]?>" id="a_cate_<?=$v[cate_id]?>"><span><?=$v['cate_name']?></span></a>
 		<?php 
 			if(($k+1)%5==0){ echo '<div class="clear"></div>';}
 			}
 			if($cate_id){
 		 ?>
-			<script type="text/javascript">getId('a_cate_<?=$cate_id?>').className='cate_sel';</script>
+			<script type="text/javascript">
+				var classname = jQuery('#a_cate_<?=$cate_id?>').prop('class');
+				jQuery('#a_cate_<?=$cate_id?>').prop('class',classname+' active');
+			</script>
 		<?php 
 			}
 		}

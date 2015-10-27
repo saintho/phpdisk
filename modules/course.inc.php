@@ -79,8 +79,8 @@ switch ($action){
             $sql = "UPDATE {$tpf}course_chapter_section SET status = 2 WHERE course_id = {$course_id}";
             $db->query_unbuffered($sql);
             //文件改审核状态
-//            $sql = "UPDATE {$tpf}file_cs_relation SET status = 2 WHERE course_id = {$course_id}";
-//            $db->query_unbuffered($sql);
+            $sql = "UPDATE {$tpf}file_cs_relation SET status = 2 WHERE course_id = {$course_id}";
+            $db->query_unbuffered($sql);
             $sysmsg[] = "提交审核成功";
             tb_redirect('reload',$sysmsg);
         }else{
@@ -101,8 +101,8 @@ switch ($action){
             $sql = "UPDATE {$tpf}course_chapter_section SET status = 1 WHERE course_id = {$course_id}";
             $db->query_unbuffered($sql);
             //文件改审核状态
-//            $sql = "UPDATE {$tpf}file_cs_relation SET status = 1 WHERE course_id = {$course_id}";
-//            $db->query_unbuffered($sql);
+            $sql = "UPDATE {$tpf}file_cs_relation SET status = 1 WHERE course_id = {$course_id}";
+            $db->query_unbuffered($sql);
             $sysmsg[] = "取消提交审核成功";
             tb_redirect('reload',$sysmsg);
         }else{
@@ -283,11 +283,9 @@ switch ($action){
 		break;
 	case 'add_file_cs_relation':
 		$cs_id = (int)gpc('cs_id','GP',0);
+		$course_id = (int)gpc('course_id','GP',0);
 		$error = $cs_id?false:true;
 		if($task=='add_file_cs_relation') {
-			$cs_id = (int)gpc('cs_id','GP',0);
-			$course_id = (int)gpc('course_id','GP',0);
-			$error = ($cs_id && $course_id)?false:true;
 			form_auth(gpc('formhash','P',''),formhash());
 			$file_ids = gpc('file_ids','P','');
 			if(!$error){
@@ -310,48 +308,53 @@ switch ($action){
 				tb_redirect('reload',$sysmsg);
 			}
 		}else{
-			require(PHPDISK_ROOT.'includes/class/phptree.class.php');
-			//获取用户文件夹
-			$sql = "SELECT * FROM {$tpf}folders WHERE userid={$pd_uid} AND in_recycle=0";
-			$q = $db->query($sql);
-			$user_folder = array();
-			while($rs = $db->fetch_array($q)){
-				$rs['ff_id'] = $rs['folder_id'];
-				$rs['in_time'] = date('Y-m-d H:i:s', $rs['in_time']);
-				$rs['is_folder'] = 1;
-				$user_folder[] = $rs;
-			}
-			unset($rs);
-			//获取用户文件
-			$sql = "SELECT * FROM {$tpf}files WHERE userid={$pd_uid} AND is_del=0";
-			$q = $db->query($sql);
-			$user_file = array();
-			$ff_id = 10000000;
-			while($rs = $db->fetch_array($q)){
-				$rs['ff_id'] = $ff_id;
-				$ff_id++;
-				$rs['file_time'] = date('Y-m-d H:i:s', $rs['file_time']);
-				$rs['parent_id'] = $rs['folder_id'];
-				$rs['is_file'] = 1;
-				$user_file[] = $rs;
-			}
-			unset($rs);
-			//混合文件
-			$user_folder_file = $user_folder+$user_file;
-			PHPTree::$config['primary_key'] = 'ff_id';
-			PHPTree::$config['parent_key'] = 'parent_id';
-			$user_folder_file = PHPTree::makeTreeForHtml($user_folder_file);
+			if(!$error) {
+				require(PHPDISK_ROOT . 'includes/class/phptree.class.php');
+				//获取用户文件夹
+				$sql = "SELECT * FROM {$tpf}folders WHERE userid={$pd_uid} AND in_recycle=0";
+				$q = $db->query($sql);
+				$user_folder = array();
+				while ($rs = $db->fetch_array($q)) {
+					$rs['ff_id'] = $rs['folder_id'];
+					$rs['in_time'] = date('Y-m-d H:i:s', $rs['in_time']);
+					$rs['is_folder'] = 1;
+					$user_folder[] = $rs;
+				}
+				unset($rs);
+				//获取用户文件
+				$sql = "SELECT * FROM {$tpf}files WHERE userid={$pd_uid} AND is_del=0";
+				$q = $db->query($sql);
+				$user_file = array();
+				$ff_id = 10000000;
+				while ($rs = $db->fetch_array($q)) {
+					$rs['ff_id'] = $ff_id;
+					$ff_id++;
+					$rs['file_time'] = date('Y-m-d H:i:s', $rs['file_time']);
+					$rs['parent_id'] = $rs['folder_id'];
+					$rs['is_file'] = 1;
+					$user_file[] = $rs;
+				}
+				unset($rs);
+				//混合文件
+				$user_folder_file = $user_folder + $user_file;
+				PHPTree::$config['primary_key'] = 'ff_id';
+				PHPTree::$config['parent_key'] = 'parent_id';
+				$user_folder_file = PHPTree::makeTreeForHtml($user_folder_file);
 
-            //获取用户已经选取的视频
-            $sql = "SELECT file_id FROM {$tpf}file_cs_relation fcr LEFT JOIN {$tpf}course c ON c.courseid = fcr.course_id WHERE user_id={$pd_uid}";
-            $q = $db->query($sql);
-            $user_select_file = array();
-            while($rs = $db->fetch_array($q)){
-                $user_select_file[] = $rs['file_id'];
-            }
-            unset($rs);
-			$ref = $_SERVER['HTTP_REFERER'];
-			require_once template_echo($item,$user_tpl_dir);
+				//获取用户已经选取的视频
+				$sql = "SELECT file_id FROM {$tpf}file_cs_relation fcr LEFT JOIN {$tpf}course c ON c.courseid = fcr.course_id WHERE user_id={$pd_uid} AND fcr.course_id = {$course_id} AND fcr.cs_id = {$cs_id}";
+				$q = $db->query($sql);
+				$user_select_file = array();
+				while ($rs = $db->fetch_array($q)) {
+					$user_select_file[] = $rs['file_id'];
+				}
+				unset($rs);
+				$ref = $_SERVER['HTTP_REFERER'];
+				require_once template_echo($item, $user_tpl_dir);
+			}else{
+				$sysmsg[] = "缺失courseid或csid，非法操作";
+				tb_redirect('reload',$sysmsg);
+			}
 		}
 		break;
 	case 'file_cs_relation_delete':

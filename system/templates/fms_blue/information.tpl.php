@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-09-27 09:20:18
+// Cache Time:2015-10-27 17:28:18
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -20,12 +20,10 @@
 ##
  ?>
 <?php !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied!'); ?>
-<div class="info_box">
-<div class="info_box_tit"><img src="images/light.gif" align="absmiddle" border="0" /> <?=__('tips_message')?></div>
-<div class="info_box_msg">
-<?=$msg?>
-<div align="center"><a href="<?=$url?>"><?=__('click_to_back')?></a></div><br>
-</div>
-<br />
-
+<div class="panel panel-primary">
+    <div class="panel-heading"><img src="images/light.gif" align="absmiddle" border="0" /> <?=__('tips_message')?></div>
+    <div class="panel-body">
+        <div align="center"><?=$msg?></div>
+        <div align="center"><a href="<?=$url?>"><?=__('click_to_back')?></a></div><br>
+    </div>
 </div>

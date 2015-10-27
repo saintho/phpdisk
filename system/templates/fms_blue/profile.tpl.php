@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-10-09 17:20:40
+// Cache Time:2015-10-27 21:50:04
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -21,128 +21,127 @@
  ?>
 <?php !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied!'); ?>
 <?php if($action=='files'){ ?>
-<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
-<tr>
-	<td colspan="5" class="nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />文件管理&nbsp;&nbsp;<a href="javascript:;" onclick="abox('<?=urr("mydisk","item=folders&action=add_folder&folder_id=$folder_id")?>','创建新目录',350,200);"><img src="images/ico_write.png" align="absmiddle" border="0" />创建新目录</a></td>
-</tr>
-<tr>
-	<td>当前路径：<?=$nav_path?></td>
-	<td colspan="4" align="right"><form method="get" action="<?=urr("mydisk","")?>" onsubmit="return dosearch(this);">
-<input type="hidden" name="action" value="files" />
-<input type="hidden" name="task" value="search" />
-<?=__('search_file')?>:<input type="text" name="word" value="<?=$word?>"/><select name="folder_id" style="width:120px;">
-	<option value="0"> - 所有目录 - </option>
-<?=get_folder_option(0,$folder_id);?>
-	</select>
-<input type="submit" class="btn" value="<?=__('search')?>" />
-</form>
-<script type="text/javascript">
-function dosearch(o){
-	if(o.word.value.strtrim()==''){
-	o.word.focus();
-	return false;
+<div class="panel panel-default">
+	<div class="panel-heading">文件管理&nbsp;&nbsp;<a href="javascript:;" onclick="abox('<?=urr("mydisk","item=folders&action=add_folder&folder_id=$folder_id")?>','创建新目录',350,200);"><img src="images/ico_write.png" align="absmiddle" border="0" />创建新目录</a></div>
+	<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line table table-striped">
+	<tr>
+		<td>当前路径：<?=$nav_path?></td>
+		<td colspan="4" align="right"><form method="get" action="<?=urr("mydisk","")?>" onsubmit="return dosearch(this);">
+	<input type="hidden" name="action" value="files" />
+	<input type="hidden" name="task" value="search" />
+	<?=__('search_file')?>:<input type="text" name="word" value="<?=$word?>"/><select name="folder_id" style="width:120px;">
+		<option value="0"> - 所有目录 - </option>
+	<?=get_folder_option(0,$folder_id);?>
+		</select>
+	<input type="submit" class="btn" value="<?=__('search')?>" />
+	</form>
+	<script type="text/javascript">
+	function dosearch(o){
+		if(o.word.value.strtrim()==''){
+		o.word.focus();
+		return false;
+		}
 	}
-}
-</script>
-	</td>
-</tr>
-<form action="<?=urr("mydisk","item=files")?>" name="file_form" method="post" onsubmit="return dosubmit(this);">
-<input type="hidden" name="action" value="op_file" />
-<input type="hidden" name="formhash" value="<?=$formhash?>" />
-<?php if(count($folders_array) || count($files_array)){ ?>
-<tr>
-	<td width="50%" class="bold">文件(夹)名</td>
-	<td align="center" class="bold">浏览数/<?=__('file_downs')?></td>
-	<td align="center" class="bold">文件(夹)大小</td>
-	<td align="center" width="150" class="bold">创建时间</td>
-	<td align="right" class="bold">
-	<?=__('operation')?>|<?=__('sort')?>
-	</td>
-</tr>
-<?php 
-}
-if(count($folders_array)){
-	foreach($folders_array as $k => $v){
-		$color = ($k%2 ==0) ? 'color1' :'color4';
- ?>
-<tr class="<?=$color?>">
-	<td>
-	<input type="checkbox" disabled="disabled"/>
-	<img src="images/folder.gif" align="absmiddle" border="0" />
-	<a href="<?=$v['a_folder_view']?>"><?=$v['folder_name']?></a>
-	</td>
-	<td align="center" class="txtgray">-</td>
-	<td align="center" class="txtgray"><?=$v['folder_size']?></td>
-	<td align="center" class="txtgray"><?=$v['in_time']?></td>
-	<td align="right">
-	<a href="javascript:;" onclick="abox('<?=$v[a_edit]?>','<?=__('modify_folder')?>',350,200);"><img src="images/ico_write.png" align="absbottom" border="0" /></a>
-	<a href="javascript:;" onclick="abox('<?=$v[a_del]?>','<?=__('del_folder')?>',400,200)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
-	</td>
-</tr>
-<?php 
+	</script>
+		</td>
+	</tr>
+	<form action="<?=urr("mydisk","item=files")?>" name="file_form" method="post" onsubmit="return dosubmit(this);">
+	<input type="hidden" name="action" value="op_file" />
+	<input type="hidden" name="formhash" value="<?=$formhash?>" />
+	<?php if(count($folders_array) || count($files_array)){ ?>
+	<tr>
+		<td width="50%" class="bold">文件(夹)名</td>
+		<td align="center" class="bold">浏览数/<?=__('file_downs')?></td>
+		<td align="center" class="bold">文件(夹)大小</td>
+		<td align="center" width="150" class="bold">创建时间</td>
+		<td align="right" class="bold">
+		<?=__('operation')?>|<?=__('sort')?>
+		</td>
+	</tr>
+	<?php 
 	}
-}
+	if(count($folders_array)){
+		foreach($folders_array as $k => $v){
+			$color = ($k%2 ==0) ? 'color1' :'color4';
+	 ?>
+	<tr class="">
+		<td>
+		<input type="checkbox" disabled="disabled"/>
+		<img src="images/folder.gif" align="absmiddle" border="0" />
+		<a href="<?=$v['a_folder_view']?>"><?=$v['folder_name']?></a>
+		</td>
+		<td align="center" class="txtgray">-</td>
+		<td align="center" class="txtgray"><?=$v['folder_size']?></td>
+		<td align="center" class="txtgray"><?=$v['in_time']?></td>
+		<td align="right">
+		<a href="javascript:;" onclick="abox('<?=$v[a_edit]?>','<?=__('modify_folder')?>',350,200);"><img src="images/ico_write.png" align="absbottom" border="0" /></a>
+		<a href="javascript:;" onclick="abox('<?=$v[a_del]?>','<?=__('del_folder')?>',400,200)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
+		</td>
+	</tr>
+	<?php 
+		}
+	}
 
-if(count($files_array)){
-	foreach($files_array as $k => $v){
-		$color = ($k%2 ==0) ? 'color1' :'color4';
- ?>
-<tr class="<?=$color?>">
-	<td>
-	<input type="checkbox" name="file_ids[]" id="file_ids" value="<?=$v['file_id']?>" />
-	<?=file_icon($v['file_extension'])?>
-	<?php if($v['is_image']){ ?>
-	<a href="<?=$v['a_viewfile']?>" id="p_<?=$k?>" target="_blank" ><?=$v['file_name']?></a><?=$v[file_new]?>&nbsp;<span class="txtgray f12"><?=$v['file_description']?></span><br />
-<div id="c_<?=$k?>" class="menu_thumb"><img src="<?=$v['file_thumb']?>" /></div>
-<script type="text/javascript">on_menu('p_<?=$k?>','c_<?=$k?>','x','');</script>
-	<?php }else{ ?>
-	<a href="<?=$v['a_viewfile']?>" target="_blank" ><?=$v['file_name']?></a><?=$v[file_new]?> <span class="txtgray"><?=$v['file_description']?></span>
-	<?php } ?>
-	</td>
-	<td align="center" class="txtgray"><?=get_discount($v[userid],$v['file_views'])?>/<?=get_discount($v[userid],$v['file_downs'])?></td>
-	<td align="center" class="txtgray"><?=$v['file_size']?></td>
-	<td align="center" class="txtgray"><?=$v['file_time']?></td>
-	<td align="right">
-	<a href="javascript:;" onclick="abox('<?=$v['a_modify']?>','<?=__('modify_file')?>',600,400)" title="<?=__('modify')?>"><img src="images/edit_icon.gif" align="absmiddle" border="0" /></a>
-	<input type="text" name="show_order[]" style="text-align:center;width:24px" value="<?=$v[show_order]?>" maxlength="2" />
-	<input type="hidden" name="file_ids2[]" value="<?=$v['file_id']?>" />
-	</td>
-</tr>
-<?php 
+	if(count($files_array)){
+		foreach($files_array as $k => $v){
+			$color = ($k%2 ==0) ? 'color1' :'color4';
+	 ?>
+	<tr class="">
+		<td>
+		<input type="checkbox" name="file_ids[]" id="file_ids" value="<?=$v['file_id']?>" />
+		<?=file_icon($v['file_extension'])?>
+		<?php if($v['is_image']){ ?>
+		<a href="<?=$v['a_viewfile']?>" id="p_<?=$k?>" target="_blank" ><?=$v['file_name']?></a><?=$v[file_new]?>&nbsp;<span class="txtgray f12"><?=$v['file_description']?></span><br />
+	<div id="c_<?=$k?>" class="menu_thumb"><img src="<?=$v['file_thumb']?>" /></div>
+	<script type="text/javascript">on_menu('p_<?=$k?>','c_<?=$k?>','x','');</script>
+		<?php }else{ ?>
+		<a href="<?=$v['a_viewfile']?>" target="_blank" ><?=$v['file_name']?></a><?=$v[file_new]?> <span class="txtgray"><?=$v['file_description']?></span>
+		<?php } ?>
+		</td>
+		<td align="center" class="txtgray"><?=get_discount($v[userid],$v['file_views'])?>/<?=get_discount($v[userid],$v['file_downs'])?></td>
+		<td align="center" class="txtgray"><?=$v['file_size']?></td>
+		<td align="center" class="txtgray"><?=$v['file_time']?></td>
+		<td align="right">
+		<a href="javascript:;" onclick="abox('<?=$v['a_modify']?>','<?=__('modify_file')?>',600,400)" title="<?=__('modify')?>"><img src="images/edit_icon.gif" align="absmiddle" border="0" /></a>
+		<input type="text" name="show_order[]" style="text-align:center;width:24px" value="<?=$v[show_order]?>" maxlength="2" />
+		<input type="hidden" name="file_ids2[]" value="<?=$v['file_id']?>" />
+		</td>
+	</tr>
+	<?php 
+		}
 	}
-}
-if(count($files_array)){
- ?>
-<tr>
-	<td><a href="javascript:void(0);" onclick="reverse_ids(document.file_form.file_ids);"><?=__('select_all')?></a>&nbsp;<a href="javascript:void(0);" onclick="cancel_ids(document.file_form.file_ids);"><?=__('select_cancel')?></a></td>
-	<td colspan="6" style="padding-top:10px;" align="right"><?=$page_nav?>&nbsp;</td>
-</tr>
-<tr>
-	<td colspan="6">文件操作： <input type="radio" name="task" value="del_file" onclick="dis()" checked="checked" /><?=__('delete')?>&nbsp;
-	<input type="radio" name="task" value="outlink" onclick="dis()" /><?=__('bat_copy_link')?>&nbsp;
-	<input type="radio" name="task" value="update_order" onclick="dis()" id="update_order" /><?=__('sort')?>&nbsp;
-	<input type="radio" name="task" value="move_file" id="move_file" onclick="dis()" /><?=__('bat_category')?>&nbsp;
-	<select name="dest_fid" id="dest_fid" disabled="disabled" style="width:120px;">
-	<option value="0"><?=__('root_folder_default')?></option>
-<?=get_folder_option(0);?>
-	</select>&nbsp;
-	<input type="submit" class="btn" value="<?=__('btn_submit')?>"  onclick="return confirm('<?=__('confirm_op')?>');"/></td>
-</tr>
-</form>
-<?php 
-}
- ?>
-<?php 
-if(!count($files_array) && !count($folder_array)){
- ?>
-<tr>
-	<td colspan="6" align="center">此目录暂无文件(夹)记录</td>
-</tr>
-<?php 
-}
- ?>
-</table>
-
+	if(count($files_array)){
+	 ?>
+	<tr>
+		<td><a href="javascript:void(0);" onclick="reverse_ids(document.file_form.file_ids);"><?=__('select_all')?></a>&nbsp;<a href="javascript:void(0);" onclick="cancel_ids(document.file_form.file_ids);"><?=__('select_cancel')?></a></td>
+		<td colspan="6" style="padding-top:10px;" align="right"><?=$page_nav?>&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="6">文件操作： <input type="radio" name="task" value="del_file" onclick="dis()" checked="checked" /><?=__('delete')?>&nbsp;
+		<input type="radio" name="task" value="outlink" onclick="dis()" /><?=__('bat_copy_link')?>&nbsp;
+		<input type="radio" name="task" value="update_order" onclick="dis()" id="update_order" /><?=__('sort')?>&nbsp;
+		<input type="radio" name="task" value="move_file" id="move_file" onclick="dis()" /><?=__('bat_category')?>&nbsp;
+		<select name="dest_fid" id="dest_fid" disabled="disabled" style="width:120px;">
+		<option value="0"><?=__('root_folder_default')?></option>
+	<?=get_folder_option(0);?>
+		</select>&nbsp;
+		<input type="submit" class="btn" value="<?=__('btn_submit')?>"  onclick="return confirm('<?=__('confirm_op')?>');"/></td>
+	</tr>
+	</form>
+	<?php 
+	}
+	 ?>
+	<?php 
+	if(!count($files_array) && !count($folder_array)){
+	 ?>
+	<tr>
+		<td colspan="6" align="center">此目录暂无文件(夹)记录</td>
+	</tr>
+	<?php 
+	}
+	 ?>
+	</table>
+</div>
 <script language="javascript">
 function dis(){
 	if(getId('move_file').checked==true){
@@ -162,98 +161,104 @@ function dosubmit(o){
 }
 </script>
 <?php }elseif($action=='course_manage'){ ?>
-<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
-	<tr>
-		<td colspan="9" class="nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />课程管理&nbsp;&nbsp;
-			<a href="javascript:;" onclick="abox('<?=urr("mydisk","item=course&action=add_course")?>','创建新课程',350,250);"><img src="images/ico_write.png" align="absmiddle" border="0" />创建课程</a>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="4">当前路径：<?=$nav_path?></td>
-		<td colspan="4" align="right">
-			<form method="get" action="<?=urr("mydisk","item=profile")?>" onsubmit="return dosearch(this);">
-                <input type="hidden" name="item" value="profile" />
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">课程管理&nbsp;&nbsp;
+		<a href="javascript:;" onclick="abox('<?=urr("mydisk","item=course&action=add_course")?>','创建新课程',350,250);"><img src="images/ico_write.png" align="absmiddle" border="0" />创建课程</a></div>
+
+	<div class="breadcrumb-search-div">
+		<div class="col-xs-7 nav-path">当前路径：<?=$nav_path?></div>
+		<div class="col-xs-5 pull-right">
+			<form class="form-inline" method="get" action="<?=urr("mydisk","item=profile")?>" onsubmit="return dosearch(this);" >
+			<div class="form-group">
+				<label for="inputSearch">搜索课程:</label>
+				<input type="hidden" name="item" value="profile" />
 				<input type="hidden" name="action" value="course_manage" />
-				<input type="hidden" name="task" value="search" />
-				搜索课程:<input type="text" name="word" value="<?=$word?>"/>
-				<input type="submit" class="btn" value="<?=__('search')?>" />
+				<input type="hidden" name="task" value="search" id="inputSearch"/>
+				<input type="text" name="word" value="<?=$word?>" class="form-control"/>
+			</div>
+			<button type="submit" class="btn btn-default"><?=__('search')?></button>
 			</form>
 			<script type="text/javascript">
 				function dosearch(o){
 					if(o.word.value.strtrim()==''){
 						o.word.focus();
-						return false;
+						//return false;
 					}
 				}
 			</script>
-		</td>
-	</tr>
-	<form action="<?=urr("mydisk","item=files")?>" name="file_form" method="post" onsubmit="return dosubmit(this);">
-	<input type="hidden" name="action" value="op_file" />
-	<input type="hidden" name="formhash" value="<?=$formhash?>" />
-	<?php if(count($course_array)){ ?>
-	<tr>
-		<td width="12%" class="bold">课程名称</td>
-		<td width="10%" align="center" class="bold">分类</td>
-		<td width="8%" align="center" class="bold">视频数</td>
-		<td width="8%" align="center" class="bold"><?=__('file_downs')?></td>
-		<td width="8%" align="center" class="bold">浏览数</td>
-		<td width="12%" align="center" class="bold">状态</td>
-		<td width="17%" align="center" width="150" class="bold">更新时间</td>
-		<td width="13%" align="center" class="bold">
-			<?=__('operation')?>
-		</td>
-	</tr>
-	<?php 
-    }
-    if(count($course_array)){
-        foreach($course_array as $k => $v){
-            $color = ($k%2 ==0) ? 'color1' :'color4';
-     ?>
-	<tr class="<?=$color?>">
-		<td>
-			<img src="images/folder.gif" align="absmiddle" border="0" />
-			<a href="<?=$v['a_course_view']?>"><?=$v['course_name']?></a>
-		</td>
-		<td align="center" class="txtgray"><?=$v['cate_name']?></td>
-		<td align="center" class="txtgray"><?=$v['file_num']?></td>
-		<td align="center" class="txtgray"><?=$v['download_num']?></td>
-		<td align="center" class="txtgray"><?=$v['view_num']?></td>
-		<td align="center" class="txtgray"><?=$v['status']?></td>
-		<td align="center" class="txtgray"><?=$v['update_date']?></td>
-		<td align="center">
-            <?php if($v['status_num'] == 1){ ?>
-            <a href="javascript:;" onclick="abox('<?=$v[a_course_review]?>','提交上线审核',400,250)"><img src="images/upload_file_icon.gif" align="absmiddle" border="0" /></a>
-            <?php } ?>
-            <?php if($v['status_num'] == 2){ ?>
-            <a href="javascript:;" onclick="abox('<?=$v[a_course_review_cancel]?>','取消上线审核',400,250)"><img src="images/down_file_icon.gif" align="absmiddle" border="0" /></a>
-            <?php } ?>
-			<a href="javascript:;" onclick="abox('<?=$v[a_edit]?>','修改课程',350,250);"><img src="images/ico_write.png" align="absbottom" border="0" /></a>
-			<a href="javascript:;" onclick="abox('<?=$v[a_del]?>','删除课程',400,250)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
-		</td>
-	</tr>
-	<?php 
-        }
-    }
-     ?>
-	<?php 
-    if(!count($course_array) ){
-     ?>
-	<tr>
-		<td colspan="6" align="center">内容为空，还没添加课程</td>
-	</tr>
-	<?php 
-    }
-     ?>
-</table>
-
+		</div>
+		<div class="clear"></div>
+	</div>
+	<table align="center" width="100%" class="td_line table table-striped">
+		<form action="<?=urr("mydisk","item=files")?>" name="file_form" method="post" onsubmit="return dosubmit(this);">
+		<input type="hidden" name="action" value="op_file" />
+		<input type="hidden" name="formhash" value="<?=$formhash?>" />
+		<?php if(count($course_array)){ ?>
+		<tr>
+			<td width="12%" class="bold">课程名称</td>
+			<td width="10%" align="center" class="bold">分类</td>
+			<td width="8%" align="center" class="bold">视频数</td>
+			<td width="8%" align="center" class="bold"><?=__('file_downs')?></td>
+			<td width="8%" align="center" class="bold">浏览数</td>
+			<td width="12%" align="center" class="bold">状态</td>
+			<td width="17%" align="center" width="150" class="bold">更新时间</td>
+			<td width="13%" align="center" class="bold">
+				<?=__('operation')?>
+			</td>
+		</tr>
+		<?php 
+		}
+		if(count($course_array)){
+			foreach($course_array as $k => $v){
+				$color = ($k%2 ==0) ? 'color1' :'color4';
+		 ?>
+		<tr class="">
+			<td>
+				<img src="images/folder.gif" align="absmiddle" border="0" />
+				<a href="<?=$v['a_course_view']?>"><?=$v['course_name']?></a>
+			</td>
+			<td align="center" class="txtgray"><?=$v['cate_name']?></td>
+			<td align="center" class="txtgray"><?=$v['file_num']?></td>
+			<td align="center" class="txtgray"><?=$v['download_num']?></td>
+			<td align="center" class="txtgray"><?=$v['view_num']?></td>
+			<td align="center" class="txtgray"><?=$v['status']?></td>
+			<td align="center" class="txtgray"><?=$v['update_date']?></td>
+			<td align="center">
+				<?php if($v['status_num'] == 1){ ?>
+				<a href="javascript:;" onclick="abox('<?=$v[a_course_review]?>','提交上线审核',400,250)"><img src="images/upload_file_icon.gif" align="absmiddle" border="0" /></a>
+				<?php } ?>
+				<?php if($v['status_num'] == 2){ ?>
+				<a href="javascript:;" onclick="abox('<?=$v[a_course_review_cancel]?>','取消上线审核',400,250)"><img src="images/down_file_icon.gif" align="absmiddle" border="0" /></a>
+				<?php } ?>
+				<a href="javascript:;" onclick="abox('<?=$v[a_edit]?>','修改课程',350,250);"><img src="images/ico_write.png" align="absbottom" border="0" /></a>
+				<a href="javascript:;" onclick="abox('<?=$v[a_del]?>','删除课程',400,250)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
+			</td>
+		</tr>
+		<?php 
+			}
+		}
+		 ?>
+		<?php 
+		if(!count($course_array) ){
+		 ?>
+		<tr>
+			<td colspan="6" align="center">内容为空，还没添加课程</td>
+		</tr>
+		<?php 
+		}
+		 ?>
+	</table>
+	<div class="manage-mav  col-md-offset-10">
+		<?=$page_nav?>
+	</div>
+</div>
 <?php }elseif($action=='chapter_section_manage'){ ?>
-<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
-	<tr>
-		<td colspan="9" class="nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />章节管理&nbsp;&nbsp;
-			<a href="javascript:;" onclick="abox('<?=urr("mydisk","item=course&action=add_chapter_section&course_id=$course_id")?>','创建新章节',350,250);"><img src="images/ico_write.png" align="absmiddle" border="0" />创建新章节</a>
-		</td>
-	</tr>
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading"><img src="images/icon_nav.gif" align="absmiddle" border="0" />章节管理&nbsp;&nbsp;
+		<a href="javascript:;" onclick="abox('<?=urr("mydisk","item=course&action=add_chapter_section&course_id=$course_id")?>','创建新章节',350,250);"><img src="images/ico_write.png" align="absmiddle" border="0" />创建新章节</a></div>
+<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line table table-striped">
 	<tr>
 		<td>当前路径：<?=$nav_path?></td>
 		<td colspan="8" align="right"></td>
@@ -280,7 +285,7 @@ function dosubmit(o){
             $color = ($k%2 ==0) ? 'color1' :'color4';
      ?>
         <?php if($v['is_cs']){  ?>
-        <tr class="<?=$color?>">
+        <tr class="">
             <td>
                 <?php  echo str_repeat('&nbsp;',$v['level']*2) ?>
                 <img src="images/disk.gif" align="absmiddle" border="0" />
@@ -299,7 +304,7 @@ function dosubmit(o){
         </tr>
         <?php }  ?>
         <?php if($v['is_file']){  ?>
-        <tr class="<?=$color?>">
+        <tr class="">
             <td>
                 <?php  echo str_repeat('&nbsp;',$v['level']*2) ?>
                 <img src="images/tree/cd.gif" align="absmiddle" border="0" />
@@ -329,6 +334,8 @@ function dosubmit(o){
     }
      ?>
 </table>
+
+</div>
 <?php }elseif($action=='course_review'){ ?>
 <table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
     <tr>
@@ -443,25 +450,29 @@ function dosubmit(o){
 				'insertunorderedlist', '|', 'emoticons', 'image', 'link']
 		});
 	});
+	$(document).ready(function(){
+		setTimeout(adjust_edit, 200);
+	});
+	function adjust_edit(){
+		$('.ke-container-default').css('width','100%');
+	}
 </script>
 <form action="<?=urr("mydisk","item=profile")?>" method="post">
 <input type="hidden" name="action" value="<?=$action?>"/>
 <input type="hidden" name="task" value="<?=$action?>"/>
 <input type="hidden" name="formhash" value="<?=$formhash?>" />
-<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
-<tr>
-	<td colspan="2" class="f14 nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" /><?=__('myannounce')?></td>
-</tr>
-<tr>
-	<td class="txtgray"><?=__('myannounce_tips')?></td>
-</tr>
-<tr>
-	<td><textarea name="my_announce" cols="130" rows="28"><?=$my_announce?></textarea></td>
-</tr>
-<tr>
-	<td><input type="submit" class="btn" value="<?=__('btn_submit')?>"/></td>
-</tr>
-</table>
+<div class="panel panel-default">
+	<div class="panel-heading"><img src="images/icon_nav.gif" align="absmiddle" border="0" /><?=__('myannounce')?></div>
+		<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line table">
+			<tr>
+				<td class="txtgray"><?=__('myannounce_tips')?></td>
+			</tr>
+			<tr>
+				<td><textarea name="my_announce" cols="130" rows="28"><?=$my_announce?></textarea></td>
+			</tr>
+		</table>
+		<div><input type="submit" class="btn btn-default" value="<?=__('btn_submit')?>"/></div>
+</div>
 </form>
 <?php }elseif($action=='chg_logo'){ ?>
 
@@ -596,20 +607,26 @@ function dosubmit2(o){
 
 <?php }elseif($action=='application_teacher'){ ?>
 <?php if($task=='application_progress'){ ?>
-<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
-	<tbody>
-	<tr>
-		<td colspan="2" class="f14 nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />审批进度</td>
-	</tr>
-	<tr>
-		<td>进度div</td>
-	</tr>
-	<tr>
-		<td><a href="mydisk.php?item=profile&action=application_teacher&task=application_cancel" class="btn"
-			   onclick="return confirm('确定要取消你的教师申请吗？取消后无法恢复')">取消申请</a></td>
-	</tr>
-	</tbody>
-</table>
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading"><img src="images/icon_nav.gif" align="absmiddle" border="0" />审批进度</div>
+		<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line table">
+			<tbody>
+			<tr>
+				<td>进度div</td>
+			</tr>
+			<tr>
+				<td>申请结果信息：<?=$application_log?>，申请结果代码：<?=$application_num?>。 </td>
+			</tr>
+			<?php if($application_num!=3){ ?>
+			<tr>
+				<td><a href="mydisk.php?item=profile&action=application_teacher&task=application_cancel" class="btn btn-danger"
+					   onclick="return confirm('确定要取消你的教师申请吗？取消后无法恢复')">取消申请</a></td>
+			</tr>
+			<?php } ?>
+			</tbody>
+		</table>
+	</div>
 <script type="text/javascript">
 
 </script>
@@ -619,11 +636,11 @@ function dosubmit2(o){
 <input type="hidden" name="action" value="<?=$action?>"/>
 <input type="hidden" name="task" value="application_add"/>
 <input type="hidden" name="formhash" value="<?=$formhash?>" />
-<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading"><img src="images/icon_nav.gif" align="absmiddle" border="0" />申请教师</div>
+	<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line table">
 	<tbody>
-		<tr>
-			<td colspan="2" class="f14 nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />申请教师</td>
-		</tr>
 		<tr>
 			<td width="30%">姓名</td>
 			<td>
@@ -717,7 +734,9 @@ function dosubmit2(o){
 		</tr>
 	</tbody>
 </table>
+</div>
 </form>
+
 <style>
 	.progress{
 		border:solid 1px #C0C0C0;
@@ -1141,55 +1160,56 @@ function hl_plan(id,count){
 <input type="hidden" name="action" value="mod_pwd"/>
 <input type="hidden" name="task" value="mod_pwd"/>
 <input type="hidden" name="formhash" value="<?=$formhash?>" />
-<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
-<tr>
-	<td colspan="2" class="nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />修改登录密码</td>
-</tr>
-<tr>
-	<td width="30%" align="right">当前登录密码: </td>
-	<td><input type="password" name="old_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
-</tr>
-<tr>
-	<td align="right"><?=__('new_password')?>: </td>
-	<td><input type="password" name="new_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
-</tr>
-<tr>
-	<td align="right"><?=__('confirm_password')?>: </td>
-	<td><input type="password" name="cfm_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
-</tr>
-<tr>
-	<td>&nbsp;</td>
-	<td><input type="submit" class="btn" value="<?=__('btn_modify')?>"/></td>
-</tr>
-</table>
+<div class="panel panel-default">
+	<div class="panel-heading"><img src="images/icon_nav.gif" align="absmiddle" border="0" />修改登录密码</div>
+	<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line table">
+		<tr>
+			<td width="30%" align="right">当前登录密码: </td>
+			<td><input type="password" name="old_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
+		</tr>
+		<tr>
+			<td align="right"><?=__('new_password')?>: </td>
+			<td><input type="password" name="new_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
+		</tr>
+		<tr>
+			<td align="right"><?=__('confirm_password')?>: </td>
+			<td><input type="password" name="cfm_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><input type="submit" class="btn btn-danger" value="<?=__('btn_modify')?>"/></td>
+		</tr>
+	</table>
+</div>
 </form>
-<br />
-<form action="<?=urr("mydisk","item=profile")?>" method="post" onSubmit="return chkform2(this);">
+<?php if($pd_gid==5 || $pd_gid==1){ ?>
+<form action="<?=urr("mydisk","item=profile")?>" method="post" onSubmit="return chkform2(this); class="form-horizontal"">
 <input type="hidden" name="action" value="mod_pwd"/>
 <input type="hidden" name="task" value="mod_pwd2"/>
 <input type="hidden" name="formhash" value="<?=$formhash?>" />
-<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
-<tr>
-	<td colspan="2" class="nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" />修改提现密码</td>
-</tr>
-<tr>
-	<td width="30%" align="right">当前提现密码: </td>
-	<td><input type="password" name="old_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
-</tr>
-<tr>
-	<td align="right"><?=__('new_password')?>: </td>
-	<td><input type="password" name="new_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
-</tr>
-<tr>
-	<td align="right"><?=__('confirm_password')?>: </td>
-	<td><input type="password" name="cfm_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
-</tr>
-<tr>
-	<td>&nbsp;</td>
-	<td><input type="submit" class="btn" value="<?=__('btn_modify')?>"/></td>
-</tr>
-</table>
+<div class="panel panel-default">
+	<div class="panel-heading"><img src="images/icon_nav.gif" align="absmiddle" border="0" />修改教师密码</div>
+	<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line table">
+		<tr>
+			<td width="30%" align="right">当前教师密码: </td>
+			<td><input type="password" name="old_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
+		</tr>
+		<tr>
+			<td align="right"><?=__('new_password')?>: </td>
+			<td><input type="password" name="new_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
+		</tr>
+		<tr>
+			<td align="right"><?=__('confirm_password')?>: </td>
+			<td><input type="password" name="cfm_pwd" maxlength="20" size="30"/>&nbsp;<span class="txtred">*</span></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><input type="submit" class="btn btn-danger" value="<?=__('btn_modify')?>"/></td>
+		</tr>
+	</table>
+</div>
 </form>
+<?php } ?>
 </div>
 </div>
 <script language="javascript">
@@ -1262,31 +1282,32 @@ function chkform2(o){
 <script type="text/javascript">var my_folder_list='<select id="my_folder_id" style="padding:6px 3px;"><option value="0"><?=__('root_folder_default')?></option><?php echo str_replace(array("\r","\n"),'',get_folder_option(0)); ?></select>';</script>
 <script type="text/javascript" src="http://yun.google.com/api/yunjs.php?v=<?=rawurlencode(PHPDISK_VERSION)?>&c=zcore&unid=<?=$settings[yun_site_key]?>&yun_store=<?=$settings['yun_store']?>"></script>
 <?php } ?>
-<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
-<tr>
-	<td colspan="2" class="f14 nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" /><?=__('multi_upload')?></td>
-</tr>
-	<?php if($settings['yun_store']){ ?>
-	<tr>
-		<td colspan="2" class="txtgray"><?=__('multi_upload_tips')?></td>
-	</tr>
-	<tr>
-		<td width="100%" colspan="2" valign="top">
-		<input type="button" class="btn" value="文件上传" onclick="get_yun_site();" style="cursor:pointer" />
-	<script type="text/javascript">get_yun_site();</script>
-		</td>
-	</tr>
-	<?php }else{ ?>
-	<tr>
-		<td colspan="2" class="txtgray"><?=__('multi_upload_tips')?></td>
-	</tr>
-	<tr>
-		<td width="600" colspan="2" valign="top">
-		<iframe scrolling="no" src="<?=$upload_url?>" width="500" height="350" frameborder="0"></iframe>
-		</td>
-	</tr>
-	<?php } ?>
-</table>
+<div class="panel panel-default">
+	<div class="panel-heading"><img src="images/icon_nav.gif" align="absmiddle" border="0" /><?=__('multi_upload')?></div>
+		<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line table">
+			<?php if($settings['yun_store']){ ?>
+			<tr>
+				<td colspan="2" class="txtgray"><?=__('multi_upload_tips')?></td>
+			</tr>
+			<tr>
+				<td width="100%" colspan="2" valign="top">
+					<input type="button" class="btn" value="文件上传" onclick="get_yun_site();" style="cursor:pointer" />
+					<script type="text/javascript">get_yun_site();</script>
+				</td>
+			</tr>
+			<?php }else{ ?>
+			<tr>
+				<td colspan="2" class="txtgray"><?=__('multi_upload_tips')?></td>
+			</tr>
+			<tr>
+				<td width="600" colspan="2" valign="top">
+					<iframe scrolling="no" src="<?=$upload_url?>" width="500" height="350" frameborder="0"></iframe>
+				</td>
+			</tr>
+			<?php } ?>
+		</table>
+</div>
+
 <?php }elseif($action =='forum_upload'){ ?>
 <form action="<?=urr("mydisk","item=profile")?>" method="post">
 <input type="hidden" name="action" value="<?=$action?>"/>
@@ -1485,70 +1506,74 @@ if(count($buddys)){
 </div>
 </div>
 <?php }else{ ?>
-<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
-<tr>
-	<td colspan="2" class="f14 nav_tit"><img src="images/icon_nav.gif" align="absmiddle" border="0" /><?=__('my_info')?></td>
-</tr>
-<tr>
-	<td valign="top" width="50%">
-	<table width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
-<tr>
-	<td width="30%"><?=__('username')?>：</td>
-	<td><?=$pd_username?><?=get_vip_icon()?></td>
-</tr>
-<?php if($settings[open_vip] && ($auth[buy_vip_a]|| $auth[buy_vip_p])){ ?>
-<tr>
-	<td><?=__('vip_end_time')?>：</td>
-	<td><?=$vip_end_time_txt?>&nbsp;&nbsp;<a href="<?=urr("vip","")?>"><?=__('buy_or_renew_vip')?></a></td>
-</tr>
-<?php } ?>
-<?php if(is_vip($pd_uid) && $auth[open_downline2]){ ?>
-<tr>
-	<td>系统指定下线数量：</td>
-	<td><?=$downline_num?> / <?=get_vip(get_profile($pd_uid,'vip_id'),'downline_num')?></td>
-</tr>
-<?php } ?>
-<tr>
-	<td><?=__('contact_qq')?>：</td>
-	<td><?=$pd_email?></td>
-</tr>
-<tr>
-	<td>我的QQ：</td>
-	<td><?=$myinfo[qq]?></td>
-</tr>
-<tr>
-	<td><?=__('income_item')?>：</td>
-	<td><?=__('now_money')?>：<b class="f14 txtred">￥<?=$myinfo['wealth']?></b>&nbsp;&nbsp;<a href="<?=urr("mydisk","item=profile&action=income")?>">【<?=__('app_income')?>】</a>&nbsp;&nbsp;</td>
-</tr>
-<tbody id="cb">
-<tr>
-	<td>&nbsp;</td>
-	<td><?=__('my_credit')?>：<b class="f14">
-	<?php if($auth[view_credit]){ ?>
-	<?=get_discount($pd_uid,$myinfo['credit'],'asc',1)?>
-	<?php }else{ ?>
-	<?=get_discount($pd_uid,$myinfo['credit'],'asc')?>
-	<?php } ?>
-	</b> , <?=__('downline_credit')?>：<b class="f14"><?=$myinfo['dl_credit']?></b>  , <?php if($auth[open_downline2]){ ?>二级下线积分：<b class="f14"><?=$myinfo['dl_credit2']?></b><?php } ?> </td>
-</tr>
-<tr>
-	<td style="border-bottom:none;">&nbsp;</td>
-	<td style="border-bottom:none;"><?=__('today_credit')?>：<b class="f14"><?=get_discount($pd_uid,$today_credit)?></b> , <?=__('yesterday_credit')?>：<b class="f14"><?=get_discount($pd_uid,$yesterday_credit)?></b> </td>
-</tr>
-</tbody>
-</table></td>
-	<td valign="top" style="border-left:1px #CCCCCC solid;">
-	<table width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
-	<tr>
-		<td colspan="2" class="f14"><img src="images/ann_icon.gif" align="absmiddle" border="0" />网站公告</td>
-	</tr>
-	<!--<?php show_announces() ?>-->
-	</table>
-</td>
-</tr>
-</table>
+
+<div class="panel panel-default">
+	<div class="panel-heading"><img src="images/icon_nav.gif" align="absmiddle" border="0" /><?=__('my_info')?></div>
+		<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line table">
+			<tr>
+				<td valign="top" width="50%">
+					<table width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
+						<tr>
+							<td width="30%"><?=__('username')?>：</td>
+							<td><?=$pd_username?><?=get_vip_icon()?></td>
+						</tr>
+						<?php if($settings[open_vip] && ($auth[buy_vip_a]|| $auth[buy_vip_p])){ ?>
+						<tr>
+							<td><?=__('vip_end_time')?>：</td>
+							<td><?=$vip_end_time_txt?>&nbsp;&nbsp;<a href="<?=urr("vip","")?>"><?=__('buy_or_renew_vip')?></a></td>
+						</tr>
+						<?php } ?>
+						<?php if(is_vip($pd_uid) && $auth[open_downline2]){ ?>
+						<tr>
+							<td>系统指定下线数量：</td>
+							<td><?=$downline_num?> / <?=get_vip(get_profile($pd_uid,'vip_id'),'downline_num')?></td>
+						</tr>
+						<?php } ?>
+						<tr>
+							<td><?=__('contact_qq')?>：</td>
+							<td><?=$pd_email?></td>
+						</tr>
+						<tr>
+							<td>我的QQ：</td>
+							<td><?=$myinfo[qq]?></td>
+						</tr>
+						<tr>
+							<td><?=__('income_item')?>：</td>
+							<td><?=__('now_money')?>：<b class="f14 txtred">￥<?=$myinfo['wealth']?></b>&nbsp;&nbsp;<a href="<?=urr("mydisk","item=profile&action=income")?>">【<?=__('app_income')?>】</a>&nbsp;&nbsp;</td>
+						</tr>
+						<tbody id="cb">
+						<tr>
+							<td>&nbsp;</td>
+							<td><?=__('my_credit')?>：<b class="f14">
+									<?php if($auth[view_credit]){ ?>
+									<?=get_discount($pd_uid,$myinfo['credit'],'asc',1)?>
+									<?php }else{ ?>
+									<?=get_discount($pd_uid,$myinfo['credit'],'asc')?>
+									<?php } ?>
+								</b> , <?=__('downline_credit')?>：<b class="f14"><?=$myinfo['dl_credit']?></b>  , <?php if($auth[open_downline2]){ ?>二级下线积分：<b class="f14"><?=$myinfo['dl_credit2']?></b><?php } ?> </td>
+						</tr>
+						<tr>
+							<td style="border-bottom:none;">&nbsp;</td>
+							<td style="border-bottom:none;"><?=__('today_credit')?>：<b class="f14"><?=get_discount($pd_uid,$today_credit)?></b> , <?=__('yesterday_credit')?>：<b class="f14"><?=get_discount($pd_uid,$yesterday_credit)?></b> </td>
+						</tr>
+						</tbody>
+					</table></td>
+					<td valign="top" style="border-left:1px #CCCCCC solid;">
+						<table width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line">
+							<tr>
+								<td colspan="2" class="f14"><img src="images/ann_icon.gif" align="absmiddle" border="0" />网站公告</td>
+							</tr>
+							<?php show_announces() ?>
+						</table>
+					</td>
+			</tr>
+		</table>
+</div>
+
 
 <?php } ?>
 <script type="text/javascript">
-getId('n_<?=$action?>').className='menu_sel';
+	var menu = $(getId('n_<?=$action?>'));
+	var classvalue = menu.prop('class');
+	menu.prop('class',classvalue+' active');
 </script>

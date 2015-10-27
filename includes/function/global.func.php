@@ -500,12 +500,13 @@ function multi($total, $perpage, $curpage, $mpurl) {
 			}
 		}
 
-		$multipage = ($curpage - $offset > 1 && $pgs > $pg ? '<a href="'.$mpurl.'pg=1" class="p_redirect">&laquo;</a>' : '').($curpage > 1 ? '<a href="'.$mpurl.'pg='.($curpage - 1).'" class="p_redirect">&#8249;</a>' : '');
+		$multipage = ($curpage - $offset > 1 && $pgs > $pg ? '<li><a href="'.$mpurl.'pg=1" >&laquo;</a></li>' : '').($curpage > 1 ? '<li><a href="'.$mpurl.'pg='.($curpage - 1).'" >&#8249;</a></li>' : '');
 		for($i = $from; $i <= $to; $i++) {
-			$multipage .= $i == $curpage ? '<span class="p_curpage">'.$i.'</span>' : '<a href="'.$mpurl.'pg='.$i.'" class="p_num">'.$i.'</a>';
+			$multipage .= $i == $curpage ? '<li class="active"><a>'.$i.'</a></li>' : '<li><a href="'.$mpurl.'pg='.$i.'" >'.$i.'</a></li>';
 		}
-		$multipage .= ($curpage < $pgs ? '<a href="'.$mpurl.'pg='.($curpage + 1).'" class="p_redirect">&#8250;</a>' : '').($to < $pgs ? '<a href="'.$mpurl.'pg='.$pgs.'" class="p_redirect">&raquo;</a>' : '');
-		$multipage = $multipage ? '<div class="p_bar"><span class="p_info">Total:&nbsp;<b>'.$total.'</b>&nbsp;</span>'.$multipage.'</div>' : '';
+		$multipage .= ($curpage < $pgs ? '<li><a href="'.$mpurl.'pg='.($curpage + 1).'" >&#8250;</a></li>' : '').($to < $pgs ? '<li><a href="'.$mpurl.'pg='.$pgs.'" >&raquo;</a></li>' : '');
+		//$multipage = $multipage ? '<nav><ul class="pagination"><li><a>Total:&nbsp;<b>'.$total.'</b>&nbsp;</a></li>'.$multipage.'</ul></nav>' : '';
+		$multipage = $multipage ? '<nav><ul class="pagination">'.$multipage.'</ul></nav>' : '';
 	}
 	return $multipage;
 }
@@ -1488,6 +1489,10 @@ function is_vip($uid){
 	}
 	return $vip_end_time>$timestamp ? true : false;
 }
+function is_teacher($uid){
+	$group_id = get_profile($uid,'gid');
+	return (isset($group_id) AND $group_id ==5)? true : false;
+}
 function dir_writeable($dir) {
 	if(!is_dir($dir)) {
 		@mkdir($dir, 0777);
@@ -1594,18 +1599,28 @@ function get_application_teacher_status(){
 }
 
 //获取视频列表数据
-function get_course_list($condition = null){
-	global $db,$tpf,$pd_uid,$pg,$defineCouser;
-	$perpage = 20;
-	$start_num = ($pg-1) * $perpage;
-    $sql = "SELECT distinct c.*, cg.cate_name,u.username, count(*) as file_num
-            FROM {$tpf}file_cs_relation fcr
-            LEFT JOIN {$tpf}course c ON c.courseid = fcr.course_id
-            LEFT JOIN {$tpf}categories cg ON c.cate_id = cg.cate_id
-            LEFT JOIN {$tpf}users u ON u.userid = c.user_id
-            WHERE user_id = {$pd_uid} {$condition} limit {$start_num},{$perpage}";
-	$q = $db->query($sql);
+function get_course_list($word = '',$perpage = 20){
+	global $db,$tpf,$pd_uid,$pg,$defineCouser,$task;
 	$course_array = array();
+	$start_num = ($pg-1) * $perpage;
+	if($task == 'search'){
+		if(!empty($word))
+			$condition = "AND course_name LIKE '%{$word}%'";
+	}
+	$sql_do = "WHERE user_id = {$pd_uid} {$condition} ";
+	$sql_page = "limit {$start_num},{$perpage}";
+    $sql = "SELECT distinct c.*, cg.cate_name,u.username
+            FROM {$tpf}course c
+            LEFT JOIN {$tpf}file_cs_relation fcr ON c.courseid = fcr.course_id
+            LEFT JOIN {$tpf}categories cg ON c.cate_id = cg.cate_id
+            LEFT JOIN {$tpf}users u ON u.userid = c.user_id ".
+            $sql_do.$sql_page;
+	$q = $db->query($sql);
+
+	$rs = $db->fetch_one_array("select count(*) as total_num from {$tpf}course ".$sql_do);
+	$total_num = $rs['total_num'];
+	$course_array['total_num'] = $total_num;
+
 	while($rs = $db->fetch_array($q)) {
         if(!empty($rs['courseid'])){
             $rs['create_date'] = date('Y-m-d H:i:s',$rs[create_date]);
@@ -1618,7 +1633,7 @@ function get_course_list($condition = null){
             $rs['a_del'] = urr("mydisk","item=course&action=course_delete&course_id={$rs['courseid']}");
             $rs['a_course_review'] = urr("mydisk", "item=course&action=course_review&course_id={$rs['courseid']}");
             $rs['a_course_review_cancel'] = urr("mydisk", "item=course&action=course_review_cancel&course_id={$rs['courseid']}");
-            $course_array[] = $rs;
+            $course_array['data'][] = $rs;
         }
 	}
 	$db->free($q);
@@ -1666,12 +1681,113 @@ function get_chapter_section_list($course_id){
 	$cs_file = array_merge($chapter_section_array,$file_array);
 	PHPTree::$config['primary_key'] = 'ff_id';
 	PHPTree::$config['parent_key'] = 'parent_id';
-	$chapter_section_array = PHPTree::makeTreeForHtml($cs_file);
+	$chapter_section_array = !empty($chapter_section_array)?PHPTree::makeTreeForHtml($cs_file):array();
 	return $chapter_section_array;
 }
 
 //获取分类下的课程
-function get_course_from_cate($cate=0){
+function get_course_from_cate($cate_id=0, $word='',$perpage=20){
+	global $tpf, $db, $pg, $defineChaptersSections, $defineFileChaptersSections;
+	//获取全部子分类
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree.php');
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree/Node.php');
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree/InvalidParentException.php');
 
+	$course_array = get_all_cate();
+	$tree = new BlueM\Tree($course_array);
+	$childrenNodes = $tree->getNodeById($cate_id)->getDescendantsAndSelf();
+	$subCate= array();
+	foreach($childrenNodes as $children){
+		$subCate[] = $children->getId();
+	}
+	$subCateStr = implode(',', $subCate);
+
+	$task = gpc('task', 'GP');
+	$start_num = ($pg-1) * $perpage;
+	if($task == 'search'){
+		if(!empty($word))
+			$condition = "AND course_name LIKE '%{$word}%'";
+	}
+	$sql_do = "WHERE cate_id IN ({$subCateStr}) {$condition} ";
+	$sql_page = "limit {$start_num},{$perpage}";
+	//获取分类的课程
+	$sql = "SELECT * FROM {$tpf}course {$sql_do} {$sql_page}";
+	$q = $db->query($sql);
+	$course_data = array();
+	while($rs = $db->fetch_array($q)) {
+		$rs['id'] = $rs['cate_id'];
+		$rs['create_date'] = date('Y-m-d H:i:s',$rs[create_date]);
+		$rs['update_date'] = date('Y-m-d H:i:s',$rs[update_date]);
+		$rs['status'] = $defineChaptersSections[$rs['status']]?$defineChaptersSections[$rs['status']]:'未定义状态';
+		$rs['a_edit'] = urr("mydisk","item=course&action=modify_chapter_section&cs_id={$rs['csid']}&course_id={$cate_id}");
+		$rs['a_del'] = urr("mydisk","item=course&action=chapter_section_delete&cs_id={$rs['csid']}&course_id={$cate_id}");
+		$rs['a_add_file'] = urr("mydisk","item=course&action=add_file_cs_relation&cs_id={$rs['csid']}&course_id={$cate_id}");
+		$rs['a_viewcourse'] = urr("viewcourse","course_id={$rs['courseid']}");
+		$rs['parent'] = $rs['pid'];
+		$course_data['data'][] = $rs;
+	}
+	unset($rs);
+	$rs = $db->fetch_one_array("select count(*) as total_num from {$tpf}course ".$sql_do);
+	$course_data['total_num'] = $rs['total_num'];
+	unset($rs);
+	return $course_data;
+}
+
+//获取这个分类的全部父子分类
+function get_all_relate_cate_from_cateid($cate = 0){
+	global $o_type;
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree.php');
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree/Node.php');
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree/InvalidParentException.php');
+	$cate_all_data = get_all_cate();
+	$tree = new BlueM\Tree($cate_all_data);
+	$curNode = $tree->getNodeById($cate);
+	$curParent = $curNode->getParent();
+	$curParentId = $curParent->getId();
+	while(!empty($curParentId)){
+		$curNode = $curParent;
+		$curParent = $curNode->getParent();
+		$curParentId = $curParent->getId();
+	}
+	$cate_object = $curNode->getDescendants();
+	$cate_data = array();
+	foreach($cate_object as $item){
+		$cate_data[] = $item->toArray();
+		$cate_data[count($cate_data)-1][a_public] = urr("public","cate_id={$cate_data[count($cate_data)-1][cate_id]}");
+		$cate_data[count($cate_data)-1][a_hotfile] = urr("hotfile","o_type=$o_type&cate_id={$cate_data[count($cate_data)-1][cate_id]}");
+	}
+	return $cate_data;
+}
+
+function get_cate_ancestor($cate){
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree.php');
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree/Node.php');
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree/InvalidParentException.php');
+	$cate_all_data = get_all_cate();
+	$tree = new BlueM\Tree($cate_all_data);
+	$curNode = $tree->getNodeById($cate);
+	$curParent = $curNode->getParent();
+	$curParentId = $curParent->getId();
+	while(!empty($curParentId)){
+		$curNode = $curParent;
+		$curParent = $curNode->getParent();
+		$curParentId = $curParent->getId();
+	}
+	return $curNode->getId();
+}
+
+//获取全部分类
+function get_all_cate(){
+	global $tpf, $db;
+	$sql = "SELECT * FROM {$tpf}categories WHERE is_hidden != 1";
+	$q = $db->query($sql);
+	$cate_array = array();
+	while($rs = $db->fetch_array($q)) {
+		$rs['id'] = $rs['cate_id'];
+		$rs['parent'] = $rs['pid'];
+		$cate_array[] = $rs;
+	}
+	unset($rs);
+	return $cate_array;
 }
 ?>

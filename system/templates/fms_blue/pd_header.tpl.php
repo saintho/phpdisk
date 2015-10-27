@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-10-14 10:00:28
+// Cache Time:2015-10-27 22:44:42
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -57,76 +57,123 @@ document.domain = "<?=$settings['cookie_domain']?>";
 <body style="background:#FFFFFF">
 <?php }else{ ?>
 <body>
-<div class="body_top">
-<div class="wrap">
-<div class="l"><?=base64_decode($settings['site_notify']);?></div>
-<div class="m">
-<?php if($pd_uid){ ?>
-<?=menu_guest_reg()?>
-<a href="<?=$a_index_share?>"><?=$pd_username?></a><?=get_vip_icon()?>
-<a href="<?=urr("mydisk","")?>"><?=__('mydisk')?></a>
-<a href="<?=urr("mydisk","item=profile&action=multi_upload")?>"><?=__('multi_upload')?></a>
-<a href="<?=urr("mydisk","item=profile&action=files")?>"><?=__('manage_file')?></a>
-<?php if($pd_gid ==1){ ?>
-<a href="<?=urr(ADMINCP,"")?>" target="_blank"><?=__('admincp')?></a>
-<?php } ?>
-<?php }else{ ?>
-<?php if($settings[open_qq_fl]){ ?>
-<a href="fastlogin/qq/oauth/qq_login.php" target="_blank"><img src="fastlogin/qq/img/qq_login.png" align="absmiddle" border="0" style="margin-top:-5px"/></a>
-<?php } ?>
-<?php if($settings[open_weibo_fl] && $auth[open_weibo]){ ?>
-<a href="fastlogin/weibo/weibo_login.php" target="_blank"><img src="fastlogin/weibo/sina_login_btn.png" align="absmiddle" border="0" style="margin-top:-5px"/></a>
-<?php } ?>
-<a href="<?=urr("account","action=login")?>"><?=__('login')?></a>
-<a href="<?=urr("account","action=register")?>"><?=__('register')?></a>
-<?php } ?>
-<?php require_once template_echo('sub/block_navigation_top','templates/fms_blue/'); ?>
-<?php if($pd_uid){ ?>
-<a href="<?=urr("account","action=logout")?>" onclick="return confirm('<?=__('confirm_logout')?>');"><?=__('logout')?></a>
-<?php } ?>
-</div>
-</div>
-<div class="clear"></div>
-</div>
+  <div class="body_top">
+  <div class="wrap">
+  <div class="l"><?=base64_decode($settings['site_notify']);?></div>
+  <div class="m">
+  <?php if($pd_uid){ ?>
+  <?=menu_guest_reg()?>
+  <a href="<?=$a_index_share?>"><?=$pd_username?></a><?=get_vip_icon()?>
+  <a href="<?=urr("mydisk","")?>"><?=__('mydisk')?></a>
+  <a href="<?=urr("mydisk","item=profile&action=multi_upload")?>"><?=__('multi_upload')?></a>
+  <a href="<?=urr("mydisk","item=profile&action=files")?>"><?=__('manage_file')?></a>
+  <?php if($pd_gid ==1){ ?>
+  <a href="<?=urr(ADMINCP,"")?>" target="_blank"><?=__('admincp')?></a>
+  <?php } ?>
+  <?php }else{ ?>
+  <?php if($settings[open_qq_fl]){ ?>
+  <a href="fastlogin/qq/oauth/qq_login.php" target="_blank"><img src="fastlogin/qq/img/qq_login.png" align="absmiddle" border="0" style="margin-top:-5px"/></a>
+  <?php } ?>
+  <?php if($settings[open_weibo_fl] && $auth[open_weibo]){ ?>
+  <a href="fastlogin/weibo/weibo_login.php" target="_blank"><img src="fastlogin/weibo/sina_login_btn.png" align="absmiddle" border="0" style="margin-top:-5px"/></a>
+  <?php } ?>
+  <a href="<?=urr("account","action=login")?>"><?=__('login')?></a>
+  <a href="<?=urr("account","action=register")?>"><?=__('register')?></a>
+  <?php } ?>
+  <?php require_once template_echo('sub/block_navigation_top','templates/fms_blue/'); ?>
+  <?php if($pd_uid){ ?>
+  <a href="<?=urr("account","action=logout")?>" onclick="return confirm('<?=__('confirm_logout')?>');"><?=__('logout')?></a>
+  <?php } ?>
+  </div>
+  </div>
+  <div class="clear"></div>
+  </div>
 
 <div class="circle_box">
+  <!--
 <div class="logo_l">
 <a href="./"><img src="<?=$user_tpl_dir?>images/logo.png" align="absmiddle" border="0" alt="<?=$settings['site_title']?>"></a>
-</div>
+</div>-->
 <div class="logo_r">
 	<?php show_adv_data('adv_top'); ?>
 </div>
 <div class="clear"></div>
 
 <div class="menu">
-<div class="nav">
-<ul>
-  <!--
-  <li><a href="./" id="nv_index"><span><?=__('site_index')?></span></a></li>
-  <?php if($settings['open_vip']){ ?>
-  <?=menu_buy_vip()?>
-  <?php } ?>
-  <li><a href="<?=urr("public","")?>" id="nv_public"><span><?=__('share_file')?></span></a></li>
-  <li><a href="<?=urr("extract","")?>" id="nv_extract"><span><?=__('file_extract')?></span></a></li>
-  <li><a href="<?=urr("tag","")?>" id="nv_tag"><span><?=__('tag')?></span></a></li>
-  <li><a href="<?=urr("hotfile","")?>" id="nv_hotfile"><span><?=__('hotfile')?></span></a></li>
-  <li><a href="<?=urr("search","")?>" id="nv_search"><span><?=__('search_file')?></span></a></li>
-  -->
-  <li><a href="/index.php" id="nv_public"><span>首页</span></a></li>
-  <?php 
-	foreach($C['sub_nav'] as $v){
-   ?>
-  <li><a href="<?=urr("public","cate_id=$v[cate_id]")?>"><span><?=$v[cate_name]?></span></a></li>
-  <?php 
-      }
-   ?>
-  </ul>
-  </div>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Momoxue</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <?php 
+	        foreach($C['sub_nav'] as $v){
+           ?>
+          <li id="nav-<?=$v[cate_id]?>"><a href="<?=urr("public","cate_id=$v[cate_id]")?>"><span><?=$v[cate_name]?></span></a></li>
+          <?php 
+              }
+           ?>
+          <!--<li><a href="<?=urr("public","")?>" id="nv_public"><span><?=__('share_file')?></span></a></li>-->
+          <!--<li><a href="<?=urr("extract","")?>" id="nv_extract"><span><?=__('file_extract')?></span></a></li>-->
+          <!--<li><a href="<?=urr("tag","")?>" id="nv_tag"><span><?=__('tag')?></span></a></li>
+          <li><a href="<?=urr("hotfile","")?>" id="nv_hotfile"><span><?=__('hotfile')?></span></a></li>
+          <li><a href="<?=urr("search","")?>" id="nv_search"><span><?=__('search_file')?></span></a></li>-->
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form navbar-left" role="search" method="get" action="<?=urr("search","")?>">
+            <div class="form-group">
+              <input type="hidden" name="action" value="search">
+              <input type="hidden" name="scope" value="all">
+              <input type="text" name="word" class="form-control" placeholder="视频名称">
+            </div>
+            <button type="submit" class="btn btn-default">搜索</button>
+          </form>
+          <?php if($pd_uid){ ?>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=$pd_username?><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <?php if($pd_gid == 1 ||$pd_gid == 5){ ?>
+                  <li><a href="<?=urr("mydisk","")?>"><?=__('mydisk')?></a></li>
+                  <li><a href="<?=urr("mydisk","item=profile&action=multi_upload")?>"><?=__('multi_upload')?></a></li>
+                  <li><a href="<?=urr("mydisk","item=profile&action=files")?>"><?=__('manage_file')?></a></li>
+                  <?php if($pd_gid ==1){ ?>
+                  <li><a href="<?=urr(ADMINCP,"")?>" target="_blank"><?=__('admincp')?></a></li>
+                  <?php } ?>
+                <?php } ?>
+                <li><a href="<?=urr("account","action=logout")?>" onclick="return confirm('<?=__('confirm_logout')?>');"><?=__('logout')?></a></li>
+              </ul>
+            </li>
+          <?php }else{ ?>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">登陆/注册<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="<?=urr("account","action=login")?>"><?=__('login')?></a></li>
+              <li><a href="<?=urr("account","action=register")?>"><?=__('register')?></a></li>
+            </ul>
+          </li>
+          <?php } ?>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </div>
+
+
 <div class="clear"></div>
-<?php if(in_array($curr_script,array('index','public','extract','tag','hotfile','search','vip'))){ ?>
-<script type="text/javascript">getId('nv_<?=$curr_script?>').className='nav_sel';</script>
-<?php } ?>
+<script type="text/javascript">
+  jQuery("#nav-<?=$curr_nav?>").prop('class', jQuery('#nav-<?=$curr_nav?>').prop('class')+' active');
+</script>
 <?php 
 if(!count($C['sub_nav'])){
  ?>
@@ -144,5 +191,5 @@ if(!count($C['sub_nav'])){
 </div>
 <div class="clear"></div>
 <?php } ?>
-<br />
+
 <?php } ?>

@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-10-09 17:37:35
+// Cache Time:2015-10-27 21:43:33
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -34,62 +34,52 @@ function expand_menu(id){
 
 <div id="md_box">
 <div id="md_main">
-	<div class="md_l">
+	<div class="col-md-2 md_l">
+		<div class="panel panel-default">
+			<div class="panel-heading"><?=__('file_menu')?></div>
+			<ul class="list-group">
+				<a class="list-group-item" href="<?=urr("mydisk","item=profile&action=multi_upload")?>" id="n_multi_upload"><img src="images/upload_file_icon.gif" align="absmiddle" border="0" /><?=__('multi_upload')?></a>
+				<a class="list-group-item" href="<?=urr("mydisk","item=profile&action=files")?>" id="n_files"><img src="images/ico_home.gif" align="absmiddle" border="0" /><?=__('manage_file')?></a>
+			</ul>
+		</div>
 
-<div class="user_menu">
-<div class="tit" style="cursor:pointer" onclick="expand_menu(1);"><img id="img_1" src="images/ico_desc.gif" align="absmiddle" border="0" /> <?=__('file_menu')?></div>
-<ul id="nav_1">
-		<li><a href="<?=urr("mydisk","item=profile&action=multi_upload")?>" id="n_multi_upload"><img src="images/upload_file_icon.gif" align="absmiddle" border="0" /><?=__('multi_upload')?></a></li>
+		<div class="panel panel-default">
+			<div class="panel-heading">课程菜单</div>
+			<ul class="list-group">
+				<a class="list-group-item" href="<?=urr("mydisk","item=profile&action=course_manage")?>" id="n_course_manage"><img src="images/user/ico_audit.gif" align="absmiddle" border="0" />课程管理</a>
+				<!--<li><a href="<?=urr("mydisk","item=profile&action=course_review")?>" id="n_course_review"><img src="images/user/ico_history.gif" align="absmiddle" border="0" />课程审核</a></li>-->
+			</ul>
+		</div>
+
 		<?php if(DEBUG){ ?>
-			<?php show_ext_menu('forum_upload') ?>
-			<?php if($settings[global_open_custom_stats] && get_profile($pd_uid,'open_custom_stats')){ ?>
-			<?php show_ext_menu('mod_stat') ?>
-			<?php } ?>
+		<div class="panel panel-default">
+			<div class="panel-heading"><?=__('income_menu')?></div>
+			<ul class="list-group">
+				<a class="list-group-item" href="<?=urr("mydisk","item=profile&action=income_plans")?>" id="n_income_plans"><img src="images/user/ico_audit.gif" align="absmiddle" border="0" /><?=__('income_plans')?></a>
+				<a class="list-group-item" href="<?=urr("mydisk","item=profile&action=income_set")?>" id="n_income_set"><img src="images/user/ico_audit.gif" align="absmiddle" border="0" /><?=__('income_set')?></a>
+				<a class="list-group-item" href="<?=urr("mydisk","item=profile&action=income")?>" id="n_income"><img src="images/user/ico_money.gif" align="absmiddle" border="0" /><?=__('to_income')?></a>
+				<a class="list-group-item" href="<?=urr("mydisk","item=profile&action=income_log")?>" id="n_income_log"><img src="images/user/ico_history.gif" align="absmiddle" border="0" /><?=__('income_log')?></a>
+				<?php if($auth[pd_a] && $settings[show_credit_log]){ ?>
+				<a class="list-group-item" href="<?=urr("mydisk","item=profile&action=credit_log")?>" id="n_credit_log"><img src="images/user/ico_history.gif" align="absmiddle" border="0" /><?=__('credit_log')?></a>
+				<?php } ?>
+			</ul>
+		</div>
 		<?php } ?>
-		<li><a href="<?=urr("mydisk","item=profile&action=files")?>" id="n_files"><img src="images/ico_home.gif" align="absmiddle" border="0" /><?=__('manage_file')?></a></li>
-</ul>
-</div>
 
-<div class="user_menu">
-	<div class="tit" style="cursor:pointer" onclick="expand_menu(2);"><img id="img_2" src="images/ico_desc.gif" align="absmiddle" border="0" /> 课程菜单</div>
-	<ul id="nav_2">
-		<li><a href="<?=urr("mydisk","item=profile&action=course_manage")?>" id="n_course_manage"><img src="images/user/ico_audit.gif" align="absmiddle" border="0" />课程管理</a></li>
-		<!--<li><a href="<?=urr("mydisk","item=profile&action=course_review")?>" id="n_course_review"><img src="images/user/ico_history.gif" align="absmiddle" border="0" />课程审核</a></li>-->
-	</ul>
-</div>
-
-<?php if(DEBUG){ ?>
-<div class="user_menu">
-<div class="tit" style="cursor:pointer" onclick="expand_menu(3);"><img id="img_2" src="images/ico_desc.gif" align="absmiddle" border="0" /> <?=__('income_menu')?></div>
-<ul id="nav_2">
-		<li><a href="<?=urr("mydisk","item=profile&action=income_plans")?>" id="n_income_plans"><img src="images/user/ico_audit.gif" align="absmiddle" border="0" /><?=__('income_plans')?></a></li>
-		<li><a href="<?=urr("mydisk","item=profile&action=income_set")?>" id="n_income_set"><img src="images/user/ico_audit.gif" align="absmiddle" border="0" /><?=__('income_set')?></a></li>
-		<li><a href="<?=urr("mydisk","item=profile&action=income")?>" id="n_income"><img src="images/user/ico_money.gif" align="absmiddle" border="0" /><?=__('to_income')?></a></li>
-		<li><a href="<?=urr("mydisk","item=profile&action=income_log")?>" id="n_income_log"><img src="images/user/ico_history.gif" align="absmiddle" border="0" /><?=__('income_log')?></a></li>
-		<?php if($auth[pd_a] && $settings[show_credit_log]){ ?>
-		<li><a href="<?=urr("mydisk","item=profile&action=credit_log")?>" id="n_credit_log"><img src="images/user/ico_history.gif" align="absmiddle" border="0" /><?=__('credit_log')?></a></li>
-		<?php } ?>
-</ul>
-</div>
-<?php } ?>
-
-<div class="user_menu">
-<div class="tit" style="cursor:pointer" onclick="expand_menu(4);"><img id="img_3" src="images/ico_desc.gif" align="absmiddle" border="0" /> <?=__('profile_menu')?></div>
-<ul id="nav_3">
-		<li><a href="<?=urr("mydisk","item=profile")?>" id="n_default"><img src="images/user/ico_profile.gif" align="absmiddle" border="0" /><?=__('myinfo')?></a></li>
-		<?php show_ext_menu('myannounce') ?>
-		<!--<li><a href="<?=urr("mydisk","item=profile&action=chg_logo")?>" id="n_chg_logo"><img src="images/user/ico_app.gif" align="absmiddle" border="0" /><?=__('space_setting')?></a></li>-->
-		<!--<li><a href="<?=urr("mydisk","item=profile&action=invite")?>" id="n_invite"><img src="images/link_icon.gif" align="absmiddle" border="0" /><?=__('invite_user')?></a></li>-->
-		<li><a href="<?=urr("mydisk","item=profile&action=application_teacher")?>" id="n_application_teacher"><img src="images/link_icon.gif" align="absmiddle" border="0" />申请教师</a></li>
-		<?php if(DEBUG){ ?>
-		<li><a href="<?=urr("mydisk","item=profile&action=dl_users")?>" id="n_dl_users"><img src="images/user/ico_buddy.gif" align="absmiddle" border="0" /><?=__('downline_user')?></a></li>
-		<?php } ?>
-		<li><a href="<?=urr("mydisk","item=profile&action=mod_pwd")?>" id="n_mod_pwd"><img src="images/user/ico_profile.gif" align="absmiddle" border="0" /><?=__('mod_pwd')?></a></li>
-		<li><a href="<?=urr("account","action=logout")?>" onclick="return confirm('<?=__('confirm_logout')?>');"><img src="images/admin_icon.gif" align="absmiddle" border="0" /><?=__('exit')?></a></li>
-</ul>
-</div>
+		<div class="panel panel-default">
+			<div class="panel-heading"><?=__('profile_menu')?></div>
+			<ul class="list-group">
+				<a class="list-group-item" href="<?=urr("mydisk","item=profile")?>" id="n_default"><img src="images/user/ico_profile.gif" align="absmiddle" border="0" /><?=__('myinfo')?></a>
+				<?php show_ext_menu('myannounce') ?>
+				<!--<li><a href="<?=urr("mydisk","item=profile&action=chg_logo")?>" id="n_chg_logo"><img src="images/user/ico_app.gif" align="absmiddle" border="0" /><?=__('space_setting')?></a></li>-->
+				<!--<li><a href="<?=urr("mydisk","item=profile&action=invite")?>" id="n_invite"><img src="images/link_icon.gif" align="absmiddle" border="0" /><?=__('invite_user')?></a></li>-->
+				<a class="list-group-item" href="<?=urr("mydisk","item=profile&action=application_teacher")?>" id="n_application_teacher"><img src="images/link_icon.gif" align="absmiddle" border="0" />申请教师</a>
+				<a class="list-group-item" href="<?=urr("mydisk","item=profile&action=mod_pwd")?>" id="n_mod_pwd"><img src="images/user/ico_profile.gif" align="absmiddle" border="0" /><?=__('mod_pwd')?></a>
+				<a class="list-group-item" href="<?=urr("account","action=logout")?>" onclick="return confirm('<?=__('confirm_logout')?>');"><img src="images/admin_icon.gif" align="absmiddle" border="0" /><?=__('exit')?></a>
+			</ul>
+		</div>
 	</div>
-	<div class="md_r"><?php require_once $action_module; ?></div>
+	<div class="col-md-10 md_r "><?php require_once $action_module; ?></div>
 </div>
 	<div class="clear"></div>
 

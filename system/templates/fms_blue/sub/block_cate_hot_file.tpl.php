@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-10-08 23:22:43
+// Cache Time:2015-10-27 17:28:22
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -20,17 +20,17 @@
 ##
  ?>
 <?php !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied!'); ?>
-<div class="fl_box">
-<div class="tit2"><?=__('cate_hot_file')?></div>
-<ul>
-<?php 
-if(count($C[cate_hot_file])){
-	foreach($C[cate_hot_file] as $v){
- ?>
-	<li><?=$v['file_size']?><a href="<?=$v['a_viewfile']?>" target="_blank"><?=$v[file_icon]?><?=$v['file_name']?></a></li>
-<?php 
+<div class="panel panel-default">
+	<div class="panel-heading"><?=__('cate_hot_file')?></div>
+	<ul class="list-group">
+	<?php 
+	if(count($C[cate_hot_file])){
+		foreach($C[cate_hot_file] as $v){
+	 ?>
+		<li class="list-group-item"><?=$v['file_size']?><a href="<?=$v['a_viewfile']?>" target="_blank"><?=$v['file_name']?></a></li>
+	<?php 
+		}
 	}
-}
- ?>
-</ul>
+	 ?>
+	</ul>
 </div>
