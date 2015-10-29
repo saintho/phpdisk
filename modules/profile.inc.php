@@ -85,7 +85,6 @@ switch($action){
 		require_once template_echo('profile',$user_tpl_dir);
 		break;
 	case 'course_manage':
-		$perpage = 3;
 		if($task == 'search'){
 			$word = gpc('word','GP','');
 			$course_array = get_course_list($word,$perpage);
@@ -361,12 +360,12 @@ switch($action){
 		break;
 	case 'application_teacher':
 		if($task == 'save_image'){
-			//清除显示
-			ob_end_clean();
 			//增加保存图片的代码
 			require(PHPDISK_ROOT.'includes/class/upload.class.php');
 			$upload=new upload('file',APPLICATION_MATERIALS_DIR);
 			$fileName=$upload->uploadFile();
+			//清除显示
+			ob_get_clean();
 			echo json_encode(array('status' => 'ok', 'data'=>array('filename'=>basename($fileName)), 'msg'=>'成功上传文件'));
 			exit;
 		}
@@ -760,5 +759,4 @@ switch($action){
 		require_once template_echo('profile',$user_tpl_dir);
 
 }
-
 ?>

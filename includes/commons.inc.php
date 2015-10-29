@@ -154,6 +154,8 @@ if(!$pd_uid || !$pd_pwd){
 		$pd_username = $userinfo['username'];
 		$pd_email = $userinfo['email'];
 		$pd_gid = $userinfo['gid'];
+		$pd_isteacher = $pd_gid==5?true:false;
+		$pd_isadmin = $pd_gid==1?true:false;
 		$pd_group_name = $userinfo['group_name'];
 	}else{
 		$pd_uid = 0;
@@ -211,4 +213,7 @@ $defineApplicationTeacher = array(1=>'等待审核', 2=>'正在审核', 3=>'审�
 $defineFileChaptersSections = array(1=>'线下／未审核', 2=>'线上／审核中', 3=>'线上／审核通过', 4=>'线下／审核不通过－淫秽色情，宗教纷争', 5=>'线下／审核不通过－视频与课程介绍不符合', 6=>'线下／审核不通过－视频质量有问题', 7=>'线下／审核不通过－其他');
 $defineChaptersSections = array(1=>'线下／未审核', 2=>'线上／提交审核');
 $defineCouser = array(1=>'线下／未审核', 2=>'线上／提交审核');
+
+//获取分类
+$cate_obj = get_all_cate_obj();
 ?>

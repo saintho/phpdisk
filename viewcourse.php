@@ -15,15 +15,23 @@ include "includes/commons.inc.php";
 
 $in_front = true;
 
-$file_id = (int)gpc('course_id','GP',0);
+$course_id = (int)gpc('course_id','GP',0);
 $code = trim(gpc('code','G',''));
-
+if(empty($course_id)) {return;}
 /*$file['is_del'] = 0;
 $file = $db->fetch_one_array("select is_del,file_id,file_time from {$tpf}files where file_id='$file_id'");
 if(!$file['is_del']){*/
-$file = curr_file($file_id);
+$course = get_course_info($course_id);
 
+$chapter_section_array = get_chapter_section_list($course_id);
 
+//面包屑
+$cur_cate = $cate_obj->getNodeById($course['cate_id']);
+$breadcrumb = array();
+get_cate_breakcrumb($cur_cate, $breadcrumb);
+$breadcrumb[] = array('name'=>$course['course_name']);
+
+/*
 if($settings['open_report']){
 	$rs = $db->fetch_one_array("select count(*) as total from {$tpf}reports where (userid>0 and userid='$pd_uid') and file_id='$file_id'");
 	$has_report = $rs['total'] ? 1 : 0;
@@ -33,21 +41,18 @@ if($settings['open_report']){
 		$disabled = 'disabled';
 	}
 }
-if(!$file['is_del']){
-	$title = $file['file_name_min'].' - '.$settings['site_title'];
-}else{
-	$title = __('file_is_delete').' - '.$settings['site_title'];
-}
+*/
+$title = $course['course_name'].' - '.$settings['site_title'];
 
-$arr = file2tag($file_id);
-$file_tags = '';
+$arr = course2tag($course_id);
+$course_tags = '';
 if(count($arr)){
 	foreach($arr as $v){
-		$file_tags .= $v['tag_name'].',';
+		$course_tags .= $v['tag_name'].',';
 	}
 }
 if($auth[pd_a]){
-	$seo = get_seo('viewfile',$file_id);
+	$seo = get_seo('viewfile',$course_id);
 	$seo_a = get_seo('viewfile',0);
 	if($seo_a[title]){
 		eval("\$title = \"$seo[title] $seo_a[title]\";");
@@ -57,7 +62,7 @@ if($auth[pd_a]){
 }
 $loading_secs = get_loadiong_secs();
 
-$myinfo = get_profile($file[userid]);
+$myinfo = get_profile($course[user_id]);
 //$curr_tpl = $myinfo[curr_tpl] ? $myinfo[curr_tpl] : 'default';
 //$user_tpl_dir = 'templates/'.$curr_tpl.'/';
 //$username = $file['p_name'] ? $file['p_name'] : $pd_username;
@@ -68,14 +73,15 @@ $logo_url = $myinfo[logo_url] ? $myinfo[logo_url] : urr("space","username=".rawu
 include PHPDISK_ROOT."./includes/header.inc.php";
 
 if($auth[is_fms]){
-	$C[cate_last_file] = get_cate_file((int)@$db->result_first("select cate_id from {$tpf}files where file_id='$file_id'"));
-	$C[user_other_file] = get_user_other_file($file_id,$file[userid],5);
-	$C[you_like_file] = super_cache::get('get_rand_file|5');
+	//其他的栏目
+	//$C[cate_last_file] = get_cate_file((int)@$db->result_first("select cate_id from {$tpf}files where file_id='$file_id'"));
+	//$C[user_other_file] = get_user_other_file($file_id,$file[userid],5);
+	//$C[you_like_file] = super_cache::get('get_rand_file|5');
 
 	if($settings['open_comment']){
-		function file_last_comment($file_id){
+		function course_last_comment($course_id){
 			global $db,$tpf;
-			$q = $db->query("select c.*,u.username from {$tpf}comments c,{$tpf}users u where file_id='$file_id' and is_checked=1 and c.userid=u.userid order by cmt_id desc limit 5");
+			$q = $db->query("select c.*,u.username from {$tpf}comments_course c,{$tpf}users u where course_id='$course_id' and is_checked=1 and c.userid=u.userid order by cmt_c_id desc limit 5");
 			$cmts = array();
 			while($rs = $db->fetch_array($q)){
 				$rs['content'] = filter_word(str_replace("\r\n","<br>",$rs['content']));
@@ -87,22 +93,20 @@ if($auth[is_fms]){
 			unset($rs);
 			return $cmts;
 		}
-		$cmts = file_last_comment($file_id);
-		$a_comment = urr("comment","file_id=$file_id");
+		$cmts = course_last_comment($course_id);
+		$a_comment = urr("comment","file_id=$course_id");
 	}
 
 }else{
 	$C[you_like_file] = super_cache::get('get_rand_file|5');
-	$C[user_other_file] = get_user_other_file($file_id,$file[userid]);
+	$C[user_other_file] = get_user_other_file($course_id,$course[user_id]);
 }
-$report_url = urr("mydisk","item=files&action=post_report&file_id=$file_id");
-$comment_url = urr("mydisk","item=files&action=post_comment&file_id=$file_id");
+$report_url = urr("mydisk","item=files&action=post_report&course_id=$course_id");
+$comment_url = urr("mydisk","item=files&action=post_comment&course_id=$course_id");
 
 require_once template_echo('pd_viewcourse',$user_tpl_dir);
-if(!$file['is_del']){
-	add_credit_log($file_id,0,'ref',$file[userid],$_SERVER['HTTP_REFERER']);
-	views_stat($file_id);
-}
+add_credit_log($course_id,0,'ref',$course[user_id],$_SERVER['HTTP_REFERER']);
+views_stat($course_id);
 
 include PHPDISK_ROOT."./includes/footer.inc.php";
 
@@ -180,9 +184,9 @@ function curr_file($file_id){
 	return $file;
 }
 
-function file2tag($file_id){
+function course2tag($course_id){
 	global $db,$tpf;
-	$q = $db->query("select tag_name from {$tpf}file2tag where file_id='$file_id'");
+	$q = $db->query("select tag_name from {$tpf}course2tag where course_id='$course_id'");
 	$arr = array();
 	while($rs = $db->fetch_array($q)){
 		$arr[] = $rs;
@@ -191,10 +195,10 @@ function file2tag($file_id){
 	unset($rs);
 	return $arr;
 }
-function get_file_tags($file_id){
+function get_course_tags($course_id){
 	global $db,$tpf;
 	$str = '';
-	$q = $db->query("select * from {$tpf}file2tag where file_id='$file_id'");
+	$q = $db->query("select * from {$tpf}course2tag where course_id='$course_id'");
 	while($rs = $db->fetch_array($q)){
 		$str .= '<a href="'.urr("tag","tag=".urlencode($rs[tag_name])).'" target="_blank">'.$rs[tag_name].'</a> ';
 	}

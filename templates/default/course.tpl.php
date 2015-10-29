@@ -101,7 +101,7 @@ function dosubmit(o){
 		<input type="hidden" name="formhash" value="{$formhash}" />
 		<div class="cfm_info">
 			<li><img src="images/folder.gif" border="0" align="absmiddle" />&nbsp;<span class="txtgreen">{$course_name}</span></li>
-			<li>确定要取消该课程审核吗？</li>
+			<li>确定要取消该课程审核吗？取消后审核通过的课程也会被取消审核通过的状态</li>
 			<li>&nbsp;</li>
 			<li><input type="submit" class="btn" value="<?=__('btn_submit')?>" />&nbsp;&nbsp;<input type="button" class="btn" value="<?=__('btn_cancel')?>" onclick="top.$.jBox.close(true);" /></li>
 		</div>

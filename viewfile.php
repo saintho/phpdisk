@@ -23,7 +23,6 @@ $file = $db->fetch_one_array("select is_del,file_id,file_time from {$tpf}files w
 if(!$file['is_del']){*/
 $file = curr_file($file_id);
 
-
 if($settings['open_report']){
 	$rs = $db->fetch_one_array("select count(*) as total from {$tpf}reports where (userid>0 and userid='$pd_uid') and file_id='$file_id'");
 	$has_report = $rs['total'] ? 1 : 0;

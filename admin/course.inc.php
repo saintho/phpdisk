@@ -64,21 +64,9 @@ switch($action){
 		}
 		break;
 	case 'search':
-		$condition = '';
 		$status = (int)gpc('status','GP',0);
-		if($status){
-			switch($status){
-				case 1:
-					$condition = 'AND fcr.status = 1 AND c.status = 1';
-					break;
-				case 2:
-					$condition = 'AND fcr.status = 2 AND c.status = 2';
-					break;
-			}
-		}
-
-		$current_status = $status;
-		$course_array = get_course_list($condition);
+		$status = 3;
+		$course_array = !empty($status)?get_course_form_status($status):array();
 		$course_array = $course_array['data'];
 		$page_nav = multi($total_num, $perpage, $pg, urr(ADMINCP,"item=$item&menu=file&action=$action&view=$view&uid=$uid"));
 		$dd = date('Y-m-d');

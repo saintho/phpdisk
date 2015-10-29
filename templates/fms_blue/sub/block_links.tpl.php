@@ -15,9 +15,9 @@
 <!--#
 if(count($C[links_arr])){
 #-->
-<div class="f_link">
-<div class="tit"><img src="images/link_icon.gif" align="absmiddle" border="0" /> <?=__('site_link')?></div>
-<div class="ctn">
+<div class="panel panel-default">
+<div class="panel-heading"><img src="images/link_icon.gif" align="absmiddle" border="0" /> <?=__('site_link')?></div>
+<div class="panel-body">
 <!--#
 	foreach($C[links_arr] as $k => $v){
 		if($v[has_logo]){

@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-10-27 21:43:33
+// Cache Time:2015-10-28 21:22:30
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -35,6 +35,7 @@ function expand_menu(id){
 <div id="md_box">
 <div id="md_main">
 	<div class="col-md-2 md_l">
+		<?php if($pd_isteacher||$pd_isadmin){ ?>
 		<div class="panel panel-default">
 			<div class="panel-heading"><?=__('file_menu')?></div>
 			<ul class="list-group">
@@ -50,7 +51,7 @@ function expand_menu(id){
 				<!--<li><a href="<?=urr("mydisk","item=profile&action=course_review")?>" id="n_course_review"><img src="images/user/ico_history.gif" align="absmiddle" border="0" />课程审核</a></li>-->
 			</ul>
 		</div>
-
+		<?php } ?>
 		<?php if(DEBUG){ ?>
 		<div class="panel panel-default">
 			<div class="panel-heading"><?=__('income_menu')?></div>

@@ -37,7 +37,8 @@ class phpdisk_core{
 	public static function gzcompress_open(){
 		global $C;
 		if ($C['gz']['open'] && function_exists('ob_gzhandler')) {
-			ob_start('ob_gzhandler');
+			//ob_start('ob_gzhandler');
+			ob_start();//不知什么原因,上面的处理,在ob_end_clear()的时候会报错;
 			$C['gz']['status'] = 'Enabled';
 		} else {
 			ob_start();

@@ -336,7 +336,7 @@ switch ($action){
 				}
 				unset($rs);
 				//混合文件
-				$user_folder_file = $user_folder + $user_file;
+				$user_folder_file = array_merge($user_folder, $user_file);
 				PHPTree::$config['primary_key'] = 'ff_id';
 				PHPTree::$config['parent_key'] = 'parent_id';
 				$user_folder_file = PHPTree::makeTreeForHtml($user_folder_file);

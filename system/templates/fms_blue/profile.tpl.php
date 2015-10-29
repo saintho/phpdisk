@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-10-27 21:50:04
+// Cache Time:2015-10-28 16:53:25
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -258,82 +258,79 @@ function dosubmit(o){
 	<!-- Default panel contents -->
 	<div class="panel-heading"><img src="images/icon_nav.gif" align="absmiddle" border="0" />章节管理&nbsp;&nbsp;
 		<a href="javascript:;" onclick="abox('<?=urr("mydisk","item=course&action=add_chapter_section&course_id=$course_id")?>','创建新章节',350,250);"><img src="images/ico_write.png" align="absmiddle" border="0" />创建新章节</a></div>
-<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line table table-striped">
-	<tr>
-		<td>当前路径：<?=$nav_path?></td>
-		<td colspan="8" align="right"></td>
-	</tr>
-	<form action="<?=urr("mydisk","item=files")?>" name="file_form" method="post" onsubmit="return dosubmit(this);">
-	<input type="hidden" name="action" value="op_file" />
-	<input type="hidden" name="formhash" value="<?=$formhash?>" />
-	<?php if(count($chapter_section_array)){ ?>
-	<tr>
-		<td width="22%" class="bold">章节／课程名称</td>
-		<td width="8%" align="center" class="bold">视频数</td>
-		<td width="8%" align="center" class="bold"><?=__('file_downs')?></td>
-		<td width="8%" align="center" class="bold">浏览数</td>
-		<td width="12%" align="center" class="bold">状态</td>
-		<td width="17%" align="center" width="150" class="bold">更新时间</td>
-		<td width="13%" align="center" class="bold">
-			<?=__('operation')?>
-		</td>
-	</tr>
-	<?php 
-    }
-    if(count($chapter_section_array)){
-        foreach($chapter_section_array as $k => $v){
-            $color = ($k%2 ==0) ? 'color1' :'color4';
-     ?>
-        <?php if($v['is_cs']){  ?>
-        <tr class="">
-            <td>
-                <?php  echo str_repeat('&nbsp;',$v['level']*2) ?>
-                <img src="images/disk.gif" align="absmiddle" border="0" />
-                <?=$v['cs_name']?>
-                <a href="javascript:;" onclick="abox('<?=$v[a_add_file]?>','添加视频',650,550);"><img src="images/tree/nolines_plus.gif" align="absbottom" border="0" /></a>
-            </td>
-            <td align="center" class="txtgray">-</td>
-            <td align="center" class="txtgray"><?=$v['download_num']?></td>
-            <td align="center" class="txtgray"><?=$v['view_num']?></td>
-            <td align="center" class="txtgray">-</td>
-            <td align="center" class="txtgray"><?=$v['update_date']?></td>
-            <td align="center">
-                <a href="javascript:;" onclick="abox('<?=$v[a_edit]?>','修改章节',350,250);"><img src="images/ico_write.png" align="absbottom" border="0" /></a>
-                <a href="javascript:;" onclick="abox('<?=$v[a_del]?>','删除章节',400,250)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
-            </td>
-        </tr>
-        <?php }  ?>
-        <?php if($v['is_file']){  ?>
-        <tr class="">
-            <td>
-                <?php  echo str_repeat('&nbsp;',$v['level']*2) ?>
-                <img src="images/tree/cd.gif" align="absmiddle" border="0" />
-                <?=$v['file_name']?>
-            </td>
-            <td align="center" class="txtgray">-</td>
-            <td align="center" class="txtgray"><?=$v['file_downs']?></td>
-            <td align="center" class="txtgray"><?=$v['file_views']?></td>
-            <td align="center" class="txtgray"><?=$v['status']?></td>
-            <td align="center" class="txtgray"><?=$v['file_time']?></td>
-            <td align="center">
-                <a href="javascript:;" onclick="abox('<?=$v[a_del]?>','删除文件',400,250)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
-            </td>
-        </tr>
-        <?php }  ?>
-	<?php 
-        }
-    }
-     ?>
-	<?php 
-    if(!count($chapter_section_array) ){
-     ?>
-	<tr>
-		<td colspan="6" align="center">内容为空，还没添加章节</td>
-	</tr>
-	<?php 
-    }
-     ?>
-</table>
+	<div class="breadcrumb-search-div col-md-12">当前路径：<?=$nav_path?></div>
+	<table align="center" width="100%" cellpadding="4" cellspacing="0" border="0" class="td_line table table-striped">
+		<form action="<?=urr("mydisk","item=files")?>" name="file_form" method="post" onsubmit="return dosubmit(this);">
+		<input type="hidden" name="action" value="op_file" />
+		<input type="hidden" name="formhash" value="<?=$formhash?>" />
+		<?php if(count($chapter_section_array)){ ?>
+		<tr>
+			<td width="22%" class="bold">章节／课程名称</td>
+			<td width="8%" align="center" class="bold">视频数</td>
+			<td width="8%" align="center" class="bold"><?=__('file_downs')?></td>
+			<td width="8%" align="center" class="bold">浏览数</td>
+			<td width="12%" align="center" class="bold">状态</td>
+			<td width="17%" align="center" width="150" class="bold">更新时间</td>
+			<td width="13%" align="center" class="bold">
+				<?=__('operation')?>
+			</td>
+		</tr>
+		<?php 
+		}
+		if(count($chapter_section_array)){
+			foreach($chapter_section_array as $k => $v){
+				$color = ($k%2 ==0) ? 'color1' :'color4';
+		 ?>
+			<?php if($v['is_cs']){  ?>
+			<tr class="">
+				<td>
+					<?php  echo str_repeat('&nbsp;',$v['level']*2) ?>
+					<img src="images/disk.gif" align="absmiddle" border="0" />
+					<?=$v['cs_name']?>
+					<a href="javascript:;" onclick="abox('<?=$v[a_add_file]?>','添加视频',650,550);"><img src="images/tree/nolines_plus.gif" align="absbottom" border="0" /></a>
+				</td>
+				<td align="center" class="txtgray">-</td>
+				<td align="center" class="txtgray"><?=$v['download_num']?></td>
+				<td align="center" class="txtgray"><?=$v['view_num']?></td>
+				<td align="center" class="txtgray">-</td>
+				<td align="center" class="txtgray"><?=$v['update_date']?></td>
+				<td align="center">
+					<a href="javascript:;" onclick="abox('<?=$v[a_edit]?>','修改章节',350,250);"><img src="images/ico_write.png" align="absbottom" border="0" /></a>
+					<a href="javascript:;" onclick="abox('<?=$v[a_del]?>','删除章节',400,250)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
+				</td>
+			</tr>
+			<?php }  ?>
+			<?php if($v['is_file']){  ?>
+			<tr class="">
+				<td>
+					<?php  echo str_repeat('&nbsp;',$v['level']*2) ?>
+					<img src="images/tree/cd.gif" align="absmiddle" border="0" />
+					<?=$v['file_name']?>
+				</td>
+				<td align="center" class="txtgray">-</td>
+				<td align="center" class="txtgray"><?=$v['file_downs']?></td>
+				<td align="center" class="txtgray"><?=$v['file_views']?></td>
+				<td align="center" class="txtgray"><?=$v['status']?></td>
+				<td align="center" class="txtgray"><?=$v['file_time']?></td>
+				<td align="center">
+					<a href="javascript:;" onclick="abox('<?=$v[a_del]?>','删除文件',400,250)"><img src="images/delete_icon.gif" align="absmiddle" border="0" /></a>
+				</td>
+			</tr>
+			<?php }  ?>
+		<?php 
+			}
+		}
+		 ?>
+		<?php 
+		if(!count($chapter_section_array) ){
+		 ?>
+		<tr>
+			<td colspan="6" align="center">内容为空，还没添加章节</td>
+		</tr>
+		<?php 
+		}
+		 ?>
+	</table>
 
 </div>
 <?php }elseif($action=='course_review'){ ?>

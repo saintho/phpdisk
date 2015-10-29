@@ -155,7 +155,7 @@ class upload{
 		if($this->checkError()&&$this->checkSize()&&$this->checkExt()&&$this->checkMime()&&$this->checkTrueImg()&&$this->checkHTTPPost()){
 			$this->checkUploadPath();
 			$this->uniName=$this->getUniName();
-			$this->destination=$this->uploadPath.'/'.$this->uniName.'.'.$this->ext;
+			$this->destination=$this->uploadPath.$this->uniName.'.'.$this->ext;
 			if(@move_uploaded_file($this->fileInfo['tmp_name'], $this->destination)){
 				return  $this->destination;
 			}else{

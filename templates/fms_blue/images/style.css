@@ -37,7 +37,8 @@ A:hover {
 .bold{font-weight:bold}
 .alt_bg{ background:#EDEDED}
 .td_line td{border-bottom:1px #cccccc dotted; height:30px}
-
+.front_course_t td{height:30px}
+.front_course_t tr:hover{background: #eee;}
 .logo{padding:10px}
 .logo_l{ padding:10px;float:left}
 .logo_r{padding:5px 20px; float:right}
@@ -94,6 +95,10 @@ A:hover {
 #md_main{width:100%; height:auto;}
 #md_main .md_l{padding-left:0px;}
 #md_main .md_r{padding-right:0px;}
+.layout_box .md_l{padding-left:0px;}
+.layout_box .md_r{padding-right:0px;}
+.m-l{padding-left: 0px}
+.m-r{padding-right: 0px}
 #md_main .md_r .nav_tit{background:url("title_bg.jpg") repeat-x;}
 .menu_sel{background:#E3EFFB; color:#FFFFFF; padding:0 4px;}
 
@@ -420,5 +425,6 @@ download button
 .cp_wrap .r{width:40%; float:right;}
 /* adv*/
 .adv_box{ border:1px #7BAADE solid; padding:1px;}
-.breadcrumb-search-div{padding-top: 8px; padding-bottom: 8px; height: 50px;}
+.breadcrumb-search-div{padding-top: 8px; padding-bottom: 8px;}
 .breadcrumb-search-div .nav-path{line-height: 35px}
+.head_nav nav{text-align: center}

@@ -12,42 +12,41 @@
 ##
 #-->
 <?php !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied!'); ?>
-<div class="fl_box2">
-<div class="tit2"><?=__('user_other_file')?></div>
-<ul>
-<!--#
-if(count($C[user_other_file])){
-	foreach($C[user_other_file] as $v){
-#-->
-	<li>{$v['file_size']}<a href="{$v['a_viewfile']}" target="_blank">{$v[file_icon]}{$v['file_name']}</a></li>
-<!--#
-	}
-}else{
-#-->
-<li><?=__('file_not_found')?></li>
-<!--#
-}
-#-->
-</ul>
+<div class="panel panel-default">
+	<div class="panel-heading"><?=__('user_other_file')?></div>
+	<ul>
+		<!--#
+        if(count($C[user_other_file])){
+            foreach($C[user_other_file] as $v){
+        #-->
+		<li>{$v['file_size']}<a href="{$v['a_viewfile']}" target="_blank">{$v[file_icon]}{$v['file_name']}</a></li>
+		<!--#
+            }
+        }else{
+        #-->
+		<li><?=__('file_not_found')?></li>
+		<!--#
+        }
+        #-->
+	</ul>
 </div>
 
-<div class="fl_box2" style="margin-left:5px;">
-<div class="tit2"><?=__('your_like_file')?></div>
-<ul>
-<!--#
-if(count($C[you_like_file])){
-	foreach($C[you_like_file] as $v){
-#-->
-	<li>{$v['file_size']}<a href="{$v['a_viewfile']}" target="_blank">{$v[file_icon]}{$v['file_name']}</a></li>
-<!--#
-	}
-}else{
-#-->
-<li><?=__('file_not_found')?></li>
-<!--#
-}
-#-->
-</ul>
+<div class="panel panel-default ">
+	<div class="panel-heading"><?=__('your_like_file')?></div>
+	<ul>
+		<!--#
+        if(count($C[you_like_file])){
+            foreach($C[you_like_file] as $v){
+        #-->
+		<li>{$v['file_size']}<a href="{$v['a_viewfile']}" target="_blank">{$v[file_icon]}{$v['file_name']}</a></li>
+		<!--#
+            }
+        }else{
+        #-->
+		<li><?=__('file_not_found')?></li>
+		<!--#
+        }
+        #-->
+	</ul>
 </div>
-
 <div class="clear"></div>

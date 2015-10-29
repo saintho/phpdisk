@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-10-27 22:44:42
+// Cache Time:2015-10-29 21:37:42
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -57,38 +57,7 @@ document.domain = "<?=$settings['cookie_domain']?>";
 <body style="background:#FFFFFF">
 <?php }else{ ?>
 <body>
-  <div class="body_top">
-  <div class="wrap">
-  <div class="l"><?=base64_decode($settings['site_notify']);?></div>
-  <div class="m">
-  <?php if($pd_uid){ ?>
-  <?=menu_guest_reg()?>
-  <a href="<?=$a_index_share?>"><?=$pd_username?></a><?=get_vip_icon()?>
-  <a href="<?=urr("mydisk","")?>"><?=__('mydisk')?></a>
-  <a href="<?=urr("mydisk","item=profile&action=multi_upload")?>"><?=__('multi_upload')?></a>
-  <a href="<?=urr("mydisk","item=profile&action=files")?>"><?=__('manage_file')?></a>
-  <?php if($pd_gid ==1){ ?>
-  <a href="<?=urr(ADMINCP,"")?>" target="_blank"><?=__('admincp')?></a>
-  <?php } ?>
-  <?php }else{ ?>
-  <?php if($settings[open_qq_fl]){ ?>
-  <a href="fastlogin/qq/oauth/qq_login.php" target="_blank"><img src="fastlogin/qq/img/qq_login.png" align="absmiddle" border="0" style="margin-top:-5px"/></a>
-  <?php } ?>
-  <?php if($settings[open_weibo_fl] && $auth[open_weibo]){ ?>
-  <a href="fastlogin/weibo/weibo_login.php" target="_blank"><img src="fastlogin/weibo/sina_login_btn.png" align="absmiddle" border="0" style="margin-top:-5px"/></a>
-  <?php } ?>
-  <a href="<?=urr("account","action=login")?>"><?=__('login')?></a>
-  <a href="<?=urr("account","action=register")?>"><?=__('register')?></a>
-  <?php } ?>
-  <?php require_once template_echo('sub/block_navigation_top','templates/fms_blue/'); ?>
-  <?php if($pd_uid){ ?>
-  <a href="<?=urr("account","action=logout")?>" onclick="return confirm('<?=__('confirm_logout')?>');"><?=__('logout')?></a>
-  <?php } ?>
-  </div>
-  </div>
-  <div class="clear"></div>
-  </div>
-
+  <br/>
 <div class="circle_box">
   <!--
 <div class="logo_l">
@@ -143,8 +112,8 @@ document.domain = "<?=$settings['cookie_domain']?>";
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?=$pd_username?><span class="caret"></span></a>
               <ul class="dropdown-menu">
+                  <li><a href="<?=urr("mydisk","")?>">我的信息</a></li>
                 <?php if($pd_gid == 1 ||$pd_gid == 5){ ?>
-                  <li><a href="<?=urr("mydisk","")?>"><?=__('mydisk')?></a></li>
                   <li><a href="<?=urr("mydisk","item=profile&action=multi_upload")?>"><?=__('multi_upload')?></a></li>
                   <li><a href="<?=urr("mydisk","item=profile&action=files")?>"><?=__('manage_file')?></a></li>
                   <?php if($pd_gid ==1){ ?>

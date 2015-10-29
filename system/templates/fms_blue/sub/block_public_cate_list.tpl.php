@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-10-27 22:22:52
+// Cache Time:2015-10-28 10:45:33
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -29,11 +29,11 @@
 		 ?>
 			<a class="list-group-item" href="<?=$v[a_public]?>" id="a_cate_<?=$v[cate_id]?>"><span><?=$v['cate_name']?></span></a>
 		<?php 
-			if(($k+1)%5==0){ echo '<div class="clear"></div>';}
 			}
 			if($cate_id){
 		 ?>
 			<script type="text/javascript">
+				//标记选中的分类
 				var classname = jQuery('#a_cate_<?=$cate_id?>').prop('class');
 				jQuery('#a_cate_<?=$cate_id?>').prop('class',classname+' active');
 			</script>

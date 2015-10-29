@@ -40,7 +40,10 @@ if($auth[pd_a]){
 include PHPDISK_ROOT."./includes/header.inc.php";
 
 if($cate_id){
-	$perpage = 9;
+	//面包屑
+	$cur_cate = $cate_obj->getNodeById($cate_id);
+	$breadcrumb = array();
+	get_cate_breakcrumb($cur_cate, $breadcrumb);
 	//分类数据
 	$C[cate_list] = get_all_relate_cate_from_cateid($cate_id);
 	//课程数据
@@ -60,4 +63,3 @@ if($cate_id){
 require_once template_echo('pd_public',$user_tpl_dir);
 
 include PHPDISK_ROOT."./includes/footer.inc.php";
-?>

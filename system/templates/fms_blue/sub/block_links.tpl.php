@@ -1,7 +1,7 @@
 <?php 
 // This is PHPDISK auto-generated file. Do NOT modify me.
 
-// Cache Time:2015-10-27 18:27:46
+// Cache Time:2015-10-29 22:27:44
 
 !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
 
@@ -23,9 +23,9 @@
 <?php 
 if(count($C[links_arr])){
  ?>
-<div class="f_link">
-<div class="tit"><img src="images/link_icon.gif" align="absmiddle" border="0" /> <?=__('site_link')?></div>
-<div class="ctn">
+<div class="panel panel-default">
+<div class="panel-heading"><img src="images/link_icon.gif" align="absmiddle" border="0" /> <?=__('site_link')?></div>
+<div class="panel-body">
 <?php 
 	foreach($C[links_arr] as $k => $v){
 		if($v[has_logo]){

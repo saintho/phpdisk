@@ -21,11 +21,11 @@
 		#-->
 			<a class="list-group-item" href="{$v[a_public]}" id="a_cate_{$v[cate_id]}"><span>{$v['cate_name']}</span></a>
 		<!--#
-			if(($k+1)%5==0){ echo '<div class="clear"></div>';}
 			}
 			if($cate_id){
 		#-->
 			<script type="text/javascript">
+				//标记选中的分类
 				var classname = jQuery('#a_cate_{$cate_id}').prop('class');
 				jQuery('#a_cate_{$cate_id}').prop('class',classname+' active');
 			</script>

@@ -49,38 +49,7 @@ document.domain = "{$settings['cookie_domain']}";
 <body style="background:#FFFFFF">
 <!--#}else{#-->
 <body>
-  <div class="body_top">
-  <div class="wrap">
-  <div class="l">{#base64_decode($settings['site_notify']);#}</div>
-  <div class="m">
-  <!--#if($pd_uid){#-->
-  {#menu_guest_reg()#}
-  <a href="{$a_index_share}">{$pd_username}</a>{#get_vip_icon()#}
-  <a href="{#urr("mydisk","")#}"><?=__('mydisk')?></a>
-  <a href="{#urr("mydisk","item=profile&action=multi_upload")#}"><?=__('multi_upload')?></a>
-  <a href="{#urr("mydisk","item=profile&action=files")#}"><?=__('manage_file')?></a>
-  <!--#if($pd_gid ==1){#-->
-  <a href="{#urr(ADMINCP,"")#}" target="_blank"><?=__('admincp')?></a>
-  <!--#}#-->
-  <!--#}else{#-->
-  <!--#if($settings[open_qq_fl]){#-->
-  <a href="fastlogin/qq/oauth/qq_login.php" target="_blank"><img src="fastlogin/qq/img/qq_login.png" align="absmiddle" border="0" style="margin-top:-5px"/></a>
-  <!--#}#-->
-  <!--#if($settings[open_weibo_fl] && $auth[open_weibo]){#-->
-  <a href="fastlogin/weibo/weibo_login.php" target="_blank"><img src="fastlogin/weibo/sina_login_btn.png" align="absmiddle" border="0" style="margin-top:-5px"/></a>
-  <!--#}#-->
-  <a href="{#urr("account","action=login")#}"><?=__('login')?></a>
-  <a href="{#urr("account","action=register")#}"><?=__('register')?></a>
-  <!--#}#-->
-  <!--#include sub/block_navigation_top#-->
-  <!--#if($pd_uid){#-->
-  <a href="{#urr("account","action=logout")#}" onclick="return confirm('<?=__('confirm_logout')?>');"><?=__('logout')?></a>
-  <!--#}#-->
-  </div>
-  </div>
-  <div class="clear"></div>
-  </div>
-
+  <br/>
 <div class="circle_box">
   <!--
 <div class="logo_l">
@@ -135,8 +104,8 @@ document.domain = "{$settings['cookie_domain']}";
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$pd_username}<span class="caret"></span></a>
               <ul class="dropdown-menu">
+                  <li><a href="{#urr("mydisk","")#}">我的信息</a></li>
                 <!--#if($pd_gid == 1 ||$pd_gid == 5){#-->
-                  <li><a href="{#urr("mydisk","")#}"><?=__('mydisk')?></a></li>
                   <li><a href="{#urr("mydisk","item=profile&action=multi_upload")#}"><?=__('multi_upload')?></a></li>
                   <li><a href="{#urr("mydisk","item=profile&action=files")#}"><?=__('manage_file')?></a></li>
                   <!--#if($pd_gid ==1){#-->

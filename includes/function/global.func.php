@@ -1598,6 +1598,46 @@ function get_application_teacher_status(){
 	return $application_one;
 }
 
+function get_course_form_status($status){
+	global $db,$tpf,$pd_uid,$pg,$defineCouser,$task;
+	$condition = '';
+	$course_array = array();
+	switch($status){
+		case 1:
+			$condition = 'WHERE fcr.status = ';
+			break;
+		case 2:
+			$condition = 'WHERE fcr.status = ';
+			break;
+	}
+	$sql_do = "{$condition}";
+	$sql = "SELECT distinct c.*, cg.cate_name,u.username
+            FROM {$tpf}course c
+            LEFT JOIN {$tpf}file_cs_relation fcr ON c.courseid = fcr.course_id
+            LEFT JOIN {$tpf}categories cg ON c.cate_id = cg.cate_id
+            LEFT JOIN {$tpf}users u ON u.userid = c.user_id
+            $sql_do";
+	$q = $db->query($sql);
+	while($rs = $db->fetch_array($q)) {
+		if(!empty($rs['courseid'])){
+			$rs['create_date'] = date('Y-m-d H:i:s',$rs[create_date]);
+			$rs['update_date'] = date('Y-m-d H:i:s',$rs[update_date]);
+			$rs['status_num'] = $rs['status'];
+			$rs['status'] = $defineCouser[$rs['status']]?$defineCouser[$rs['status']]:'未定义状态';
+			$rs['a_course_view'] = urr("mydisk","item=profile&action=chapter_section_manage&course_id={$rs['courseid']}");
+			$rs['a_course_view_admin'] = urr("admincp","item=course&menu=file&action=course_view&course_id={$rs['courseid']}");
+			$rs['a_edit'] = urr("mydisk","item=course&action=modify_course&course_id={$rs['courseid']}");
+			$rs['a_del'] = urr("mydisk","item=course&action=course_delete&course_id={$rs['courseid']}");
+			$rs['a_course_review'] = urr("mydisk", "item=course&action=course_review&course_id={$rs['courseid']}");
+			$rs['a_course_review_cancel'] = urr("mydisk", "item=course&action=course_review_cancel&course_id={$rs['courseid']}");
+			$course_array['data'][] = $rs;
+		}
+	}
+	$db->free($q);
+	unset($rs);
+	return $course_array;
+}
+
 //获取视频列表数据
 function get_course_list($word = '',$perpage = 20){
 	global $db,$tpf,$pd_uid,$pg,$defineCouser,$task;
@@ -1683,6 +1723,29 @@ function get_chapter_section_list($course_id){
 	PHPTree::$config['parent_key'] = 'parent_id';
 	$chapter_section_array = !empty($chapter_section_array)?PHPTree::makeTreeForHtml($cs_file):array();
 	return $chapter_section_array;
+}
+
+//获取课程信息
+function get_course_info($course_id){
+	global $db, $tpf, $defineCouser;
+	$course_info = array();
+	$sql = "SELECT c.*, u.username, cg.cate_name FROM {$tpf}course c
+			LEFT JOIN {$tpf}categories cg ON cg.cate_id = c.cate_id
+			LEFT JOIN {$tpf}users u ON u.userid = c.user_id
+			WHERE c.courseid = {$course_id}";
+	$q = $db->query($sql);
+	while($rs = $db->fetch_array($q)) {
+		$rs['create_date'] = date('Y-m-d H:i:s',$rs[create_date]);
+		$rs['update_date'] = date('Y-m-d',$rs[update_date]);
+		$rs['status_info'] = $defineCouser[$rs['status']]?$defineCouser[$rs['status']]:'未定义状态';
+		//a连接的字段
+		$rs['a_edit'] = urr("mydisk","item=course&action=modify_chapter_section&cs_id={$rs['csid']}&course_id={$course_id}");
+		$rs['a_del'] = urr("mydisk","item=course&action=chapter_section_delete&cs_id={$rs['csid']}&course_id={$course_id}");
+		$rs['a_add_file'] = urr("mydisk","item=course&action=add_file_cs_relation&cs_id={$rs['csid']}&course_id={$course_id}");
+		$rs['a_viewcourse'] = urr("viewcourse","course_id={$rs['courseid']}");
+		$course_info = $rs;
+	}
+	return $course_info;
 }
 
 //获取分类下的课程
@@ -1789,5 +1852,37 @@ function get_all_cate(){
 	}
 	unset($rs);
 	return $cate_array;
+}
+
+//获取全部分类对象
+function get_all_cate_obj($display_hidden=0){
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree.php');
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree/Node.php');
+	require_once(PHPDISK_ROOT.'includes/class/BlueM_Tree/Tree/InvalidParentException.php');
+	global $tpf, $db;
+	$sql_do = !$display_hidden?' WHERE is_hidden !=1':'';
+	$sql = "SELECT * FROM {$tpf}categories {$sql_do}";
+	$q = $db->query($sql);
+	$cate_array = array();
+	while($rs = $db->fetch_array($q)) {
+		$rs['id'] = $rs['cate_id'];
+		$rs['parent'] = $rs['pid'];
+		$cate_array[] = $rs;
+	}
+	unset($rs);
+	$tree = new BlueM\Tree($cate_array);
+	return $tree;
+}
+
+//获取分类面包屑
+function get_cate_breakcrumb($cate_obj, &$breadcrumb){
+	$cur_cate = $cate_obj;
+	$cur_cate_parent = $cur_cate->getParent();
+	$cur_cate_parent_id = $cur_cate_parent->getId();
+	if(!empty($cur_cate_parent_id)){
+		get_cate_breakcrumb($cur_cate_parent, $breadcrumb);
+	}
+	$crumb = array('name'=>$cur_cate->get('cate_name'),'url'=>urr('public','cate_id='.$cur_cate->get('cate_id')));
+	$breadcrumb[]=$crumb;
 }
 ?>

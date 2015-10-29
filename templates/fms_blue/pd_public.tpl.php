@@ -13,72 +13,72 @@
 #-->
 <?php !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied!'); ?>
 <div id="container">
+
 <!--#include sub/block_adv_middle#-->
 
-<div>
-<ol class="breadcrumb">
-	<li><a href="#">Home</a></li>
-	<li><a href="#">Library</a></li>
-	<li class="active">Data</li>
-</ol>
+<div class="div-breadcrumb">
+	<ol class="breadcrumb">
+		<li><a href="{#urr("index","")#}">首页</a></li>
+		<!--#if(count($breadcrumb)){#-->
+			<!--#foreach($breadcrumb as $item){#-->
+				<!--#if(!empty($item['url'])){#-->
+					<li><a href="{$item['url']}">{$item['name']}</a></li>
+				<!--#}else{#-->
+					<li class="active">{$item['name']}</li>
+				<!--#}#-->
+			<!--#}#-->
+		<!--#}#-->
+	</ol>
 </div>
 
 <!--#if($cate_id){#-->
 <div class="layout_box">
-<div class="l col-md-3">
-<!--#include sub/block_public_cate_list#-->
+	<div class="l col-md-3">
+	<!--#include sub/block_public_cate_list#-->
 
-<!--#show_adv_data('adv_right');#-->
+	<!--#show_adv_data('adv_right');#-->
 
-<!--#include sub/block_cate_hot_file#-->
+	<!--#include sub/block_cate_hot_file#-->
 
-<!--#include sub/block_now_week_down_file#-->
-</div>
-<div class="r col-md-9">
-<div >
-	<table align="center" width="98%" cellpadding="0" cellspacing="0" border="0" id="f_tab" class="td_line">
-	<!--#
-	if(count($course_data)){
-		foreach($course_data as $k => $v){
-			$color = ($k%2 ==0) ? 'color1' :'color4';
-			$rowH = ($k%3 ==0) ? '<div class="row">' :'';
-			$rowF = ($k%3 ==2) ? '</div>' :'';
-	#-->
-		{$rowH}
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUwOWY2ZjUwYzcgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTA5ZjZmNTBjNyI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS40Ij4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+" alt="">
-					<div class="caption">
-						<h3><a href="{$v['a_viewcourse']}" >{$v['course_name']}</a></h3>
-						<p>{$v['description']}</p>
+	<!--#include sub/block_now_week_down_file#-->
+	</div>
+	<div class="r col-md-9">
+		<div>
+			<!--#
+			if(count($course_data)){
+				foreach($course_data as $k => $v){
+					$rowH = ($k%3 ==0) ? '<div class="row">' :'';
+					$rowF = ($k%3 ==2) ? '</div>' :'';
+			#-->
+				{$rowH}
+					<div class="col-sm-6 col-md-4">
+						<div class="thumbnail">
+							<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUwOWY2ZjUwYzcgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTA5ZjZmNTBjNyI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS40Ij4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+" alt="">
+							<div class="caption">
+								<h3><a href="{$v['a_viewcourse']}" >{$v['course_name']}</a></h3>
+								<p>{$v['description']}</p>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-		{$rowF}
-	<!--#
-		}
-		unset($files_array);
-	}else{
-	#-->
-	<tr>
-		<td colspan="6"><?=__('file_not_found')?></td>
-	</tr>
-	<!--#
-	}
-	#-->
-	<!--#if($page_nav){#-->
-	<tr>
-		<td colspan="6" class="head_bar">{$page_nav}</td>
-	</tr>
-	<!--#}#-->
-	</table>
+				{$rowF}
+			<!--#
+				}
+				unset($course_data);
+			}else{
+			#-->
+			<div class="col-md-3 col-md-push-5">没有对应的课程</div>
+			<!--#
+			}
+			#-->
+			<div class="clearfix"></div>
+			<!--#if($page_nav){#-->
+			<div class="head_nav">{$page_nav}</div>
+			<!--#}#-->
+		</div>
+	</div>
 </div>
-
-</div>
-<div class="clear"></div>
-</div>
-
 <!--#}else{#-->
+
 <br />
 <div class="layout_box">
 <!--#
@@ -123,4 +123,4 @@ if(count($cate_list)){
 </div>
 
 <!--#}#-->
-
+<div class="clearfix"></div>

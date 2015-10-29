@@ -304,6 +304,11 @@ switch($action){
 						$sysmsg = array('系统错误，操作记录无法保存');
 						redirect('back',$sysmsg);
 					}
+					//如果是审核通过就改用户的用户组
+					if($status == 3){
+						$sql = "UPDATE {$tpf}users SET gid = 5 WHERE userid ={$user_id}";
+						$db->query($sql);
+					}
 				}else{
 					$sysmsg = array('系统错误，操作失败');
 					redirect('admincp.php?item=users&menu=user&action=review_application_teacher',$sysmsg);

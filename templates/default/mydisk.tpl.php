@@ -27,6 +27,7 @@ function expand_menu(id){
 <div id="md_box">
 <div id="md_main">
 	<div class="col-md-2 md_l">
+		<!--#if($pd_isteacher||$pd_isadmin){#-->
 		<div class="panel panel-default">
 			<div class="panel-heading"><?=__('file_menu')?></div>
 			<ul class="list-group">
@@ -42,7 +43,7 @@ function expand_menu(id){
 				<!--<li><a href="{#urr("mydisk","item=profile&action=course_review")#}" id="n_course_review"><img src="images/user/ico_history.gif" align="absmiddle" border="0" />课程审核</a></li>-->
 			</ul>
 		</div>
-
+		<!--#}#-->
 		<!--#if(DEBUG){#-->
 		<div class="panel panel-default">
 			<div class="panel-heading"><?=__('income_menu')?></div>

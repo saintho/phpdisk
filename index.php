@@ -107,7 +107,6 @@ if($auth[is_fms]){
 	$C[index_tags] = get_last_tag();
 	$C[commend_file] = get_commend_file(15);
 }
-
 require_once template_echo('phpdisk',$user_tpl_dir);
 $f = PHPDISK_ROOT."./system/global/stats.inc.php";
 if(!file_exists($f) || $timestamp-@filemtime($f)>3600){
