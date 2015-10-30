@@ -1,0 +1,45 @@
+<?php 
+// This is PHPDISK auto-generated file. Do NOT modify me.
+
+// Cache Time:2015-10-28 10:45:33
+
+!defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied');
+
+?>
+<?php 
+##
+#	Project: PHPDISK File Storage Solution
+#	This is NOT a freeware, use is subject to license terms.
+#
+#	Site: http://www.google.com
+#
+#	$Id: block_public_cate_list.tpl.php 121 2014-03-04 12:38:05Z along $
+#
+#	Copyright (C) 2008-2014 PHPDisk Team. All Rights Reserved.
+#
+##
+ ?>
+<?php !defined('IN_PHPDISK') && exit('[PHPDisk] Access Denied!'); ?>
+<div class="panel panel-default">
+	<div class="panel-heading">分类列表</div>
+	<ul class="list-group">
+		<?php 
+		if(count($C[cate_list])){
+			foreach($C[cate_list] as $k => $v){
+		 ?>
+			<a class="list-group-item" href="<?=$v[a_public]?>" id="a_cate_<?=$v[cate_id]?>"><span><?=$v['cate_name']?></span></a>
+		<?php 
+			}
+			if($cate_id){
+		 ?>
+			<script type="text/javascript">
+				//标记选中的分类
+				var classname = jQuery('#a_cate_<?=$cate_id?>').prop('class');
+				jQuery('#a_cate_<?=$cate_id?>').prop('class',classname+' active');
+			</script>
+		<?php 
+			}
+		}
+		 ?>
+	</ul>
+</div>
