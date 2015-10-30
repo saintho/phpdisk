@@ -1,0 +1,1329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0f801bfc-63ac-40fc-ba5e-5f7c3dbfa569" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/adbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/barbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/bg2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/bg_header.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/body_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/body_bot_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/body_topbar_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/btn_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/btn_bg2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/btn_sel.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/copyrightbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/down_btn.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/file_bar_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/fl_box_tit_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/foot_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/guest_btn.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/hdbg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/indexbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/loginbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/logo_cp.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/m_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/mainbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/menu_leftbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/sbtn_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/snapshot.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/titleBG.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/title_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/title_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/topbar.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/upload_btn.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/images/win_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/green_black/template_info.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/adbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/barbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/bg_header.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/body_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/body_bot_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/body_topbar_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/btn_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/btn_bg2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/btn_sel.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/copyrightbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/down_btn.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/file_bar_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/fl_box_tit_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/foot_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/guest_btn.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/hdbg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/indexbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/loginbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/logo_cp.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/m_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/mainbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/menu_leftbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/sbtn_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/snapshot.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/titleBG.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/title_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/title_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/topbar.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/upload_btn.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/images/win_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/light_blue/template_info.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/adbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/barbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/bg_header.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/body_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/body_bot_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/body_topbar_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/btn_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/btn_bg2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/btn_sel.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/copyrightbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/down_btn.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/file_bar_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/fl_box_tit_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/foot_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/guest_btn.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/hdbg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/ibg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/indexbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/loginbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/logo_cp.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/m_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/mainbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/menu_leftbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/sbtn_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/snapshot.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/titleBG.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/title_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/title_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/topbar.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/upload_btn.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/images/win_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/violet/template_info.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/adbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/barbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/bg2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/bg_header.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/body_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/body_bot_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/body_topbar_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/btn_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/btn_bg2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/btn_sel.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/copyrightbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/down_btn.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/file_bar_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/fl_box_tit_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/foot_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/guest_btn.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/hdbg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/index.htm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/indexbg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/loginbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/logo_cp.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/m_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/mainbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/menu_leftbg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/sbtn_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/snapshot.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/titleBG.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/title_bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/title_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/topbar.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/upload_btn.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/images/win_bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/bak/win8/template_info.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    </list>
+    <ignored path="phpdisk.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="FLATTEN" value="false" />
+    <option name="GROUP_BY_TYPE" value="true" />
+    <option name="SORT_CHILDREN" value="false" />
+    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="phpdisk" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="course.tpl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/default/course.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.3529413">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.75">
+              <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
+              <folding>
+                <marker date="1446127960000" expanded="true" signature="1253:1370" placeholder="select serve..." />
+                <marker date="1446127960000" expanded="true" signature="1858:1916" placeholder="select count..." />
+                <marker date="1446127960000" expanded="true" signature="2184:2240" placeholder="select count..." />
+                <marker date="1446127960000" expanded="true" signature="2485:2602" placeholder="select serve..." />
+                <marker date="1446127960000" expanded="true" signature="3361:3430" placeholder="select usern..." />
+                <marker date="1446127960000" expanded="true" signature="3760:3849" placeholder="select * fro..." />
+                <marker date="1446127960000" expanded="true" signature="4085:4146" placeholder="select usern..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/fms_blue/images/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.888889">
+              <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitattributes" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitattributes">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2059925">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewcourse.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/viewcourse.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3461539">
+              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+              <folding>
+                <marker date="1446131524000" expanded="true" signature="2726:2889" placeholder="select c.*,u..." />
+                <marker date="1446131524000" expanded="true" signature="4611:4661" placeholder="select * fro..." />
+                <marker date="1446131524000" expanded="true" signature="4866:4939" placeholder="select usern..." />
+                <marker date="1446131524000" expanded="true" signature="4973:5090" placeholder="select folde..." />
+                <marker date="1446131524000" expanded="true" signature="8662:8728" placeholder="select tag_n..." />
+                <marker date="1446131524000" expanded="true" signature="8935:8994" placeholder="select * fro..." />
+                <marker date="1446131524000" expanded="true" signature="9622:9689" placeholder="select count..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pd_public.tpl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/fms_blue/pd_public.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.0">
+              <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pd_viewcourse.tpl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/fms_blue/pd_viewcourse.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.2941177">
+              <caret line="190" column="107" selection-start-line="190" selection-start-column="107" selection-end-line="190" selection-end-column="107" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="course.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/course.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5897436">
+              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding>
+                <marker date="1446131409000" expanded="true" signature="453:543" placeholder="select serve..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.func.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/function/global.func.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.019607844">
+              <caret line="1684" column="33" selection-start-line="1684" selection-start-column="9" selection-end-line="1684" selection-end-column="33" />
+              <folding>
+                <marker date="1446130723000" expanded="true" signature="14839:14913" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="15014:15110" placeholder="select sum(f..." />
+                <marker date="1446130723000" expanded="true" signature="15501:15575" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="17242:17305" placeholder="select user_..." />
+                <marker date="1446130723000" expanded="true" signature="17583:17644" placeholder="select sum(f..." />
+                <marker date="1446130723000" expanded="true" signature="25850:25915" placeholder="select domai..." />
+                <marker date="1446130723000" expanded="true" signature="28057:28110" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="28290:28346" placeholder="select ${$co..." />
+                <marker date="1446130723000" expanded="true" signature="28500:28555" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="28596:28654" placeholder="select ${$co..." />
+                <marker date="1446130723000" expanded="true" signature="28849:28922" placeholder="select count..." />
+                <marker date="1446130723000" expanded="true" signature="29405:29463" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="29506:29567" placeholder="select ${$co..." />
+                <marker date="1446130723000" expanded="true" signature="29617:29668" placeholder="select count..." />
+                <marker date="1446130723000" expanded="true" signature="29765:29817" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="29862:29917" placeholder="select ${$co..." />
+                <marker date="1446130723000" expanded="true" signature="30088:30173" placeholder="select stat_..." />
+                <marker date="1446130723000" expanded="true" signature="30214:30226" placeholder="..." />
+                <marker date="1446130723000" expanded="true" signature="30371:30431" placeholder="select usern..." />
+                <marker date="1446130723000" expanded="true" signature="30464:30568" placeholder="select paren..." />
+                <marker date="1446130723000" expanded="true" signature="31046:31106" placeholder="select usern..." />
+                <marker date="1446130723000" expanded="true" signature="31142:31196" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="34301:34362" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="34959:35013" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="35605:35724" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="36373:36483" placeholder="select cate_..." />
+                <marker date="1446130723000" expanded="true" signature="36903:36978" placeholder="select pid,c..." />
+                <marker date="1446130723000" expanded="true" signature="37610:37711" placeholder="select count..." />
+                <marker date="1446130723000" expanded="true" signature="37854:37885" placeholder="insert into ..." />
+                <marker date="1446130723000" expanded="true" signature="38204:38287" placeholder="delete from ..." />
+                <marker date="1446130723000" expanded="true" signature="38445:38515" placeholder="select count..." />
+                <marker date="1446130723000" expanded="true" signature="38651:38678" placeholder="insert into ..." />
+                <marker date="1446130723000" expanded="true" signature="38926:38979" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="39359:39410" placeholder="delete from ..." />
+                <marker date="1446130723000" expanded="true" signature="39445:39485" placeholder="delete from ..." />
+                <marker date="1446130723000" expanded="true" signature="39560:39611" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="40057:40082" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="41440:41508" placeholder="select activ..." />
+                <marker date="1446130723000" expanded="true" signature="42328:42913" placeholder="CREATE TABLE..IF..." />
+                <marker date="1446130723000" expanded="true" signature="43401:43986" placeholder="CREATE TABLE..IF..." />
+                <marker date="1446130723000" expanded="true" signature="44206:44314" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="44855:44909" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="45717:45772" placeholder="delete from ..." />
+                <marker date="1446130723000" expanded="true" signature="45805:45871" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="46002:46057" placeholder="insert into ..." />
+                <marker date="1446130723000" expanded="true" signature="47500:47573" placeholder="select * fro..." />
+                <marker date="1446130723000" expanded="true" signature="47830:47964" placeholder="select id fr..." />
+                <marker date="1446130723000" expanded="true" signature="48337:48405" placeholder="insert into ..." />
+                <marker date="1446130723000" expanded="true" signature="48471:48605" placeholder="select id fr..." />
+                <marker date="1446130723000" expanded="true" signature="48978:49046" placeholder="insert into ..." />
+                <marker date="1446130723000" expanded="true" signature="49292:49360" placeholder="insert into ..." />
+                <marker date="1446130723000" expanded="true" signature="50313:50374" placeholder="SELECT statu..." />
+                <marker date="1446130723000" expanded="true" signature="50775:51058" placeholder="SELECT disti..." />
+                <marker date="1446130723000" expanded="true" signature="50775:51071" placeholder="SELECT disti..." />
+                <marker date="1446130723000" expanded="true" signature="50775:51078" placeholder="SELECT disti..." />
+                <marker date="1446130723000" expanded="true" signature="52555:52839" placeholder="SELECT disti..." />
+                <marker date="1446130723000" expanded="true" signature="52927:52974" placeholder="select count..." />
+                <marker date="1446130723000" expanded="true" signature="54446:54507" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="55327:55463" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="56438:56494" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="56438:56507" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="56438:56514" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="56438:56530" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="56438:56534" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="56438:56543" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="56438:56550" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="56438:56553" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="56438:56567" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="56438:56573" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="56438:56627" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="58367:58404" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="59296:59343" placeholder="select count..." />
+                <marker date="1446130723000" expanded="true" signature="61155:61206" placeholder="SELECT * FRO..." />
+                <marker date="1446130723000" expanded="true" signature="61783:61814" placeholder="SELECT * FRO..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="WARN_ABOUT_CRLF" value="false" />
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/dev/sub/modules/upload.inc.php" />
+        <option value="$PROJECT_DIR$/modules/folders.inc.php" />
+        <option value="$PROJECT_DIR$/templates/default/my_header.tpl.php" />
+        <option value="$PROJECT_DIR$/modules/files.inc.php" />
+        <option value="$PROJECT_DIR$/templates/admin/admincp.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/admin/course.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/admin/menu.tpl.php" />
+        <option value="$PROJECT_DIR$/includes/class/BlueM_Tree/Tree.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/sub/block_now_week_down_file.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/sub/block_cate_hot_file.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/sub/block_cate_last_file.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/sub/block_yesterday_down_file.tpl.php" />
+        <option value="$PROJECT_DIR$/system/settings.inc.php" />
+        <option value="$PROJECT_DIR$/dev/sub/system/settings.inc.php" />
+        <option value="$PROJECT_DIR$/includes/class/phptree.class.php" />
+        <option value="$PROJECT_DIR$/includes/auth/phpdisk.a.inc.php" />
+        <option value="$PROJECT_DIR$/system/templates/fms_blue/information.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/default/information.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/default/pd_search.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/pd_header.tpl.php-" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/sub/block_public_cate_list.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/pd_public.tpl.php" />
+        <option value="$PROJECT_DIR$/viewfile.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/sub/block_viewfile_bottom.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/default/profile.tpl.php" />
+        <option value="$PROJECT_DIR$/public.php" />
+        <option value="$PROJECT_DIR$/dev/sub/includes/commons.inc.php" />
+        <option value="$PROJECT_DIR$/templates/default/mydisk.tpl.php" />
+        <option value="$PROJECT_DIR$/modules/course.inc.php" />
+        <option value="$PROJECT_DIR$/templates/default/course.tpl.php" />
+        <option value="$PROJECT_DIR$/includes/class/upload.class.php" />
+        <option value="$PROJECT_DIR$/mydisk.php" />
+        <option value="$PROJECT_DIR$/includes/commons.inc.php" />
+        <option value="$PROJECT_DIR$/includes/class/core.class.php" />
+        <option value="$PROJECT_DIR$/modules/profile.inc.php" />
+        <option value="$PROJECT_DIR$/admincp.php" />
+        <option value="$PROJECT_DIR$/admin/users.inc.php" />
+        <option value="$PROJECT_DIR$/dev/sub/system/configs.inc.php" />
+        <option value="$PROJECT_DIR$/plugins/api/uc_configs.inc.php" />
+        <option value="$PROJECT_DIR$/system/configs.inc.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/pd_header.tpl.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/sub/block_announce_list.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/sub/block_links.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/phpdisk.tpl.php" />
+        <option value="$PROJECT_DIR$/includes/function/global.func.php" />
+        <option value="$PROJECT_DIR$/admin/course.inc.php" />
+        <option value="$PROJECT_DIR$/viewcourse.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/pd_viewcourse.tpl.php" />
+        <option value="$PROJECT_DIR$/templates/fms_blue/images/style.css" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="phpdisk.app" id="7e8ad928-b8f7-40ad-94d7-090afa24a35d" name="phpdisk.app" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="/var/www/sites/phpdisk" />
+        </path_mappings>
+      </server>
+      <server host="mall.local.dev.tpages.com" id="95f39838-eda4-4468-82a4-92ecd82d3da2" name="mall.local.dev.tpages.com" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/yucmedia/Template" remote-root="/var/www/sites/ECMall" />
+        </path_mappings>
+      </server>
+      <server host="local.dev.tpages.com" id="2d39aae3-6310-4c9c-aab0-01f90fb306eb" name="local.dev.tpages.com" />
+      <server host="api.local.dev.tpages.com" id="310ebba5-d516-4e28-8c1b-05caeba7acd7" name="api.local.dev.tpages.com" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/yucmedia/Template" remote-root="/var/www/sites/Tpages/php/API" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="4" />
+    <option name="y" value="23" />
+    <option name="width" value="1916" />
+    <option name="height" value="1057" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Blade files</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpdisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpdisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phpdisk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wecenter" />
+    <property name="SearchEverywhereHistoryKey" value="course.tpl.p&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/admin/course.tpl.php&#10;cour&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/admin/course.inc.php&#10;course.tpl.php&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/default/course.tpl.php&#10;admincp&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/admin/admincp.tpl.php&#10;viewcourse&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/viewcourse.php&#10;sty&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/images/style.css&#10;block_links&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/sub/block_links.tpl.php&#10;block_announce_list&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/sub/block_announce_list.tpl.php&#10;phpdisk.tpl.php&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/phpdisk.tpl.php&#10;index&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/index.php&#10;he&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/pd_header.tpl.php&#10;pub&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/public.php&#10;course&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/pd_viewcourse.tpl.php&#10;pu&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/pd_public.tpl.php&#10;viewcourse.php&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/viewcourse.php&#10;index.php&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/index.php&#10;upload&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/includes/class/upload.class.php&#10;commons.inc.php&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/includes/commons.inc.php&#10;mydis&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/mydisk.php&#10;com&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/includes/commons.inc.php&#10;pr&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/modules/profile.inc.php&#10;pro&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/modules/profile.inc.php&#10;mydisk&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/default/mydisk.tpl.php&#10;block_cate_hot_file&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/sub/block_cate_hot_file.tpl.php&#10;glo&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/includes/function/global.func.php&#10;profile&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/default/profile.tpl.php&#10;block_viewfile_bottom&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/sub/block_viewfile_bottom.tpl.php&#10;pd_viewcourse&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/pd_viewcourse.tpl.php&#10;view&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/viewcourse.php&#10;viewc&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/pd_viewcourse.tpl.php&#10;viewfi&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/viewfile.php&#10;commons&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/includes/commons.inc.php&#10;block_public_cate_list&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/sub/block_public_cate_list.tpl.php&#10;public&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/pd_public.tpl.php&#10;public.php&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/public.php&#10;gl&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/includes/function/global.func.php&#10;style&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/images/style.css&#10;search.php&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/default/pd_search.tpl.php&#10;pd_public&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/pd_public.tpl.php&#10; pd_public&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/pd_public.tpl.php&#10;kindeditor-min.js&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/editor/kindeditor-min.js&#10;profile.inc.php&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/modules/profile.inc.php&#10;information.t&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/default/information.tpl.php&#10;show_ext_menu&#9;null&#9;null&#10;head&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/fms_blue/pd_header.tpl.php&#10;comm&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/includes/commons.inc.php&#10;phptree.&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/includes/class/phptree.class.php&#10;multi&#9;null&#9;null&#10;profile.inc&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/modules/profile.inc.php&#10;mydisk.php&#9;FILE&#9;file:///Users/saint/Sites/phpdisk/templates/default/mydisk.tpl.php" />
+    <property name="options.lastSelected" value="File.Encoding" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="settings.editor.splitter.proportion" value="0.22779922" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/fms_blue" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/includes/class" />
+      <recent name="$PROJECT_DIR$/templates/admin" />
+      <recent name="$PROJECT_DIR$/admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/includes/js" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f801bfc-63ac-40fc-ba5e-5f7c3dbfa569" name="Default" comment="" />
+      <created>1442807349427</created>
+      <option name="number" value="Default" />
+      <updated>1442807349427</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="4" y="23" width="1916" height="1057" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.38663968" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995227" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19583844" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14196242" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38562754" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32692307" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/course.inc.php</url>
+          <line>114</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/course.inc.php</url>
+          <line>292</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/course.inc.php</url>
+          <line>29</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/course.inc.php</url>
+          <line>344</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/viewcourse.php</url>
+          <line>17</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/viewfile.php</url>
+          <line>23</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/viewcourse.php</url>
+          <line>23</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/course.inc.php</url>
+          <line>322</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/modules/profile.inc.php</url>
+          <line>363</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/includes/function/global.func.php</url>
+          <line>1637</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="82" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="public.php">
+        <watch expression="$cate_cate-&gt;getId()" language="PHP" />
+      </configuration>
+      <configuration name="viewcourse.php">
+        <watch expression="$course" language="PHP" />
+      </configuration>
+      <configuration name="mydisk.php">
+        <watch expression="$cate_cate-&gt;getId()" language="PHP" />
+      </configuration>
+      <configuration name="admincp.php">
+        <watch expression="$sql" language="PHP" />
+      </configuration>
+      <configuration name="viewfile.php">
+        <watch expression="count($cate_data)" language="PHP" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/includes/class/mysql.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33274022">
+          <caret line="136" column="18" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/settings.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3293718">
+          <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/sub/system/settings.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3293718">
+          <caret line="74" column="46" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/class/phptree.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3125">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/zh_cn/LC_MESSAGES/phpdisk.po">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7943" column="19" selection-start-line="7943" selection-start-column="7" selection-end-line="7943" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/function/core.func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20833333">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/auth/phpdisk.a.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="2098" selection-start-line="0" selection-start-column="2098" selection-end-line="0" selection-end-column="2098" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/default/information.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor/kindeditor-min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41145834">
+          <caret line="144" column="283" selection-start-line="144" selection-start-column="283" selection-end-line="144" selection-end-column="283" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/templates/fms_blue/information.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="27" selection-start-column="3" selection-end-line="28" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/default/pd_search.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="20.0">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/js/skins/blue/jbox.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58928573">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fms_blue/pd_header.tpl.php-">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fms_blue/sub/block_public_cate_list.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.7058825">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fms_blue/sub/block_viewfile_bottom.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.235294">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.625">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34188035">
+          <caret line="534" column="9" selection-start-line="534" selection-start-column="9" selection-end-line="534" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/default/profile.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0897436">
+          <caret line="902" column="42" selection-start-line="902" selection-start-column="16" selection-end-line="902" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/sub/includes/commons.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.958333">
+          <caret line="121" column="8" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/global.cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.125">
+          <caret line="277" column="66" selection-start-line="277" selection-start-column="66" selection-end-line="277" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fms_blue/sub/block_cate_hot_file.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/course.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="110" column="16" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
+          <folding>
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select cours..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select cours..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select cours..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select cs_na..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="SELECT statu..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="SELECT file_..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1446038873000" expanded="true" signature="-1:-1" placeholder="select file_..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/default/mydisk.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydisk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <marker date="1444280393000" expanded="true" signature="-1:-1" placeholder="select count..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/commons.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="217" column="31" selection-start-line="217" selection-start-column="31" selection-end-line="217" selection-end-column="31" />
+          <folding>
+            <marker date="1446049188000" expanded="true" signature="-1:-1" placeholder="select useri..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/class/core.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.375">
+          <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+          <folding>
+            <marker date="1446049660000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admincp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8235295">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+          <folding>
+            <marker date="1446110821000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1446110821000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1446110821000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/users.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.980392">
+          <caret line="309" column="41" selection-start-line="309" selection-start-column="41" selection-end-line="309" selection-end-column="41" />
+          <folding>
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select useri..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select useri..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select u.*,g..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select gid,g..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select gid,g..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select u.*,g..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select gid,g..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select gid,g..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select is_lo..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select usern..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select usern..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select email..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select gid,g..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select plan_..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select passw..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select incom..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select email..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select passw..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select gid,g..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select subje..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select subje..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select subje..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select u.use..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select money..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select useri..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select uo.*,..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446111140000" expanded="true" signature="-1:-1" placeholder="select p.*,f..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/profile.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.9411764">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select fd.*,..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="SELECT c.*, ..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select useri..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select useri..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select sum(m..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select p.*,f..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select logo ..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select space..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select incom..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select u.cre..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select touse..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select u.cre..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select serve..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select sum(d..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select sum(d..." />
+            <marker date="1446088835000" expanded="true" signature="-1:-1" placeholder="select count..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/configs.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5714286">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/api/uc_configs.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17142858">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/sub/system/configs.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17142858">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/class/upload.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.8627453">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding>
+            <marker date="1446043005000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="45" column="48" selection-start-line="42" selection-start-column="4" selection-end-line="45" selection-end-column="48" />
+          <folding>
+            <marker date="1446037267000" expanded="true" signature="-1:-1" placeholder="select cate_..." />
+            <marker date="1446037267000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fms_blue/pd_header.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5752381">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fms_blue/sub/block_announce_list.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48795182">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fms_blue/sub/block_links.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4857143">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fms_blue/phpdisk.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41402715">
+          <caret line="51" column="59" selection-start-line="51" selection-start-column="59" selection-end-line="51" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75">
+          <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
+          <folding>
+            <marker date="1446127960000" expanded="true" signature="1253:1370" placeholder="select serve..." />
+            <marker date="1446127960000" expanded="true" signature="1858:1916" placeholder="select count..." />
+            <marker date="1446127960000" expanded="true" signature="2184:2240" placeholder="select count..." />
+            <marker date="1446127960000" expanded="true" signature="2485:2602" placeholder="select serve..." />
+            <marker date="1446127960000" expanded="true" signature="3361:3430" placeholder="select usern..." />
+            <marker date="1446127960000" expanded="true" signature="3760:3849" placeholder="select * fro..." />
+            <marker date="1446127960000" expanded="true" signature="4085:4146" placeholder="select usern..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/function/global.func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.019607844">
+          <caret line="1684" column="33" selection-start-line="1684" selection-start-column="9" selection-end-line="1684" selection-end-column="33" />
+          <folding>
+            <marker date="1446130723000" expanded="true" signature="14839:14913" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="15014:15110" placeholder="select sum(f..." />
+            <marker date="1446130723000" expanded="true" signature="15501:15575" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="17242:17305" placeholder="select user_..." />
+            <marker date="1446130723000" expanded="true" signature="17583:17644" placeholder="select sum(f..." />
+            <marker date="1446130723000" expanded="true" signature="25850:25915" placeholder="select domai..." />
+            <marker date="1446130723000" expanded="true" signature="28057:28110" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="28290:28346" placeholder="select ${$co..." />
+            <marker date="1446130723000" expanded="true" signature="28500:28555" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="28596:28654" placeholder="select ${$co..." />
+            <marker date="1446130723000" expanded="true" signature="28849:28922" placeholder="select count..." />
+            <marker date="1446130723000" expanded="true" signature="29405:29463" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="29506:29567" placeholder="select ${$co..." />
+            <marker date="1446130723000" expanded="true" signature="29617:29668" placeholder="select count..." />
+            <marker date="1446130723000" expanded="true" signature="29765:29817" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="29862:29917" placeholder="select ${$co..." />
+            <marker date="1446130723000" expanded="true" signature="30088:30173" placeholder="select stat_..." />
+            <marker date="1446130723000" expanded="true" signature="30214:30226" placeholder="..." />
+            <marker date="1446130723000" expanded="true" signature="30371:30431" placeholder="select usern..." />
+            <marker date="1446130723000" expanded="true" signature="30464:30568" placeholder="select paren..." />
+            <marker date="1446130723000" expanded="true" signature="31046:31106" placeholder="select usern..." />
+            <marker date="1446130723000" expanded="true" signature="31142:31196" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="34301:34362" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="34959:35013" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="35605:35724" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="36373:36483" placeholder="select cate_..." />
+            <marker date="1446130723000" expanded="true" signature="36903:36978" placeholder="select pid,c..." />
+            <marker date="1446130723000" expanded="true" signature="37610:37711" placeholder="select count..." />
+            <marker date="1446130723000" expanded="true" signature="37854:37885" placeholder="insert into ..." />
+            <marker date="1446130723000" expanded="true" signature="38204:38287" placeholder="delete from ..." />
+            <marker date="1446130723000" expanded="true" signature="38445:38515" placeholder="select count..." />
+            <marker date="1446130723000" expanded="true" signature="38651:38678" placeholder="insert into ..." />
+            <marker date="1446130723000" expanded="true" signature="38926:38979" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="39359:39410" placeholder="delete from ..." />
+            <marker date="1446130723000" expanded="true" signature="39445:39485" placeholder="delete from ..." />
+            <marker date="1446130723000" expanded="true" signature="39560:39611" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="40057:40082" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="41440:41508" placeholder="select activ..." />
+            <marker date="1446130723000" expanded="true" signature="42328:42913" placeholder="CREATE TABLE..IF..." />
+            <marker date="1446130723000" expanded="true" signature="43401:43986" placeholder="CREATE TABLE..IF..." />
+            <marker date="1446130723000" expanded="true" signature="44206:44314" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="44855:44909" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="45717:45772" placeholder="delete from ..." />
+            <marker date="1446130723000" expanded="true" signature="45805:45871" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="46002:46057" placeholder="insert into ..." />
+            <marker date="1446130723000" expanded="true" signature="47500:47573" placeholder="select * fro..." />
+            <marker date="1446130723000" expanded="true" signature="47830:47964" placeholder="select id fr..." />
+            <marker date="1446130723000" expanded="true" signature="48337:48405" placeholder="insert into ..." />
+            <marker date="1446130723000" expanded="true" signature="48471:48605" placeholder="select id fr..." />
+            <marker date="1446130723000" expanded="true" signature="48978:49046" placeholder="insert into ..." />
+            <marker date="1446130723000" expanded="true" signature="49292:49360" placeholder="insert into ..." />
+            <marker date="1446130723000" expanded="true" signature="50313:50374" placeholder="SELECT statu..." />
+            <marker date="1446130723000" expanded="true" signature="50775:51058" placeholder="SELECT disti..." />
+            <marker date="1446130723000" expanded="true" signature="50775:51071" placeholder="SELECT disti..." />
+            <marker date="1446130723000" expanded="true" signature="50775:51078" placeholder="SELECT disti..." />
+            <marker date="1446130723000" expanded="true" signature="52555:52839" placeholder="SELECT disti..." />
+            <marker date="1446130723000" expanded="true" signature="52927:52974" placeholder="select count..." />
+            <marker date="1446130723000" expanded="true" signature="54446:54507" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="55327:55463" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="56438:56494" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="56438:56507" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="56438:56514" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="56438:56530" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="56438:56534" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="56438:56543" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="56438:56550" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="56438:56553" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="56438:56567" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="56438:56573" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="56438:56627" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="58367:58404" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="59296:59343" placeholder="select count..." />
+            <marker date="1446130723000" expanded="true" signature="61155:61206" placeholder="SELECT * FRO..." />
+            <marker date="1446130723000" expanded="true" signature="61783:61814" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/admincp.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7590361">
+          <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/default/course.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3529413">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin/course.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6987952">
+          <caret line="302" column="20" selection-start-line="223" selection-start-column="12" selection-end-line="302" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/course.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5897436">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <marker date="1446131409000" expanded="true" signature="453:543" placeholder="select serve..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcourse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3461539">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding>
+            <marker date="1446131524000" expanded="true" signature="2726:2889" placeholder="select c.*,u..." />
+            <marker date="1446131524000" expanded="true" signature="4611:4661" placeholder="select * fro..." />
+            <marker date="1446131524000" expanded="true" signature="4866:4939" placeholder="select usern..." />
+            <marker date="1446131524000" expanded="true" signature="4973:5090" placeholder="select folde..." />
+            <marker date="1446131524000" expanded="true" signature="8662:8728" placeholder="select tag_n..." />
+            <marker date="1446131524000" expanded="true" signature="8935:8994" placeholder="select * fro..." />
+            <marker date="1446131524000" expanded="true" signature="9622:9689" placeholder="select count..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fms_blue/pd_public.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fms_blue/pd_viewcourse.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2941177">
+          <caret line="190" column="107" selection-start-line="190" selection-start-column="107" selection-end-line="190" selection-end-column="107" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fms_blue/images/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.888889">
+          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2059925">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
